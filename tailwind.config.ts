@@ -15,6 +15,7 @@ const config: Config = {
         navyblue: "#002F67",
         white: "#FFFFFF",
         black: "#000000",
+        green: "#18FF6D",
       },
     },
   },
