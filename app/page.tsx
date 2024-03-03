@@ -120,8 +120,6 @@ export default function Home() {
               onInit={(typewriter) => {
                 typewriter
                   .typeString("Desenvolvendo ideias e impulsionando resultados")
-                  .pauseFor(5000)
-                  .deleteAll()
                   .start();
               }}
             />
