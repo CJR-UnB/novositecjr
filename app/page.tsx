@@ -1,4 +1,6 @@
-import CustomIcon, { CJR } from "./components/SVGicons";
+"use client";
+import { useEffect, useRef, useState } from "react";
+import CustomIcon, { CJR, Menu } from "./components/SVGicons";
 {
   /* As cores principais que combinamos no figma já estão gravadas nos arquivos do projeto com os seguintes nomes:
     aquagreen: "#27BD80",
@@ -18,46 +20,125 @@ Vai ficar incrível
 }
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuRef]);
+
   return (
     <main className="text-spaceblue">
-      <header className="justify-between bg-spaceblue text-gray-300 flex px-2 relative">
-        <CJR className="scale-125 ml-40 self-center" />
-        <div className="self-center text-2xl mr-24 space-x-40">
+      <header
+        className="sticky top-0 justify-between bg-spaceblue text-gray-300 flex px-2 z-50"
+        style={{ height: "10vh" }}
+      >
+        <div
+          className="scale-125 ml-40 mr-10 self-center py-5 
+        xs:ml-10 sm:ml-20 md:ml-20 lg:ml-32 xl:ml-40 2xl:ml-40"
+        >
+          <CJR />
+        </div>
+        <div className="self-center text-2xl mr-24 space-x-16 hidden xs:hidden sm:hidden md:hidden lg:hidden xl:flex">
           <button className="group transition duration-300">
             Quem somos
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-aquagreen"></span>
+            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen"></span>
           </button>
           <button className="group transition duration-300">
             Nossos Cases
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-aquagreen"></span>
+            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen"></span>
           </button>
           <button className="group transition duration-300">
             Serviços e Produtos
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-1 bg-aquagreen"></span>
+            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen"></span>
           </button>
           <button className="bg-aquagreen py-7 px-20 text-black transition-colors duration-300 hover:bg-green ease-in">
             Contato
           </button>
         </div>
+        <button
+          className="flex xs:flex sm:flex md:flex lg:flex xl:hidden items-center mr-10"
+          onClick={toggleMenu}
+        >
+          <Menu />
+        </button>
+        <div
+          ref={menuRef}
+          className={`absolute right-0 mr-10 flex flex-col items-start top-24 justify-center z-50 transition-all duration-500 transform origin-top ${
+            isMenuOpen ? "scale-y-100" : "scale-y-0"
+          }`}
+        >
+          <div className="bg-aquagreen text-white p-8 rounded-lg w-full max-w-xs">
+            <button className="block mb-4" onClick={toggleMenu}>
+              Quem somos
+            </button>
+            <button className="block mb-4" onClick={toggleMenu}>
+              Nossos Cases
+            </button>
+            <button className="block mb-4" onClick={toggleMenu}>
+              Serviços e Produtos
+            </button>
+            <button className="block mb-4" onClick={toggleMenu}>
+              Contato
+            </button>
+          </div>
+        </div>
       </header>
+
       <section
-        className="bg-spaceblue bg-contain text-white w-auto p-2 flex relative"
+        className="bg-spaceblue text-white p-2 flex relative
+        flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row"
         id="Início"
-        style={{ overflow: "hidden" }}
+        style={{ overflow: "hidden", height: "90vh" }}
       >
-        <div className="self-center ml-40">
-          <h1 className="text-5xl w-full max-w-3xl mb-3 leading-snug">
+        <div
+          className="px-5 mx-2
+         m-auto lg:ml-32 xl:ml-40 2xl:ml-40
+         mt-16 sm:mt-16 md:mt-20 lg:mt-auto xl:mt-auto 2xl:mt-auto"
+        >
+          <h1
+            className=" w-full max-w-3xl mb-3 leading-snug text-left
+          text-4xl xs:text-4xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
+          >
             Desenvolvendo ideias e impulsionando resultados
           </h1>
-          <p className="text-gray-200 text-xl mb-8 w-full max-w-md">
+          <p
+            className="text-gray-200 mb-8 w-full max-w-xl text-left
+          text-xl xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-2xl"
+          >
             A CJR tem a solução certa para digitalizar sua empresa e escalar
             seus serviços
           </p>
-          <button className="bg-aquagreen rounded-xl py-3 px-16 text-2xl text-black transition-colors duration-300 hover:bg-green ease-linear">
+          <button
+            className="bg-aquagreen rounded-xl py-3 px-10 text-black transition-colors duration-300 hover:bg-green ease-linear
+           hidden xs:hidden sm:hidden md:hidden lg:block xl:block 2xl:block 
+           lg:text-xl xl:text-2xl 2xl:text-2xl"
+          >
             Faça um orçamento grátis
           </button>
         </div>
-        <CustomIcon className="shrink-0 scale-125 overflow-hidden ml-auto mr-44 mt-32" />
+        <div
+          className="
+        flex xs:flex sm:flex md:flex lg:block xl:block 2xl:block
+        scale-90 xs:scale-90 sm:scale-100 md:scale-100 lg:scale-100 xl:scale-125 2xl:scale-125
+        mt-0 xs:mt-0 sm:mt-0 md:mt-0 lg:mt-32 xl:mt-44 2xl:mt-44
+        xs:ml-auto sm:ml-auto md:ml-auto lg:mr-10 xl:mr-44 2xl:mr-44
+        justify-center items-center"
+        >
+          <CustomIcon className="shrink-0" />
+        </div>
       </section>
       {/* Aqui pode ter aquele coutdown de quantos projetos, anos de funcionamento, membros e nota de satisfação*/}
       <section className="" id="quem somos">
