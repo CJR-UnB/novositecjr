@@ -1,12 +1,25 @@
-import { useState, useRef, useEffect } from "react";
-import { CJR, Menu } from "./SVGicons";
+import { useEffect, useRef, useState } from "react";
+import { CJR, DarkCJR, DarkMenu, Menu } from "./SVGicons";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef(null);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -24,14 +37,18 @@ const Header: React.FC = () => {
   return (
     <>
       <header
-        className="sticky top-0 justify-between bg-spaceblue text-gray-300 flex px-2 z-50"
+        className={`sticky top-0 justify-between flex px-2 z-50 transition-colors duration-250 ${
+          isScrolled
+            ? "bg-offwhite text-spaceblue"
+            : "bg-spaceblue text-gray-300"
+        }`}
         style={{ height: "10vh" }}
       >
         <div
           className="scale-125 ml-40 mr-10 self-center py-5 
   xs:ml-10 sm:ml-20 md:ml-20 lg:ml-32 xl:ml-40 2xl:ml-40"
         >
-          <CJR />
+          {isScrolled ? <DarkCJR /> : <CJR />}
         </div>
         <div className="self-center text-2xl mr-24 space-x-16 hidden xs:hidden sm:hidden md:hidden lg:hidden xl:flex">
           <button className="group transition duration-300">
@@ -51,7 +68,10 @@ const Header: React.FC = () => {
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen"></span>
           </button>
           <div className="bg-aquagreen max-h-full flex">
-            <button className="py-7 px-20 text-black transition-colors duration-300 hover:bg-green ease-in">
+            <button
+              className="py-7 px-20 text-black transition-colors duration-300 hover:bg-green ease-in flex-grow"
+              style={{ height: "10vh" }}
+            >
               Contato
             </button>
           </div>
@@ -60,7 +80,7 @@ const Header: React.FC = () => {
           className="flex xs:flex sm:flex md:flex lg:flex xl:hidden items-center mr-10"
           onClick={toggleMenu}
         >
-          <Menu />
+          {isScrolled ? <DarkMenu /> : <Menu />}
         </button>
         <div
           ref={menuRef}
@@ -69,7 +89,7 @@ const Header: React.FC = () => {
           }`}
         >
           <div
-            className="bg-white text-black p-8 rounded-lg w-full max-w-xs"
+            className="bg-offwhite text-black p-8 rounded-lg w-full max-w-xs"
             style={{ alignItems: "center" }}
           >
             <button className="block mb-4" onClick={toggleMenu}>

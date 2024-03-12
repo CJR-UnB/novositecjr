@@ -27,7 +27,7 @@ const HomePage: React.FC = () => {
                   .pauseFor(5000)
                   .deleteAll()
                   .pauseFor(1000)
-                  .typeString("Desenvolvendo ideias e impulsionando resultados")
+                  .typeString("Do seu sonho ao negócio, a CJR te acompanha!")
                   .pauseFor(5000)
                   .start();
               }}
@@ -65,6 +65,7 @@ const HomePage: React.FC = () => {
           <CustomIcon className="shrink-0" />
         </div>
       </section>
+      <div className="bg-aquagreen h-16"></div>
     </>
   );
 };
