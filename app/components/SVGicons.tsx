@@ -288,7 +288,7 @@ const PageBreak: React.FC = () => {
         viewBox="0 0 464.48 30.15"
         width="200"
         height="30"
-        className=" flex m-auto md:scale-125 mb-2"
+        className=" flex m-auto md:scale-125 mb-7"
       >
         <path
           d="M20.7,43.4H200c3.21,0,3.22-5,0-5H20.1c-3.22,0-3.22,5,0,5H200c3.21,0,3.22-5,0-5H20.7c-3.22,0-3.22,5,0,5Z"

@@ -4,6 +4,7 @@ import OndeEstamos from "./components/OndeEstamos";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import HomePage from "./components/homepage";
+import Parceiros from "./components/parceiros";
 {
   /* As cores principais que combinamos no figma já estão gravadas nos arquivos do projeto com os seguintes nomes:
     aquagreen: "#27BD80",
@@ -43,7 +44,7 @@ export default function Home() {
       <section className="">Essa é a seção do conheça nosso time</section>
       {/*Não esquecer do botão whatsapp*/}
       <OndeEstamos />
-      <section className="">Essa é a seção do nossos parceiros</section>
+      <Parceiros />
       <section className="">
         Essa é a seção do como podemos te ajudar com links e formas de contato
       </section>

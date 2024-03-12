@@ -5,9 +5,9 @@ const OndeEstamos: React.FC = () => {
   return (
     <>
       <section className="">
-        <div className="text-center text-navyblue font-bold text-4xl">
+        <h1 className="text-center text-navyblue font-bold text-4xl">
           ONDE ESTAMOS
-        </div>
+        </h1>
         <PageBreak />
         <div className="inline">
           <Map />
