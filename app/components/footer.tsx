@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
               <h2>UnB, Brasília, Distrito Federal</h2>
               <h2>70910-900, BR</h2>
             </div>
-            <div>
+            <div className="mb-4 md:mb-0">
               <h1 className="text-gray-300">CONTATO</h1>
               <h2>contato@cjr.org</h2>
             </div>

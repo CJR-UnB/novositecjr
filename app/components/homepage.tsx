@@ -24,7 +24,17 @@ const HomePage: React.FC = () => {
               onInit={(typewriter) => {
                 typewriter
                   .typeString("Desenvolvendo ideias e impulsionando resultados")
+                  .pauseFor(5000)
+                  .deleteAll()
+                  .pauseFor(1000)
+                  .typeString("Desenvolvendo ideias e impulsionando resultados")
+                  .pauseFor(5000)
                   .start();
+              }}
+              options={{
+                delay: 50,
+                deleteSpeed: 30,
+                loop: true,
               }}
             />
           </h1>

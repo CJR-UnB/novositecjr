@@ -9,20 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@googlemaps/js-api-loader": "^1.16.6",
-    "@iconify/react": "^4.1.1",
-    "@types/google.maps": "^3.55.4",
     "clsx": "^2.1.0",
-    "framer-motion": "^11.0.8",
-    "icons": "^1.0.0",
+    "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
+    "leaflet-geosearch": "^3.11.1",
     "next": "14.1.1",
-    "react": "^18.2.0",
-    "react-dom": "^18",
+    "react-leaflet": "^4.2.1",
     "tailwind-merge": "^2.2.1",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@types/leaflet": "^1.9.8",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

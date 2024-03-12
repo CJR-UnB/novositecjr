@@ -1,4 +1,6 @@
 "use client";
+
+import OndeEstamos from "./components/OndeEstamos";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import HomePage from "./components/homepage";
@@ -22,7 +24,7 @@ Vai ficar incrível
 
 export default function Home() {
   return (
-    <main className="text-spaceblue">
+    <main className="text-spaceblue bg-offwhite">
       <Header />
       <HomePage />
       {/* Aqui pode ter aquele coutdown de quantos projetos, anos de funcionamento, membros e nota de satisfação*/}
@@ -40,12 +42,12 @@ export default function Home() {
       <section className="">Essa é a seção do nossos serviços</section>
       <section className="">Essa é a seção do conheça nosso time</section>
       {/*Não esquecer do botão whatsapp*/}
-      {/**/}
-      <section className="">Essa é a seção do onde estamos</section>
+      <OndeEstamos />
       <section className="">Essa é a seção do nossos parceiros</section>
       <section className="">
         Essa é a seção do como podemos te ajudar com links e formas de contato
       </section>
+      <div></div>
       <Footer />
     </main>
   );
