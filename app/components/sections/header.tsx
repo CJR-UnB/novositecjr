@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
         className={`sticky top-0 justify-between flex px-2 z-50 transition-colors duration-250 ${
           isScrolled ? "bg-white text-spaceblue" : "bg-spaceblue text-gray-300"
         }`}
-        style={{ height: "10vh" }}
+        style={{ minHeight: "fit-content", maxHeight: "5rem" }}
       >
         <NavigationItem
           key={"homepage"}
@@ -126,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
 
               <div
                 className="bg-aquagreen max-h-full flex"
-                style={{ height: "10vh" }}
+                style={{ height: "5rem" }}
               >
                 <NavigationItem
                   key={"contato"}
