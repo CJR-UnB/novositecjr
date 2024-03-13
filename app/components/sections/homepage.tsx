@@ -1,6 +1,6 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import CustomIcon from "./SVGicons";
+import CustomIcon from "../SVGicons";
 
 const HomePage: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
       <section
         className="bg-spaceblue text-white p-1 flex relative
         flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row"
-        id="Início"
+        id="homepage"
         style={{ overflow: "hidden", height: "90vh" }}
       >
         <div
@@ -24,7 +24,17 @@ const HomePage: React.FC = () => {
               onInit={(typewriter) => {
                 typewriter
                   .typeString("Desenvolvendo ideias e impulsionando resultados")
+                  .pauseFor(5000)
+                  .deleteAll()
+                  .pauseFor(1000)
+                  .typeString("Do seu sonho ao negócio, a CJR te acompanha!")
+                  .pauseFor(5000)
                   .start();
+              }}
+              options={{
+                delay: 50,
+                deleteSpeed: 30,
+                loop: true,
               }}
             />
           </h1>
@@ -55,6 +65,7 @@ const HomePage: React.FC = () => {
           <CustomIcon className="shrink-0" />
         </div>
       </section>
+      <div className="bg-aquagreen h-16"></div>
     </>
   );
 };
