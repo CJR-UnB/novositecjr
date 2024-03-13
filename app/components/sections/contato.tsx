@@ -1,5 +1,4 @@
 import {
-  ArrowSquare,
   Email,
   Facebook,
   Focatia,
@@ -7,6 +6,7 @@ import {
   Linkedin,
   MessageApp,
 } from "../SVGicons";
+import Orcamento from "../botaoOrcamento";
 
 const Contato: React.FC = () => {
   return (
@@ -80,10 +80,9 @@ const Contato: React.FC = () => {
             <h2 className="text-xl mb-5">
               Faça um orçamento e tire seu projeto do papel
             </h2>
-            <button className="flex bg-green items-center p-2 w-fit self-center lg:self-start text-black hover:scale-110 transition-all duration-300">
-              <h1 className="mr-2">Fazer um orçamento</h1>
-              <ArrowSquare />
-            </button>
+            <div className="self-center lg:self-start">
+              <Orcamento />
+            </div>
             <div className="mt-14 block lg:hidden">
               <h1 className="text-3xl font-medium mb-2">
                 Ainda tem alguma dúvida?
