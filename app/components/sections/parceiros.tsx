@@ -13,7 +13,7 @@ const Parceiros: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-around scale-75 md:scale-90 mx-20">
           <a href="https://brasiljunior.org.br" className="mb-20 md:mb-0">
             <Image
-              src="/brj.png"
+              src="/brj.svg"
               width={311}
               height={147}
               alt="brasil junior"
@@ -21,14 +21,14 @@ const Parceiros: React.FC = () => {
           </a>
           <a href="https://concentrodf.com.br" className="mb-28 md:mb-0 mx-5">
             <Image
-              src="/concentro.png"
+              src="/concentro.svg"
               width={311}
               height={144}
               alt="concentro"
             />
           </a>
           <a href="https://www.cic.unb.br" className="">
-            <Image src="/unb cic.png" width={311} height={146} alt="unb cic" />
+            <Image src="/unb cic.svg" width={311} height={146} alt="unb cic" />
           </a>
         </div>
       </section>
