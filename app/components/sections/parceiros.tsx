@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { PageBreak } from "./SVGicons";
+import { PageBreak } from "../SVGicons";
 
 const Parceiros: React.FC = () => {
   return (

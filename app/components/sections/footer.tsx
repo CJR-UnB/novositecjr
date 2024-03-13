@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Instagram, Linkedin } from "./SVGicons";
+import { Facebook, Instagram, Linkedin } from "../SVGicons";
 
 const Footer: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import CustomIcon from "./SVGicons";
+import CustomIcon from "../SVGicons";
 
 const HomePage: React.FC = () => {
   return (

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { CJR, DarkCJR, DarkMenu, Menu } from "./SVGicons";
+import { CJR, DarkCJR, DarkMenu, Menu } from "../SVGicons";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,9 +38,7 @@ const Header: React.FC = () => {
     <>
       <header
         className={`sticky top-0 justify-between flex px-2 z-50 transition-colors duration-250 ${
-          isScrolled
-            ? "bg-offwhite text-spaceblue"
-            : "bg-spaceblue text-gray-300"
+          isScrolled ? "bg-white text-spaceblue" : "bg-spaceblue text-gray-300"
         }`}
         style={{ height: "10vh" }}
       >

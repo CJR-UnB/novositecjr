@@ -1,5 +1,5 @@
-import { PageBreak } from "./SVGicons";
-import Map from "./map";
+import { PageBreak } from "../SVGicons";
+import Map from "../map";
 
 const OndeEstamos: React.FC = () => {
   return (
