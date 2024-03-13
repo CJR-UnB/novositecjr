@@ -325,7 +325,7 @@ const PageBreak: React.FC = () => {
   );
 };
 
-const WhatsappImage: React.FC = () => {
+const WhatsappImage: React.FC<CustomIconProps> = ({ className }) => {
   return (
     <>
       <svg
@@ -335,7 +335,7 @@ const WhatsappImage: React.FC = () => {
         id="Capa_1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 58 58"
-        className="w-24 h-24"
+        className={className}
       >
         <g>
           <path
@@ -413,10 +413,11 @@ const MessageApp: React.FC = () => {
   );
 };
 
-const Focatia: React.FC = () => {
+const Focatia: React.FC<CustomIconProps> = ({ className }) => {
   return (
     <>
       <svg
+        className={className}
         width="397"
         height="287"
         viewBox="0 0 397 287"

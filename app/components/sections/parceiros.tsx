@@ -4,11 +4,14 @@ import { PageBreak } from "../SVGicons";
 const Parceiros: React.FC = () => {
   return (
     <>
-      <section className="text-center text-navyblue font-bold text-4xl mt-20">
+      <section
+        className="text-center text-navyblue font-bold text-4xl mt-20"
+        id="parceiros"
+      >
         <h1>NOSSOS PARCEIROS</h1>
         <PageBreak />
         <div className="flex flex-col md:flex-row items-center justify-around scale-75 md:scale-90 mx-20">
-          <a href="https://brasiljunior.org.br" className="">
+          <a href="https://brasiljunior.org.br" className="mb-20 md:mb-0">
             <Image
               src="/brj.png"
               width={311}
@@ -16,7 +19,7 @@ const Parceiros: React.FC = () => {
               alt="brasil junior"
             />
           </a>
-          <a href="https://concentrodf.com.br" className="mb-10 md:mb-0 mx-5">
+          <a href="https://concentrodf.com.br" className="mb-28 md:mb-0 mx-5">
             <Image
               src="/concentro.png"
               width={311}

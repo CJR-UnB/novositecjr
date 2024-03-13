@@ -1,12 +1,50 @@
 import { useEffect, useRef, useState } from "react";
 import { CJR, DarkCJR, DarkMenu, Menu } from "../SVGicons";
+import NavigationItem from "../navigationItems";
 
-const Header: React.FC = () => {
+export interface NavigationItem {
+  label: string;
+  id: string;
+}
+
+interface HeaderProps {
+  navigationItems: NavigationItem[];
+}
+
+const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [isScrolled, setIsScrolled] = useState(false);
+
   const menuRef = useRef(null);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      // Scroll to the section with an offset to account for the header height
+      const headerHeight = window.innerHeight * 0.1; // 10vh
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = sectionPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+
+      setIsMenuOpen(false);
+    }
+  };
+
+  const scrollTop = (id: string) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
@@ -42,37 +80,68 @@ const Header: React.FC = () => {
         }`}
         style={{ height: "10vh" }}
       >
-        <div
-          className="scale-125 ml-40 mr-10 self-center py-5 
-  xs:ml-10 sm:ml-20 md:ml-20 lg:ml-32 xl:ml-40 2xl:ml-40"
+        <NavigationItem
+          key={"homepage"}
+          id={"homepage"}
+          onClick={scrollTop}
+          text={false}
         >
           {isScrolled ? <DarkCJR /> : <CJR />}
-        </div>
+        </NavigationItem>
         <div className="self-center text-2xl mr-24 space-x-16 hidden xs:hidden sm:hidden md:hidden lg:hidden xl:flex">
-          <button className="group transition duration-300">
-            Quem Somos
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen"></span>
-          </button>
-          <button className="group transition duration-300">
-            Nossos Cases
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen"></span>
-          </button>
-          <button className="group transition duration-300">
-            Serviços e Produtos
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen"></span>
-          </button>
-          <button className="group transition duration-300">
-            Nosso Time
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen"></span>
-          </button>
-          <div className="bg-aquagreen max-h-full flex">
-            <button
-              className="py-7 px-20 text-black transition-colors duration-300 hover:bg-green ease-in flex-grow"
-              style={{ height: "10vh" }}
-            >
-              Contato
-            </button>
-          </div>
+          {navigationItems.map((item) => (
+            <>
+              <NavigationItem
+                key={"quem-somos"}
+                label={"Quem Somos"}
+                id={"quem-somos"}
+                onClick={scrollToSection}
+                normal={true}
+                text={true}
+              />
+              <NavigationItem
+                key={"nossos-cases"}
+                label={"Nossos Cases"}
+                id={"nossos-cases"}
+                onClick={scrollToSection}
+                normal={true}
+                text={true}
+              />
+              <NavigationItem
+                key={"servicos"}
+                label={"Serviços e Produtos"}
+                id={"servicos"}
+                onClick={scrollToSection}
+                normal={true}
+                text={true}
+              />
+              <NavigationItem
+                key={"nosso-time"}
+                label={"Nosso Time"}
+                id={"nosso-time"}
+                onClick={scrollToSection}
+                normal={true}
+                text={true}
+              />
+
+              <div
+                className="bg-aquagreen max-h-full flex"
+                style={{ height: "10vh" }}
+              >
+                <NavigationItem
+                  key={"contato"}
+                  label={"Contato"}
+                  id={"contato"}
+                  onClick={scrollToSection}
+                  normal={false}
+                  text={true}
+                  style={
+                    "py-7 px-20 text-black transition-colors duration-300 hover:bg-green ease-in flex-grow"
+                  }
+                />
+              </div>
+            </>
+          ))}
         </div>
         <button
           className="flex xs:flex sm:flex md:flex lg:flex xl:hidden items-center mr-10"
@@ -87,21 +156,42 @@ const Header: React.FC = () => {
           }`}
         >
           <div
+            id="dropdown"
             className="bg-offwhite text-black p-8 rounded-lg w-full max-w-xs"
             style={{ alignItems: "center" }}
           >
-            <button className="block mb-4" onClick={toggleMenu}>
-              Quem somos
-            </button>
-            <button className="block mb-4" onClick={toggleMenu}>
-              Nossos Cases
-            </button>
-            <button className="block mb-4" onClick={toggleMenu}>
-              Serviços e Produtos
-            </button>
-            <button className="block mb-4" onClick={toggleMenu}>
-              Contato
-            </button>
+            <NavigationItem
+              label="Quem somos"
+              id="quem-somos"
+              onClick={scrollToSection}
+              normal={false}
+              text={true}
+              style={"block mb-4"}
+            />
+            <NavigationItem
+              label="Nossos Cases"
+              id="nossos-cases"
+              onClick={scrollToSection}
+              normal={false}
+              text={true}
+              style={"block mb-4"}
+            />
+            <NavigationItem
+              label="Serviços e Produtos"
+              id="servicos"
+              onClick={scrollToSection}
+              normal={false}
+              text={true}
+              style={"block mb-4"}
+            />
+            <NavigationItem
+              label="Contato"
+              id="contato"
+              onClick={scrollToSection}
+              normal={false}
+              text={true}
+              style={"block mb-4"}
+            />
           </div>
         </div>
       </header>

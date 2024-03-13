@@ -7,9 +7,9 @@ const Whatsapp: React.FC = () => {
         href="https://wa.me/1234567890"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed flex bottom-5 right-7 z-50"
+        className="fixed flex bottom-4 right-4 z-50"
       >
-        <WhatsappImage />
+        <WhatsappImage className="h-20 w-20 md:h-24 md:w-24" />
       </a>
     </>
   );

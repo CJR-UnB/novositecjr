@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
       <section
         className="bg-spaceblue text-white p-1 flex relative
         flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row"
-        id="Início"
+        id="homepage"
         style={{ overflow: "hidden", height: "90vh" }}
       >
         <div
