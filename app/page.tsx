@@ -4,6 +4,7 @@ import OndeEstamos from "./components/sections/OndeEstamos";
 import Contato from "./components/sections/contato";
 import Footer from "./components/sections/footer";
 import Header from "./components/sections/header";
+import Cases from "./components/sections/cases";
 import HomePage from "./components/sections/homepage";
 import Parceiros from "./components/sections/parceiros";
 import Whatsapp from "./components/whatsappButton";
@@ -45,9 +46,7 @@ export default function Home() {
           nossos membros
         </p>
       </section>
-      <section className="" id="nossos-cases">
-        Essa é a seção dos cases
-      </section>
+      <Cases />
       <section className="" id="servicos">
         Essa é a seção do nossos serviços
       </section>
