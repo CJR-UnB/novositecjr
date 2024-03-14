@@ -5,7 +5,7 @@ const NossoTime: React.FC = () => {
   return (
     <>
       <section id="nosso-time">
-        <h1 className="text-center text-navyblue font-bold text-4xl md:text-5xl mt-10">
+        <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl mt-10">
           NOSSO TIME
         </h1>
         <PageBreak />
@@ -13,45 +13,43 @@ const NossoTime: React.FC = () => {
         <div className="flex flex-wrap justify-around items-center mb-20">
           <Card
             imageSrc="/user.jpeg"
-            nome="Membro"
-            cargo="Líder de alguma coisa"
+            nome="Usuário"
+            cargo="Presidente"
             linkedin=""
             github=""
+            texto="Eu sou simplesmente incrível"
           />
           <Card
-            imageSrc="/user.jpeg"
-            nome="Membro"
-            cargo="Líder de alguma coisa"
+            imageSrc="/daniel.png"
+            nome="Daniel"
+            cargo="Líder imagem e publicidade"
             linkedin=""
             github=""
+            texto="Eu nem sou mais líder kkkkkkk"
           />
           <Card
-            imageSrc="/user.jpeg"
-            nome="Membro"
-            cargo="Líder de alguma coisa"
+            imageSrc="/lagartixa.png"
+            nome="Largatixa"
+            cargo="Líder da máfia chinesa"
             linkedin=""
             github=""
+            texto="eu amo subir paredes aleatórias"
           />
           <Card
-            imageSrc="/user.jpeg"
-            nome="Membro"
-            cargo="Líder de alguma coisa"
+            imageSrc="/mulher.png"
+            nome="Mulher do GTA"
+            cargo="funcionária pública"
             linkedin=""
             github=""
+            texto="Eu só queria comprar um carro e fui assaltada"
           />
           <Card
-            imageSrc="/user.jpeg"
-            nome="Membro"
-            cargo="Líder de alguma coisa"
+            imageSrc="/rafael.png"
+            nome="Rafael"
+            cargo="Líder desse site"
             linkedin=""
             github=""
-          />
-          <Card
-            imageSrc="/user.jpeg"
-            nome="Membro"
-            cargo="Líder de alguma coisa"
-            linkedin=""
-            github=""
+            texto="Eu to ficando mei doido das ideias"
           />
         </div>
       </section>

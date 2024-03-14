@@ -11,11 +11,12 @@ const config: Config = {
       colors: {
         aquagreen: "#27BD80",
         spaceblue: "#001830",
-        offwhite: "#D9D9D9",
+        offwhite: "#D7D7D7",
         navyblue: "#002F67",
         white: "#FFFFFF",
         black: "#000000",
         green: "#38C28A",
+        mutedSpaceblue: "#4A5A6B",
       },
     },
   },

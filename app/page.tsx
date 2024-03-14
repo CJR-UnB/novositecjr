@@ -1,11 +1,11 @@
 "use client";
 
-import OndeEstamos from "./components/sections/OndeEstamos";
 import Contato from "./components/sections/contato";
 import Footer from "./components/sections/footer";
 import Header from "./components/sections/header";
 import HomePage from "./components/sections/homepage";
 import NossoTime from "./components/sections/nossoTime";
+import OndeEstamos from "./components/sections/ondeEstamos";
 import Parceiros from "./components/sections/parceiros";
 import Whatsapp from "./components/whatsappButton";
 
@@ -13,8 +13,9 @@ import Whatsapp from "./components/whatsappButton";
   /* As cores principais que combinamos no figma já estão gravadas nos arquivos do projeto com os seguintes nomes:
     aquagreen: "#27BD80",
     spaceblue: "#001830",
+    mutedSpaceblue: "001830",
     offwhite: "#D9D9D9",
-    navyblue: "#002F67",
+    spaceblue: "#002F67",
     white: "#FFFFFF",
     black: "#000000",
     green: "#73C04A",
@@ -28,7 +29,7 @@ Vai ficar incrível
 }
 
 export default function Home() {
-  const navigationItems = [{ label: "", id: "quem-somos" }];
+  const navigationItems = [{ label: "", id: "" }];
 
   return (
     <main className="text-spaceblue bg-white">
