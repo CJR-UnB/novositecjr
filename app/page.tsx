@@ -5,6 +5,7 @@ import Contato from "./components/sections/contato";
 import Footer from "./components/sections/footer";
 import Header from "./components/sections/header";
 import HomePage from "./components/sections/homepage";
+import NossoTime from "./components/sections/nossoTime";
 import Parceiros from "./components/sections/parceiros";
 import Whatsapp from "./components/whatsappButton";
 
@@ -51,10 +52,7 @@ export default function Home() {
       <section className="" id="servicos">
         Essa é a seção do nossos serviços
       </section>
-      <section className="" id="nosso-time">
-        Essa é a seção do conheça nosso time
-      </section>
-      {/*Não esquecer do botão whatsapp*/}
+      <NossoTime />
       <OndeEstamos />
       <Parceiros />
       <Contato />
