@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <>
-      <div className="flex-col flex items-center justify-center w-fit p-5 m-10 md:mx-32 rounded-3xl bg-gradient-to-t from-gray-200 via-gray-200 to-white ">
+      <div className="flex-col flex items-center justify-center w-fit p-5 m-10 md:mx-32 rounded-3xl bg-gradient-to-t from-gray-100 to-white ">
         <div className="relative mt-16">
           <Image
             src={imageSrc}
@@ -31,10 +31,10 @@ const Card: React.FC<CardProps> = ({
           />
         </div>
         <div>
-          <h1 className="text-3xl font-bold text-center mb-2 text-spaceblue">
+          <h1 className="w-full max-w-xs text-3xl font-bold text-center mb-2 text-spaceblue">
             {nome}
           </h1>
-          <h2 className="text-xl text-center font-semibold text-mutedSpaceblue mb-3">
+          <h2 className="w-full max-w-xs text-xl text-center font-semibold text-mutedSpaceblue mb-3">
             {cargo}
           </h2>
           <p className="w-full max-w-xs mb-6 text-center text-mutedSpaceblue">

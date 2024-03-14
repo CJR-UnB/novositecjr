@@ -41,7 +41,7 @@ const NossoTime: React.FC = () => {
             cargo="funcionária pública"
             linkedin=""
             github=""
-            texto="Eu só queria comprar um carro e fui assaltada"
+            texto="Fui assaltada"
           />
           <Card
             imageSrc="/rafael.png"
