@@ -8,6 +8,7 @@ import HomePage from "./components/sections/homepage";
 import NossoTime from "./components/sections/nossoTime";
 import OndeEstamos from "./components/sections/ondeEstamos";
 import Parceiros from "./components/sections/parceiros";
+import Servicos from "./components/sections/servicos";
 import Whatsapp from "./components/whatsappButton";
 
 {
@@ -51,10 +52,7 @@ export default function Home() {
       <section className="" id="nossos-cases">
         Essa é a seção dos cases
       </section>
-      <section className="" id="servicos">
-        Essa é a seção do nossos serviços
-      </section>
-
+      <Servicos />
       <NossoTime />
       <Depoimentos />
       <OndeEstamos />
