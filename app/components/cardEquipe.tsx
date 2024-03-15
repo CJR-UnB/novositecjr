@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <>
-      <div className="flex-col flex items-center justify-center w-fit p-5 m-10 md:mx-32 rounded-3xl bg-gradient-to-t from-gray-100 to-white ">
+      <div className="flex-col flex items-center justify-center w-fit p-5 m-10 md:mx-32 rounded-3xl bg-gradient-to-t from-offwhite to-white ">
         <div className="relative mt-16">
           <Image
             src={imageSrc}

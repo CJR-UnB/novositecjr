@@ -6,7 +6,7 @@ import {
   Linkedin,
   MessageApp,
 } from "../SVGicons";
-import Orcamento from "./botaoOrcamento";
+import Orcamento from "../botaoOrcamento";
 
 const Contato: React.FC = () => {
   return (

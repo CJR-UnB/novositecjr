@@ -1,4 +1,4 @@
-import { ArrowSquare } from "../SVGicons";
+import { ArrowSquare } from "./SVGicons";
 
 const Orcamento: React.FC = () => {
   return (

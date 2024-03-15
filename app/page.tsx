@@ -1,6 +1,7 @@
 "use client";
 
 import Contato from "./components/sections/contato";
+import Depoimentos from "./components/sections/depoimentos";
 import Footer from "./components/sections/footer";
 import Header from "./components/sections/header";
 import HomePage from "./components/sections/homepage";
@@ -53,7 +54,9 @@ export default function Home() {
       <section className="" id="servicos">
         Essa é a seção do nossos serviços
       </section>
+
       <NossoTime />
+      <Depoimentos />
       <OndeEstamos />
       <Parceiros />
       <Contato />
