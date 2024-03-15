@@ -9,7 +9,6 @@ function Depoimentos() {
     <div className="mx-5 rounded-full shadow-xl mb-20">
       <Carousel
         pauseOnHover={true}
-        slide={false}
         leftControl={
           <Image src="/left.svg" width={30} height={30} alt="left" />
         }
