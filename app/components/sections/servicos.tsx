@@ -22,11 +22,14 @@ const Servicos: React.FC = () => {
   return (
     <>
       <section
-        className="text-center text-navyblue font-bold text-4xl mt-20"
+        className="text-center text-navyblue font-bold text-4xl mt-20 mb-20"
         id="servicos"
       >
         <h1>NOSSOS SERVIÇOS</h1>
         <PageBreak />
+        <p className="text-lg sm:text-xl mb-5 px-5 text-mutedSpaceblue font-normal">
+          Conheça os nossos serviços e como podemos impulsionar seus resultados!
+        </p>
         <div className="flex justify-center items-center mt-10">
           <div className="grid md:grid-cols-3 gap-6 px-10 w-fit">
             <ServiceBox

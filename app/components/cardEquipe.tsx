@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <>
-      <div className="flex-col flex items-center justify-center w-fit p-5 m-10 md:mx-32 rounded-3xl bg-gradient-to-t from-offwhite to-white ">
+      <div className="flex-col flex items-center justify-center w-fit p-5 m-10 mx-10 md:mx-32 rounded-3xl bg-gradient-to-t from-offwhite to-white shadow-lg ">
         <div className="relative mt-16">
           <Image
             src={imageSrc}
@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({
             height={250}
             alt="foto de perfil"
             className="mb-5 rounded-full"
-            style={{ marginTop: "-100px" }} // Adjust this value as needed
+            style={{ marginTop: "-100px" }}
           />
         </div>
         <div>

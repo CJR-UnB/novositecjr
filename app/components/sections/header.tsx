@@ -106,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               <NavigationItem
                 key={"nosso-time"}
                 label={"Nosso Time"}
-                id={"nosso-time"}
+                id={"time"}
                 onClick={scrollToSection}
                 normal={true}
                 text={true}
@@ -160,7 +160,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               onClick={scrollToSection}
               normal={false}
               text={true}
-              style={"block mb-4"}
+              style={"block mb-6"}
             />
             <NavigationItem
               label="Nossos Cases"
@@ -168,7 +168,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               onClick={scrollToSection}
               normal={false}
               text={true}
-              style={"block mb-4"}
+              style={"block mb-6"}
             />
             <NavigationItem
               label="Serviços e Produtos"
@@ -176,7 +176,15 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               onClick={scrollToSection}
               normal={false}
               text={true}
-              style={"block mb-4"}
+              style={"block mb-6"}
+            />
+            <NavigationItem
+              label="Nosso Time"
+              id="time"
+              onClick={scrollToSection}
+              normal={false}
+              text={true}
+              style={"block mb-6"}
             />
             <NavigationItem
               label="Contato"
@@ -184,7 +192,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               onClick={scrollToSection}
               normal={false}
               text={true}
-              style={"block mb-4"}
+              style={"block mb-6"}
             />
           </div>
         </div>

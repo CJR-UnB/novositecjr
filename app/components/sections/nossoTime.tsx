@@ -4,7 +4,7 @@ import Card from "../cardEquipe";
 const NossoTime: React.FC = () => {
   return (
     <>
-      <section id="nosso-time">
+      <section id="time">
         <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl mt-10">
           NOSSO TIME
         </h1>
