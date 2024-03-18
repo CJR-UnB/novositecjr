@@ -4,9 +4,10 @@ import Contato from "./components/sections/contato";
 import Depoimentos from "./components/sections/depoimentos";
 import Footer from "./components/sections/footer";
 import Header from "./components/sections/header";
+import Cases from "./components/sections/cases";
 import HomePage from "./components/sections/homepage";
 import NossoTime from "./components/sections/nossoTime";
-import OndeEstamos from "./components/sections/ondeEstamos";
+import OndeEstamos from "./components/sections/OndeEstamos";
 import Parceiros from "./components/sections/parceiros";
 import Servicos from "./components/sections/servicos";
 import Whatsapp from "./components/whatsappButton";
@@ -49,9 +50,7 @@ export default function Home() {
           nossos membros
         </p>
       </section>
-      <section className="" id="nossos-cases">
-        Essa é a seção dos cases
-      </section>
+      <Cases />
       <Servicos />
       <NossoTime />
       <Depoimentos />

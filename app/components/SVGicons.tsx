@@ -453,6 +453,35 @@ const Github: React.FC = () => {
   );
 };
 
+const RightArrow: React.FC = () => {
+  return (
+    <>
+      <svg className="w-12 sm:w-14" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="56" height="56" rx="28" fill="#27BD80"/>
+        <path d="M30.172 28L25.222 23.05L26.636 21.636L33 28L26.636 34.364L25.222 32.95L30.172 28Z" fill="#001830"/>
+      </svg>
+    </>
+  );
+};
+
+const LeftArrow: React.FC = () => {
+  return (
+    <>
+      <svg className="w-12 sm:w-14" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="56" height="56" rx="28" fill="#27BD80"/>
+        <g clip-path="url(#clip0_1004_427)">
+        <path d="M26.828 28L31.778 32.95L30.364 34.364L24 28L30.364 21.636L31.778 23.05L26.828 28Z" fill="#001830"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_1004_427">
+        <rect width="24" height="24" fill="white" transform="translate(16 16)"/>
+        </clipPath>
+        </defs>
+        </svg>
+    </>
+  );
+};
+
 export {
   ArrowSquare,
   CJR,
@@ -469,5 +498,7 @@ export {
   MessageApp,
   PageBreak,
   WhatsappImage,
+  RightArrow,
+  LeftArrow,
 };
 export default CustomIcon;
