@@ -9,7 +9,7 @@ const HomePage: React.FC = () => {
         className="bg-spaceblue text-white p-1 flex relative
         flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row"
         id="homepage"
-        style={{ overflow: "hidden", height: "90vh" }}
+        style={{ overflow: "hidden", height: "95vh" }}
       >
         <div
           className="px-5 mx-2
@@ -45,13 +45,15 @@ const HomePage: React.FC = () => {
             A CJR tem a solução certa para digitalizar sua empresa e escalar
             seus serviços
           </p>
-          <button
-            className="bg-aquagreen rounded-xl mt-5 py-3 px-10 text-black transition-colors duration-300 hover:bg-green ease-linear
+          <a href="https://tally.so/r/3jeXOJ" target="_blank">
+            <button
+              className="bg-aquagreen rounded-xl mt-5 py-3 px-10 text-black transition-colors duration-300 hover:bg-green ease-linear
            hidden xs:hidden sm:hidden md:hidden lg:block xl:block 2xl:block 
            lg:text-xl xl:text-2xl 2xl:text-2xl"
-          >
-            Faça um orçamento grátis
-          </button>
+            >
+              Faça um orçamento grátis
+            </button>
+          </a>
         </div>
         <div
           className="

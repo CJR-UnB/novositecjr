@@ -13,10 +13,10 @@ const Contato: React.FC = () => {
     <>
       {" "}
       <section className=" mt-32" id="contato">
-        <h1 className="text-center text-navyblue font-bold text-4xl sm:text-5xl mb-14 px-5 mx-3">
+        <h1 className="text-center text-spaceblue font-bold text-4xl sm:text-5xl mb-14 px-5 mx-3">
           Como podemos te ajudar?
         </h1>
-        <div className="flex justify-center text-navyblue">
+        <div className="flex justify-center text-spaceblue">
           <div className="hidden lg:block mx-10">
             <h1 className="text-2xl sm:text-3xl font-medium mb-2">
               Ainda tem alguma dúvida?

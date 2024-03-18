@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { CJR, DarkCJR, DarkMenu, Menu } from "../SVGicons";
 import NavigationItem from "../navigationItems";
 
@@ -16,8 +16,6 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const menuRef = useRef(null);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -25,8 +23,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
-      // Scroll to the section with an offset to account for the header height
-      const headerHeight = window.innerHeight * 0.1; // 10vh
+      const headerHeight = window.innerHeight * 0.12; // 10vh
       const sectionPosition =
         section.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = sectionPosition - headerHeight;
@@ -59,24 +56,13 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [menuRef]);
-
   return (
     <>
       <header
-        className={`sticky top-0 justify-between flex px-2 z-50 transition-colors duration-250 ${
-          isScrolled ? "bg-white text-spaceblue" : "bg-spaceblue text-gray-300"
+        className={`sticky top-0 md:justify-between flex px-2 z-50 transition-colors duration-250 ${
+          isScrolled
+            ? "bg-white text-spaceblue shadow-lg opacity-90 "
+            : "bg-spaceblue text-gray-300"
         }`}
         style={{ minHeight: "fit-content", maxHeight: "5rem" }}
       >
@@ -84,7 +70,9 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
           key={"homepage"}
           id={"homepage"}
           onClick={scrollTop}
+          normal={false}
           text={false}
+          style=""
         >
           {isScrolled ? <DarkCJR /> : <CJR />}
         </NavigationItem>
@@ -144,21 +132,27 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
           ))}
         </div>
         <button
-          className="flex xs:flex sm:flex md:flex lg:flex xl:hidden items-center mr-10"
+          id="hamburguer"
+          className="absolute right-8 top-6 xl:hidden items-center"
           onClick={toggleMenu}
         >
           {isScrolled ? <DarkMenu /> : <Menu />}
         </button>
         <div
-          ref={menuRef}
-          className={`absolute right-0 mr-10 top-24 z-50 transition-all duration-300 transform origin-top ${
+          className={`absolute top-20 z-50 left-0 transition-all duration-300 transform origin-top ${
             isMenuOpen ? "scale-y-100" : "scale-y-0"
           }`}
+          style={{ width: "100vw", height: "100vh" }}
+          onClick={toggleMenu}
         >
           <div
             id="dropdown"
-            className="bg-offwhite text-black p-8 rounded-lg w-full max-w-xs"
-            style={{ alignItems: "center" }}
+            className={`px-8 items-center flex-col flex justify-center text-2xl font-semibold ${
+              isScrolled
+                ? "bg-white text-spaceblue"
+                : "bg-spaceblue text-white "
+            }`}
+            style={{ alignItems: "center", height: "95vh" }}
           >
             <NavigationItem
               label="Quem somos"

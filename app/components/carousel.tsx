@@ -28,7 +28,7 @@ const Carousel: React.FC<CarouselProps> = ({children: slides, autoSlide = true, 
                 
                 <div className="absolute bottom-4 right-0 left-0">
                     <div className="flex items-center justify-center gap-2">
-                    {slides.map((_: any, i: Key | null | undefined) => (
+                    {slides!.map((_: any, i: Key | null | undefined) => (
                         <div
                             key={i}
                             className={`

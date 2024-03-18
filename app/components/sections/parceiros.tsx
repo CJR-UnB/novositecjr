@@ -5,7 +5,7 @@ const Parceiros: React.FC = () => {
   return (
     <>
       <section
-        className="text-center text-navyblue font-bold text-4xl mt-20"
+        className="text-center text-spaceblue font-bold text-4xl mt-20"
         id="parceiros"
       >
         <h1>NOSSOS PARCEIROS</h1>
