@@ -1,5 +1,5 @@
-import { PageBreak } from "../SVGicons";
-import Card from "../cardEquipe";
+import { PageBreak } from "../../SVGicons";
+import Card from "./cardEquipe";
 
 const NossoTime: React.FC = () => {
   return (

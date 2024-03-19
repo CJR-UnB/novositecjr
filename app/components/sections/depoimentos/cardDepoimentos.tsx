@@ -16,13 +16,11 @@ const CardDepoimento: React.FC<depoimentosProps> = ({
   titulo,
 }) => {
   return (
-    <div className="flex flex-col px-16 md:px-96 py-10 h-fit items-center justify-center rounded-3xl bg-offwhite">
+    <div className="flex flex-col px-16 xl:px-96 py-10 max-h-fit items-center justify-center rounded-lg bg-offwhite">
       <h1 className="text-center text-3xl font-semibold mb-2 text-spaceblue">
         {titulo}
       </h1>
-      <p className="text-justify md:text-center text-xl mb-10 text-mutedSpaceblue">
-        {texto}
-      </p>
+      <p className="text-center text-xl mb-10 text-mutedSpaceblue">{texto}</p>
       <Image
         src={imgSrc}
         width={50}

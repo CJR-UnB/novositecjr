@@ -1,15 +1,16 @@
 "use client";
 
+import Cases from "./components/sections/cases/cases";
+import Contador from "./components/sections/contador/contador";
 import Contato from "./components/sections/contato";
-import Depoimentos from "./components/sections/depoimentos";
-import Footer from "./components/sections/footer";
-import Header from "./components/sections/header";
-import Cases from "./components/sections/cases";
+import Depoimentos from "./components/sections/depoimentos/depoimentos";
+import Footer from "./components/sections/footer/footer";
+import Header from "./components/sections/header/header";
 import HomePage from "./components/sections/homepage";
-import NossoTime from "./components/sections/nossoTime";
-import OndeEstamos from "./components/sections/OndeEstamos";
+import NossoTime from "./components/sections/nosso time/nossoTime";
+import OndeEstamos from "./components/sections/onde estamos/OndeEstamos";
 import Parceiros from "./components/sections/parceiros";
-import Servicos from "./components/sections/servicos";
+import Servicos from "./components/sections/servicos/servicos";
 import Whatsapp from "./components/whatsappButton";
 
 {
@@ -38,6 +39,7 @@ export default function Home() {
     <main className="text-spaceblue bg-white">
       <Header navigationItems={navigationItems} />
       <HomePage />
+      <Contador />
       <Whatsapp />
       {/* Aqui pode ter aquele coutdown de quantos projetos, anos de funcionamento, membros e nota de satisfação*/}
       <section className="" id="quem-somos">

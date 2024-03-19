@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { CJR, DarkCJR, DarkMenu, Menu } from "../SVGicons";
-import NavigationItem from "../navigationItems";
+import { CJR, DarkCJR, DarkMenu, Menu } from "../../SVGicons";
+import NavigationItem from "./navigationItems";
 
 export interface NavigationItem {
   label: string;
@@ -16,10 +16,15 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const [activeSection, setActiveSection] = useState("");
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  {
+    /* função para scrollar até certa sessão dependendo do id dela */
+  }
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -37,6 +42,9 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
     }
   };
 
+  {
+    /* função para fazer a página voltar para o topo */
+  }
   const scrollTop = (id: string) => {
     window.scrollTo({
       top: 0,
@@ -44,6 +52,48 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
     });
   };
 
+  {
+    /* useEffect para detectar em que sessão a página está */
+  }
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    const sectionIds = [
+      "quem-somos",
+      "nossos-cases",
+      "servicos",
+      "nosso-time",
+      "contato",
+    ];
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) {
+          observer.unobserve(section);
+        }
+      });
+    };
+  }, []);
+
+  {
+    /* useEffect para detectar se a página está no topo para mudar a cor do header*/
+  }
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -86,6 +136,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
                 onClick={scrollToSection}
                 normal={true}
                 text={true}
+                active={activeSection === "quem-somos"}
               />
               <NavigationItem
                 key={"nossos-cases"}
@@ -94,6 +145,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
                 onClick={scrollToSection}
                 normal={true}
                 text={true}
+                active={activeSection === "nossos-cases"}
               />
               <NavigationItem
                 key={"servicos"}
@@ -102,6 +154,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
                 onClick={scrollToSection}
                 normal={true}
                 text={true}
+                active={activeSection === "servicos"}
               />
               <NavigationItem
                 key={"nosso-time"}
@@ -110,6 +163,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
                 onClick={scrollToSection}
                 normal={true}
                 text={true}
+                active={activeSection === "nosso-time"}
               />
 
               <div
@@ -160,7 +214,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               onClick={scrollToSection}
               normal={false}
               text={true}
-              style={"block mb-4"}
+              style={"block mb-6"}
             />
             <NavigationItem
               label="Nossos Cases"
@@ -168,7 +222,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               onClick={scrollToSection}
               normal={false}
               text={true}
-              style={"block mb-4"}
+              style={"block mb-6"}
             />
             <NavigationItem
               label="Serviços e Produtos"
@@ -176,7 +230,15 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               onClick={scrollToSection}
               normal={false}
               text={true}
-              style={"block mb-4"}
+              style={"block mb-6"}
+            />
+            <NavigationItem
+              label="Nosso Time"
+              id="time"
+              onClick={scrollToSection}
+              normal={false}
+              text={true}
+              style={"block mb-6"}
             />
             <NavigationItem
               label="Contato"
@@ -184,7 +246,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               onClick={scrollToSection}
               normal={false}
               text={true}
-              style={"block mb-4"}
+              style={"block mb-6"}
             />
           </div>
         </div>

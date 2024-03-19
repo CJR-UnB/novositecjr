@@ -6,6 +6,7 @@ interface NavigationItemProps {
   style?: string;
   text: boolean;
   children?: React.ReactNode;
+  active?: boolean;
 }
 
 const NavigationItem: React.FC<NavigationItemProps> = ({
@@ -16,8 +17,13 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
   style,
   text,
   children,
+  active,
 }) => {
   const buttonstyle = normal ? "group transition duration-300" : style;
+  const activeSection = active
+    ? "max-w-full transition-all duration-500"
+    : "max-w-0";
+
   if (text) {
     return (
       <>
@@ -25,7 +31,9 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
           {label}
           {children}
           {normal && (
-            <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen"></span>
+            <span
+              className={`block group-hover:max-w-full transition-all duration-500 h-0.5 ${activeSection} bg-aquagreen`}
+            ></span>
           )}
         </button>
       </>
