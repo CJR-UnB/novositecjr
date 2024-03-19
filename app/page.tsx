@@ -11,6 +11,7 @@ import OndeEstamos from "./components/sections/OndeEstamos";
 import Parceiros from "./components/sections/parceiros";
 import Servicos from "./components/sections/servicos";
 import Whatsapp from "./components/whatsappButton";
+import QuemSomos from "./components/sections/quemSomos";
 
 {
   /* As cores principais que combinamos no figma já estão gravadas nos arquivos do projeto com os seguintes nomes:
@@ -40,16 +41,7 @@ export default function Home() {
       <HomePage />
       <Whatsapp />
       {/* Aqui pode ter aquele coutdown de quantos projetos, anos de funcionamento, membros e nota de satisfação*/}
-      <section className="" id="quem-somos">
-        <h1>Quem somos</h1>
-        <p>
-          Desde 1999 conquistamos clientes a partir de atendimentos e serviços
-          de qualidade. Trabalhamos incansavelmente para agregar valor aos
-          negócios de nossos clientes e estimular o cenário de empreendedorismo
-          brasileiro, além de impactar diretamente o crescimento e evolução dos
-          nossos membros
-        </p>
-      </section>
+      <QuemSomos />
       <Cases />
       <Servicos />
       <NossoTime />
