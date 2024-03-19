@@ -672,5 +672,7 @@ export {
   PageBreak,
   RightArrow,
   WhatsappImage,
+  RightArrow,
+  LeftArrow,
 };
 export default HomePageIcon;
