@@ -2,9 +2,9 @@
 
 import Cases from "./components/sections/cases/cases";
 import Contador from "./components/sections/contador/contador";
-import Contato from "./components/sections/contato";
+import Contato from "./components/sections/contato/contato";
 import Depoimentos from "./components/sections/depoimentos/depoimentos";
-import Footer from "./components/sections/footer/footer";
+import Footer from "./components/sections/footer";
 import Header from "./components/sections/header/header";
 import HomePage from "./components/sections/homepage";
 import NossoTime from "./components/sections/nosso time/nossoTime";
