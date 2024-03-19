@@ -19,17 +19,15 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <>
-      <div className="flex-col flex items-center justify-center w-fit p-5 m-10 mx-10 md:mx-32 rounded-3xl bg-gradient-to-t from-offwhite to-white shadow-lg ">
-        <div className="relative mt-16">
-          <Image
-            src={imageSrc}
-            width={250}
-            height={250}
-            alt="foto de perfil"
-            className="mb-5 rounded-full"
-            style={{ marginTop: "-100px" }}
-          />
-        </div>
+      <div className="border-2 border-navyblue flex-col flex items-center justify-center w-fit p-5 m-10 mx-10 md:mx-32 rounded-lg bg-gradient-to-t from-gray-100 to-offwhite shadow-lg ">
+        <Image
+          src={imageSrc}
+          width={250}
+          height={250}
+          alt="foto de perfil"
+          className="mb-5 rounded-full"
+        />
+
         <div>
           <h1 className="w-full max-w-xs text-3xl font-bold text-center mb-2 text-spaceblue">
             {nome}
