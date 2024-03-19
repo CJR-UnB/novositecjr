@@ -4,12 +4,12 @@ import QuemSomosItem from "../quemSomosItem";
 
 const QuemSomos: React.FC = () => {
     return (
-        <section className="py-10 lg:px-40" id="quem-somos">
+        <section className="py-10 lg:px-32" id="quem-somos">
             <h1 className=" text-navyblue font-bold text-4xl text-center">
                 QUEM SOMOS
             </h1>
             <PageBreak />
-            <div className="flex flex-col lg:flex-row gap-4 items-center lg:gap-8 lg:items-start">
+            <div className="flex flex-col lg:flex-row gap-4 items-center lg:gap-8 lg:items-start justify-center">
                 <div className="flex flex-row min-w-fit gap-4 max-w-[547px] lg:gap-8">
                     
                     <div className="h-[218px] w-[218px] lg:h-[356px] lg:w-[354px]">
