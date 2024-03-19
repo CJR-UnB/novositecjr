@@ -21,10 +21,7 @@ const siteInstitucionalIcon = <FontAwesomeIcon icon={faUsersBetweenLines} />;
 const Servicos: React.FC = () => {
   return (
     <>
-      <section
-        className="text-center font-bold text-4xl mt-20 mb-20"
-        id="servicos"
-      >
+      <section className="text-center font-bold text-4xl mt-20" id="servicos">
         <h1>NOSSOS SERVIÇOS</h1>
         <PageBreak />
         <p className="text-lg sm:text-xl mb-5 px-5 text-mutedSpaceblue font-normal">

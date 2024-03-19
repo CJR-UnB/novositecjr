@@ -10,6 +10,7 @@ import HomePage from "./components/sections/homepage";
 import NossoTime from "./components/sections/nosso time/nossoTime";
 import OndeEstamos from "./components/sections/onde estamos/OndeEstamos";
 import Parceiros from "./components/sections/parceiros";
+import QuemSomos from "./components/sections/quemSomos/quemSomos";
 import Servicos from "./components/sections/servicos/servicos";
 import Whatsapp from "./components/whatsappButton";
 
@@ -41,17 +42,7 @@ export default function Home() {
       <HomePage />
       <Contador />
       <Whatsapp />
-      {/* Aqui pode ter aquele coutdown de quantos projetos, anos de funcionamento, membros e nota de satisfação*/}
-      <section className="" id="quem-somos">
-        <h1>Quem somos</h1>
-        <p>
-          Desde 1999 conquistamos clientes a partir de atendimentos e serviços
-          de qualidade. Trabalhamos incansavelmente para agregar valor aos
-          negócios de nossos clientes e estimular o cenário de empreendedorismo
-          brasileiro, além de impactar diretamente o crescimento e evolução dos
-          nossos membros
-        </p>
-      </section>
+      <QuemSomos />
       <Cases />
       <Servicos />
       <NossoTime />

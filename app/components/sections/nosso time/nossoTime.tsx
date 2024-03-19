@@ -4,8 +4,8 @@ import Card from "./cardEquipe";
 const NossoTime: React.FC = () => {
   return (
     <>
-      <section id="nosso-time">
-        <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl mt-10">
+      <section className="mt-20" id="nosso-time">
+        <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl">
           NOSSO TIME
         </h1>
         <PageBreak />

@@ -1,11 +1,11 @@
-import { Focatia, Instagram, Linkedin, MessageApp } from "../SVGicons";
+import { Focatia, Instagram, MessageApp } from "../SVGicons";
 import Orcamento from "./footer/botaoOrcamento";
 
 const Contato: React.FC = () => {
   return (
     <>
       {" "}
-      <section className="px-6 mt-32" id="contato">
+      <section className="px-5 mt-24" id="contato">
         <h1 className="text-center text-spaceblue font-bold text-4xl sm:text-5xl mb-14 px-5 mx-3">
           Como podemos te ajudar?
         </h1>
@@ -20,7 +20,7 @@ const Contato: React.FC = () => {
             <div className="hover:scale-110 transition-all duration-300 my-6">
               <a href="" target="_blank" className="flex items-center">
                 <MessageApp />
-                <h1 className="ml-2">Via WhatsApp</h1>
+                <h1 className="ml-2 text-xl">Via WhatsApp</h1>
               </a>
             </div>
             <div className="hover:scale-110 transition-all duration-300 my-6">
@@ -30,17 +30,7 @@ const Contato: React.FC = () => {
                 className="flex items-center"
               >
                 <Instagram />
-                <h1 className="ml-2">Via Instagram</h1>
-              </a>
-            </div>
-            <div className=" hover:scale-110 transition-all duration-300 my-6">
-              <a
-                href="https://www.linkedin.com/company/cjr-unb/mycompany/"
-                target="_blank"
-                className="flex items-center"
-              >
-                <Linkedin />
-                <h1 className="ml-2">Via LinkedIn</h1>
+                <h1 className="ml-2 text-xl">Via Instagram</h1>
               </a>
             </div>
           </div>
