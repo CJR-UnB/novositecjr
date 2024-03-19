@@ -1,10 +1,10 @@
-import { PageBreak } from "../SVGicons";
-import Card from "../cardEquipe";
+import { PageBreak } from "../../SVGicons";
+import Card from "./cardEquipe";
 
 const NossoTime: React.FC = () => {
   return (
     <>
-      <section id="time">
+      <section id="nosso-time">
         <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl mt-10">
           NOSSO TIME
         </h1>

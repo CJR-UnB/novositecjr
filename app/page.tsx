@@ -1,15 +1,16 @@
 "use client";
 
-import OndeEstamos from "./components/sections/OndeEstamos";
+import Cases from "./components/sections/cases/cases";
 import Contador from "./components/sections/contador/contador";
 import Contato from "./components/sections/contato";
-import Depoimentos from "./components/sections/depoimentos";
-import Footer from "./components/sections/footer";
-import Header from "./components/sections/header";
+import Depoimentos from "./components/sections/depoimentos/depoimentos";
+import Footer from "./components/sections/footer/footer";
+import Header from "./components/sections/header/header";
 import HomePage from "./components/sections/homepage";
-import NossoTime from "./components/sections/nossoTime";
+import NossoTime from "./components/sections/nosso time/nossoTime";
+import OndeEstamos from "./components/sections/onde estamos/OndeEstamos";
 import Parceiros from "./components/sections/parceiros";
-import Servicos from "./components/sections/servicos";
+import Servicos from "./components/sections/servicos/servicos";
 import Whatsapp from "./components/whatsappButton";
 
 {
@@ -51,9 +52,7 @@ export default function Home() {
           nossos membros
         </p>
       </section>
-      <section className="" id="nossos-cases">
-        Essa é a seção dos cases
-      </section>
+      <Cases />
       <Servicos />
       <NossoTime />
       <Depoimentos />

@@ -8,8 +8,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { PageBreak } from "../SVGicons";
-import ServiceBox from "../containerServico";
+import { PageBreak } from "../../SVGicons";
+import ServiceBox from "./containerServico";
 
 const sistemasWebIcon = <FontAwesomeIcon icon={faCode} />;
 const consultoriaIcon = <FontAwesomeIcon icon={faMugSaucer} />;
@@ -22,7 +22,7 @@ const Servicos: React.FC = () => {
   return (
     <>
       <section
-        className="text-center text-navyblue font-bold text-4xl mt-20 mb-20"
+        className="text-center font-bold text-4xl mt-20 mb-20"
         id="servicos"
       >
         <h1>NOSSOS SERVIÇOS</h1>

@@ -1,5 +1,9 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { Github, Linkedin } from "./SVGicons";
+import { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { Github, Linkedin } from "../../SVGicons";
+
 interface CardProps {
   imageSrc: string;
   nome: string;
@@ -17,9 +21,21 @@ const Card: React.FC<CardProps> = ({
   github,
   texto,
 }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Only trigger once
+    threshold: 0.3, // Trigger when 50% of the component is visible
+    onChange: setIsVisible, // Update isVisible state when component is in view
+  });
   return (
     <>
-      <div className="border-2 border-navyblue flex-col flex items-center justify-center w-fit p-5 m-10 mx-10 md:mx-32 rounded-lg bg-gradient-to-t from-gray-100 to-offwhite shadow-lg ">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVisible ? 1 : 0 }}
+        transition={{ duration: 0.5 }}
+        ref={ref}
+        className="border-2 border-navyblue flex-col flex items-center justify-center w-fit p-5 m-10 mx-10 md:mx-32 rounded-lg bg-gradient-to-t from-gray-100 to-offwhite shadow-lg "
+      >
         <Image
           src={imageSrc}
           width={250}
@@ -28,7 +44,11 @@ const Card: React.FC<CardProps> = ({
           className="mb-5 rounded-full"
         />
 
-        <div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isVisible ? 1 : 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <h1 className="w-full max-w-xs text-3xl font-bold text-center mb-2 text-spaceblue">
             {nome}
           </h1>
@@ -38,7 +58,12 @@ const Card: React.FC<CardProps> = ({
           <p className="w-full max-w-xs mb-6 text-center text-mutedSpaceblue">
             {texto}
           </p>
-          <div className="flex justify-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isVisible ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center"
+          >
             <a
               href={linkedin}
               target="_blank"
@@ -53,9 +78,9 @@ const Card: React.FC<CardProps> = ({
             >
               <Github />
             </a>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </>
   );
 };
