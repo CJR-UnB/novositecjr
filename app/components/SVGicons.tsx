@@ -652,8 +652,8 @@ const LeftArrow: React.FC<CustomIconProps> = ({ className }) => {
 
 export {
   ArrowSquare,
-  Calendar,
   CJR,
+  Calendar,
   Code,
   DarkCJR,
   DarkMenu,
@@ -672,7 +672,5 @@ export {
   PageBreak,
   RightArrow,
   WhatsappImage,
-  RightArrow,
-  LeftArrow,
 };
 export default HomePageIcon;

@@ -10,11 +10,7 @@ import HomePage from "./components/sections/homepage";
 import NossoTime from "./components/sections/nosso time/nossoTime";
 import OndeEstamos from "./components/sections/onde estamos/OndeEstamos";
 import Parceiros from "./components/sections/parceiros";
-<<<<<<< HEAD
 import Servicos from "./components/sections/servicos";
-=======
-import Servicos from "./components/sections/servicos/servicos";
->>>>>>> b55fb161610c209dece1562e872185449140606e
 import Whatsapp from "./components/whatsappButton";
 
 {
@@ -56,21 +52,10 @@ export default function Home() {
           nossos membros
         </p>
       </section>
-<<<<<<< HEAD
-      <section className="" id="nossos-cases">
-        Essa é a seção dos cases
-      </section>
-      <Servicos />
-      <section className="" id="nosso-time">
-        Essa é a seção do conheça nosso time
-      </section>
-      {/*Não esquecer do botão whatsapp*/}
-=======
       <Cases />
       <Servicos />
       <NossoTime />
       <Depoimentos />
->>>>>>> b55fb161610c209dece1562e872185449140606e
       <OndeEstamos />
       <Parceiros />
       <Contato />

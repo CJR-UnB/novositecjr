@@ -9,7 +9,7 @@ export default function ServiceBox({
 }) {
   return (
     <>
-      <div className="flex flex-col py-2 px-2 items-center justify-center border-none border-2  bg-slate-50 rounded h-32 md:max-w-96 md:h-72">
+      <div className="flex flex-col py-2 px-2 items-center justify-center border-spaceblue border-2 bg-gradient-to-t from-gray-100 to-offwhite shadow-lg rounded h-32 md:max-w-96 md:h-72">
         <div className="items-center justify-center">
           <i className="flex items-center justify-center size-10 md:size-16">
             {icone}
