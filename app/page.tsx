@@ -1,20 +1,29 @@
 "use client";
 
-import OndeEstamos from "./components/sections/OndeEstamos";
+import Cases from "./components/sections/cases/cases";
+import Contador from "./components/sections/contador/contador";
 import Contato from "./components/sections/contato";
-import Footer from "./components/sections/footer";
-import Header from "./components/sections/header";
+import Depoimentos from "./components/sections/depoimentos/depoimentos";
+import Footer from "./components/sections/footer/footer";
+import Header from "./components/sections/header/header";
 import HomePage from "./components/sections/homepage";
+import NossoTime from "./components/sections/nosso time/nossoTime";
+import OndeEstamos from "./components/sections/onde estamos/OndeEstamos";
 import Parceiros from "./components/sections/parceiros";
+<<<<<<< HEAD
 import Servicos from "./components/sections/servicos";
+=======
+import Servicos from "./components/sections/servicos/servicos";
+>>>>>>> b55fb161610c209dece1562e872185449140606e
 import Whatsapp from "./components/whatsappButton";
 
 {
   /* As cores principais que combinamos no figma já estão gravadas nos arquivos do projeto com os seguintes nomes:
     aquagreen: "#27BD80",
     spaceblue: "#001830",
+    mutedSpaceblue: "001830",
     offwhite: "#D9D9D9",
-    navyblue: "#002F67",
+    spaceblue: "#002F67",
     white: "#FFFFFF",
     black: "#000000",
     green: "#73C04A",
@@ -28,12 +37,13 @@ Vai ficar incrível
 }
 
 export default function Home() {
-  const navigationItems = [{ label: "", id: "quem-somos" }];
+  const navigationItems = [{ label: "", id: "" }];
 
   return (
     <main className="text-spaceblue bg-white">
       <Header navigationItems={navigationItems} />
       <HomePage />
+      <Contador />
       <Whatsapp />
       {/* Aqui pode ter aquele coutdown de quantos projetos, anos de funcionamento, membros e nota de satisfação*/}
       <section className="" id="quem-somos">
@@ -46,6 +56,7 @@ export default function Home() {
           nossos membros
         </p>
       </section>
+<<<<<<< HEAD
       <section className="" id="nossos-cases">
         Essa é a seção dos cases
       </section>
@@ -54,6 +65,12 @@ export default function Home() {
         Essa é a seção do conheça nosso time
       </section>
       {/*Não esquecer do botão whatsapp*/}
+=======
+      <Cases />
+      <Servicos />
+      <NossoTime />
+      <Depoimentos />
+>>>>>>> b55fb161610c209dece1562e872185449140606e
       <OndeEstamos />
       <Parceiros />
       <Contato />
