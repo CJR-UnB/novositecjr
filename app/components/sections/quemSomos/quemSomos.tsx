@@ -43,10 +43,6 @@ const QuemSomos: React.FC = () => {
             dos nossos membros.s, nós conquistamos clientes por meio de
             atendimentos e serviços de qualidade, com custos que somente uma EJ
             pode oferecer.
-            <br /> Trabalhamos incansavelmente para agregar valor aos negócios
-            de nossos clientes e estimular o cenário de empreendedorismo
-            brasileiro, além de impactar diretamente o crescimento e evolução
-            dos nossos membros.
           </div>
         </div>
       </div>
