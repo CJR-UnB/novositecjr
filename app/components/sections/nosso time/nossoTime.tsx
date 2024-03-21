@@ -46,7 +46,7 @@ const NossoTime: React.FC = () => {
           <Card
             imageSrc="/rafael.png"
             nome="Rafael"
-            cargo="Líder desse site"
+            cargo="frontenddev"
             linkedin=""
             github=""
             texto="Eu to ficando mei doido das ideias"

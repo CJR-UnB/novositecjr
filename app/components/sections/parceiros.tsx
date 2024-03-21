@@ -8,7 +8,7 @@ const Parceiros: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true, // Only trigger once
-    threshold: 1, // Trigger when 50% of the component is visible
+    threshold: 0.7, // Trigger when 50% of the component is visible
     onChange: setIsVisible, // Update isVisible state when component is in view
   });
 

@@ -13,7 +13,7 @@ const Cases: React.FC = () => {
   });
 
   return (
-    <motion.section className="px-6 mt-20" id="nossos-cases">
+    <motion.section className="px-14 mt-20" id="nossos-cases">
       <h1 className="text-center text-spaceblue font-bold  text-3xl md:text-4xl">
         NOSSO CASES
       </h1>
