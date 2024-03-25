@@ -5,7 +5,7 @@ const Parceiros: React.FC = () => {
   return (
     <>
       <section
-        className="text-center text-spaceblue font-bold text-4xl mt-20"
+        className="text-center px-6 text-spaceblue font-bold text-4xl mt-20"
         id="parceiros"
       >
         <h1>NOSSOS PARCEIROS</h1>
@@ -26,7 +26,7 @@ const Parceiros: React.FC = () => {
           <a
             href="https://concentrodf.com.br"
             target="_blank"
-            className="mb-28 md:mb-0 mx-5"
+            className="mb-28 md:mb-0 mx-0 sm:mx-10"
           >
             <Image
               src="/concentro.svg"

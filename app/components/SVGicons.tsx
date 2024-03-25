@@ -1,52 +1,95 @@
+import { motion } from "framer-motion";
 import React from "react";
-
 interface CustomIconProps {
   className?: string;
 }
 
-const CustomIcon: React.FC<CustomIconProps> = ({ className }) => {
+const HomePageIcon: React.FC = () => {
   return (
-    <>
-      <svg
-        className={className}
+    <div>
+      <motion.svg
+        className="shrink-0"
         width="594"
         height="726"
         viewBox="0 0 594 726"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
           d="M496.208 297.975L496.208 492.785L592.499 396.735L592.499 201.925L496.208 297.975Z"
           stroke="#27BD80"
-          stroke-width="3"
+          stroke-width={3}
+          strokeDasharray="0 1"
         />
-        <path
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          strokeDasharray="0 1"
           d="M493.5 693.5L493.5 497.5L297.5 497.5L297.5 693.5L493.5 693.5Z"
           stroke="#27BD80"
           stroke-width="3"
         />
-        <path
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          strokeDasharray="0 1"
           d="M592.5 197.5L592.5 1.5L397.676 1.5L396.5 2.83171L396.5 197.5L592.5 197.5Z"
           stroke="#27BD80"
           stroke-width="3"
         />
-        <path
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          strokeDasharray="0 1"
           d="M97.7921 694.025L97.7921 499.215L1.50127 595.265L1.50125 790.076L97.7921 694.025Z"
           stroke="#27BD80"
           stroke-width="3"
         />
-        <path
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          strokeDasharray="0 1"
           d="M395.791 198.425L395.791 3.61505L299.501 99.6654L299.501 294.476L395.791 198.425Z"
           stroke="#27BD80"
           stroke-width="3"
         />
-        <path
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          strokeDasharray="0 1"
           d="M100.5 298.5L100.5 494.5L296.5 494.5L296.5 298.5L100.5 298.5Z"
           stroke="#27BD80"
           stroke-width="3"
         />
-      </svg>
-    </>
+      </motion.svg>
+      ;
+    </div>
   );
 };
 
@@ -453,52 +496,183 @@ const Github: React.FC = () => {
   );
 };
 
-const RightArrow: React.FC = () => {
+const Code: React.FC = () => {
+  return (
+    <div className="flex justify-center mb-4">
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        fill="#001830"
+        viewBox="0 0 256 256"
+      >
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          strokeDasharray="0 1"
+          d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"
+        ></motion.path>
+      </motion.svg>
+    </div>
+  );
+};
+
+const Calendar: React.FC = () => {
+  return (
+    <div className="flex justify-center mb-4">
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        fill="#001830"
+        viewBox="0 0 256 256"
+      >
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          strokeDasharray="0 1"
+          d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"
+        ></motion.path>
+      </motion.svg>
+    </div>
+  );
+};
+
+const Members: React.FC = () => {
+  return (
+    <div className="flex justify-center mb-4">
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        fill="#001830"
+        viewBox="0 0 256 256"
+      >
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          strokeDasharray="0 1"
+          d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"
+        ></motion.path>
+      </motion.svg>
+    </div>
+  );
+};
+
+const Face: React.FC = () => {
+  return (
+    <div className="flex justify-center mb-5">
+      <motion.svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="100"
+        height="100"
+        fill="#001830"
+        viewBox="0 0 256 256"
+      >
+        <motion.path
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+          strokeDasharray="0 1"
+          d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM80,108a12,12,0,1,1,12,12A12,12,0,0,1,80,108Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,176,108Zm-1.07,48c-10.29,17.79-27.4,28-46.93,28s-36.63-10.2-46.92-28a8,8,0,1,1,13.84-8c7.47,12.91,19.21,20,33.08,20s25.61-7.1,33.07-20a8,8,0,0,1,13.86,8Z"
+        ></motion.path>
+      </motion.svg>
+    </div>
+  );
+};
+
+const RightArrow: React.FC<CustomIconProps> = ({ className }) => {
   return (
     <>
-      <svg className="w-12 sm:w-14" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="56" height="56" rx="28" fill="#27BD80"/>
-        <path d="M30.172 28L25.222 23.05L26.636 21.636L33 28L26.636 34.364L25.222 32.95L30.172 28Z" fill="#001830"/>
+      <svg
+        className="w-12 sm:w-14"
+        width="56"
+        height="56"
+        viewBox="0 0 56 56"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="56" height="56" rx="28" fill="#27BD80" />
+        <path
+          d="M30.172 28L25.222 23.05L26.636 21.636L33 28L26.636 34.364L25.222 32.95L30.172 28Z"
+          fill="#001830"
+        />
       </svg>
     </>
   );
 };
 
-const LeftArrow: React.FC = () => {
+const LeftArrow: React.FC<CustomIconProps> = ({ className }) => {
   return (
     <>
-      <svg className="w-12 sm:w-14" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="56" height="56" rx="28" fill="#27BD80"/>
+      <svg
+        className="w-12 sm:w-14"
+        width="56"
+        height="56"
+        viewBox="0 0 56 56"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="56" height="56" rx="28" fill="#27BD80" />
         <g clip-path="url(#clip0_1004_427)">
-        <path d="M26.828 28L31.778 32.95L30.364 34.364L24 28L30.364 21.636L31.778 23.05L26.828 28Z" fill="#001830"/>
+          <path
+            d="M26.828 28L31.778 32.95L30.364 34.364L24 28L30.364 21.636L31.778 23.05L26.828 28Z"
+            fill="#001830"
+          />
         </g>
         <defs>
-        <clipPath id="clip0_1004_427">
-        <rect width="24" height="24" fill="white" transform="translate(16 16)"/>
-        </clipPath>
+          <clipPath id="clip0_1004_427">
+            <rect
+              width="24"
+              height="24"
+              fill="white"
+              transform="translate(16 16)"
+            />
+          </clipPath>
         </defs>
-        </svg>
+      </svg>
     </>
   );
 };
 
 export {
   ArrowSquare,
+  Calendar,
   CJR,
-  CustomIcon,
+  Code,
   DarkCJR,
   DarkMenu,
   Email,
+  Face,
   Facebook,
   Focatia,
   Github,
+  HomePageIcon,
   Instagram,
+  LeftArrow,
   Linkedin,
+  Members,
   Menu,
   MessageApp,
   PageBreak,
+  RightArrow,
   WhatsappImage,
   RightArrow,
   LeftArrow,
 };
-export default CustomIcon;
+export default HomePageIcon;

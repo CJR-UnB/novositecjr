@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import React from "react";
 import Typewriter from "typewriter-effect";
-import CustomIcon from "../SVGicons";
+import HomePageIcon from "../SVGicons";
 
 const HomePage: React.FC = () => {
   return (
@@ -9,9 +10,12 @@ const HomePage: React.FC = () => {
         className="bg-spaceblue text-white p-1 flex relative
         flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row"
         id="homepage"
-        style={{ overflow: "hidden", height: "95vh" }}
+        style={{ overflow: "hidden", height: "92vh" }}
       >
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
           className="px-5 mx-2
          m-auto lg:ml-32 xl:ml-40 2xl:ml-40
          mt-16 sm:mt-16 md:mt-20 lg:mt-auto xl:mt-auto 2xl:mt-auto"
@@ -20,23 +24,39 @@ const HomePage: React.FC = () => {
             className=" w-full max-w-3xl mb-3 leading-snug text-left
           text-3xl xs:text-4xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
           >
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString("Desenvolvendo ideias e impulsionando resultados")
-                  .pauseFor(5000)
-                  .deleteAll()
-                  .pauseFor(1000)
-                  .typeString("Do seu sonho ao negócio, a CJR te acompanha!")
-                  .pauseFor(5000)
-                  .start();
-              }}
-              options={{
-                delay: 50,
-                deleteSpeed: 30,
-                loop: true,
-              }}
-            />
+            Desenvolvendo ideias e impulsionando resultados
+            <div className="my-0 md:my-3 text-aquagreen">
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter
+                    .pauseFor(1000)
+                    .typeString("Sites?")
+                    .pauseFor(2000)
+                    .deleteAll()
+                    .pauseFor(500)
+                    .typeString("Aplicativos?")
+                    .pauseFor(2000)
+                    .deleteAll()
+                    .pauseFor(500)
+                    .typeString("Sistemas?")
+                    .pauseFor(2000)
+                    .deleteAll()
+                    .pauseFor(500)
+                    .typeString("Consultorias?")
+                    .pauseFor(2000)
+                    .deleteAll()
+                    .pauseFor(500)
+                    .typeString("A CJR te acompanha!")
+                    .pauseFor(2000)
+                    .start();
+                }}
+                options={{
+                  delay: 50,
+                  deleteSpeed: 30,
+                  loop: true,
+                }}
+              />
+            </div>
           </h1>
           <p
             className="text-gray-200 w-full max-w-xl text-left
@@ -46,15 +66,20 @@ const HomePage: React.FC = () => {
             seus serviços
           </p>
           <a href="https://tally.so/r/3jeXOJ" target="_blank">
-            <button
+            <motion.button
               className="bg-aquagreen rounded-xl mt-5 py-3 px-10 text-black transition-colors duration-300 hover:bg-green ease-linear
            hidden xs:hidden sm:hidden md:hidden lg:block xl:block 2xl:block 
            lg:text-xl xl:text-2xl 2xl:text-2xl"
+              whileHover={{ scale: 1.15 }}
+              onHoverStart={(e) => {}}
+              onHoverEnd={(e) => {}}
+              whileTap={{ scale: 1 }}
+              transition={{ duration: 0.2 }}
             >
               Faça um orçamento grátis
-            </button>
+            </motion.button>
           </a>
-        </div>
+        </motion.div>
         <div
           className="
         flex xs:flex sm:flex md:flex lg:block xl:block 2xl:block
@@ -64,10 +89,9 @@ const HomePage: React.FC = () => {
         mr-44 xs: sm: md: lg:mr-10 xl:mr-44 2xl:mr-44
         justify-center items-center"
         >
-          <CustomIcon className="shrink-0" />
+          <HomePageIcon />
         </div>
       </section>
-      <div className="bg-aquagreen h-16"></div>
     </>
   );
 };
