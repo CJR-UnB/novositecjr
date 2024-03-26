@@ -21,10 +21,7 @@ const siteInstitucionalIcon = <FontAwesomeIcon icon={faUsersBetweenLines} />;
 const Servicos: React.FC = () => {
   return (
     <>
-      <section
-        className="text-center font-bold text-4xl mt-20 mb-20"
-        id="servicos"
-      >
+      <section className="text-center font-bold text-4xl mt-20" id="servicos">
         <h1>NOSSOS SERVIÇOS</h1>
         <PageBreak />
         <p className="text-lg sm:text-xl mb-5 px-5 text-mutedSpaceblue font-normal">
@@ -35,32 +32,31 @@ const Servicos: React.FC = () => {
             <ServiceBox
               icone={sistemasWebIcon}
               tipo="Sistemas Web"
-              descricao="Desenvolvimentos de sistemas web personalizados para atender as necessidades do cliente"
-            />
-            <ServiceBox
-              icone={consultoriaIcon}
-              tipo="Consultoria"
-              descricao="Prestação de consultas profissionais visando atender as necessidades do cliente"
+              subtitulo="Desenvolvimentos de sistemas web personalizados para atender as necessidades do cliente"
+              temDetalhes={true}
+              detalhes="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus, purus at aliquam placerat, elit risus faucibus ante, id vehicula magna quam elementum orci. Phasellus facilisis eu dolor ut ultrices. Maecenas vitae tempor tortor. Etiam mattis justo eget pellentesque scelerisque. Integer placerat dignissim odio quis sagittis. Pellentesque sit amet lacinia erat. In hac habitasse platea dictumst."
             />
             <ServiceBox
               icone={PWAIcon}
               tipo="PWA"
-              descricao="Desenvolvimento de Progressive Web Apps para melhorar a experiência do usuário"
+              subtitulo="Desenvolvimento de Progressive Web Apps para melhorar a experiência do usuário"
+              temDetalhes={true}
             />
             <ServiceBox
               icone={ecommerceIcon}
               tipo="E-Commerce"
-              descricao="Desenvolvimento de lojas virtuais para venda de produtos e serviços"
+              subtitulo="Desenvolvimento de lojas virtuais para venda de produtos e serviços"
             />
             <ServiceBox
               icone={appIcon}
               tipo="Aplicativo Móvel"
-              descricao="Desenvolvimento de aplicativos móveis para Android e iOS"
+              subtitulo="Desenvolvimento de aplicativos móveis para Android e iOS"
+              temDetalhes={true}
             />
             <ServiceBox
               icone={siteInstitucionalIcon}
               tipo="Site Institucional"
-              descricao="Desenvolvimento de sites institucionais para apresentação de empresas e serviços"
+              subtitulo="Desenvolvimento de sites institucionais para apresentação de empresas e serviços"
             />
           </div>
         </div>

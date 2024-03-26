@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowSquare } from "../../SVGicons";
+import { ArrowSquare } from "./SVGicons";
 
 const Orcamento: React.FC = () => {
   return (
@@ -10,6 +10,7 @@ const Orcamento: React.FC = () => {
           whileHover={{ scale: 1.15 }}
           onHoverStart={(e) => {}}
           onHoverEnd={(e) => {}}
+          whileTap={{ scale: 1 }}
         >
           <h1 className="mr-2">Fazer um orçamento</h1>
           <ArrowSquare />

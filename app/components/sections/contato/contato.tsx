@@ -1,11 +1,21 @@
-import { Focatia, Instagram, Linkedin, MessageApp } from "../SVGicons";
-import Orcamento from "./footer/botaoOrcamento";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { useInView } from "react-intersection-observer";
+import { Focatia, Instagram, MessageApp } from "../../SVGicons";
+import Orcamento from "../../botaoOrcamento";
 
 const Contato: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Only trigger once
+    threshold: 0.8, // Trigger when 50% of the component is visible
+    onChange: setIsVisible, // Update isVisible state when component is in view
+  });
+
   return (
     <>
       {" "}
-      <section className="px-6 mt-32" id="contato">
+      <motion.section ref={ref} className="px-5 mt-24" id="contato">
         <h1 className="text-center text-spaceblue font-bold text-4xl sm:text-5xl mb-14 px-5 mx-3">
           Como podemos te ajudar?
         </h1>
@@ -17,36 +27,36 @@ const Contato: React.FC = () => {
             <h2 className="text-lg sm:text-xl mb-5">
               Entre em contato com a nossa equipe
             </h2>
-            <div className="hover:scale-110 transition-all duration-300 my-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isVisible ? 1 : 0 }}
+              transition={{ duration: 0.5 }}
+              className="hover:scale-110 transition-all duration-300 my-6"
+            >
               <a href="" target="_blank" className="flex items-center">
                 <MessageApp />
-                <h1 className="ml-2">Via WhatsApp</h1>
+                <h1 className="ml-2 text-xl">Via WhatsApp</h1>
               </a>
-            </div>
-            <div className="hover:scale-110 transition-all duration-300 my-6">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isVisible ? 1 : 0 }}
+              transition={{ duration: 1 }}
+              className="hover:scale-110 transition-all duration-300 my-6"
+            >
               <a
                 href="https://www.instagram.com/cjr.unb/"
                 target="_blank"
                 className="flex items-center"
               >
                 <Instagram />
-                <h1 className="ml-2">Via Instagram</h1>
+                <h1 className="ml-2 text-xl">Via Instagram</h1>
               </a>
-            </div>
-            <div className=" hover:scale-110 transition-all duration-300 my-6">
-              <a
-                href="https://www.linkedin.com/company/cjr-unb/mycompany/"
-                target="_blank"
-                className="flex items-center"
-              >
-                <Linkedin />
-                <h1 className="ml-2">Via LinkedIn</h1>
-              </a>
-            </div>
+            </motion.div>
           </div>
           <div className="bg-offwhite w-1 rounded-xl hidden lg:block"></div>{" "}
           {/* divisoria */}
-          <div id="small screen" className="flex flex-col overflow-x-hidden">
+          <div id="small screen" className="flex flex-col">
             <h1 className="text-2xl sm:text-3xl font-medium px-5 mb-2">
               Já tem uma ideia de projeto?
             </h1>
@@ -75,7 +85,7 @@ const Contato: React.FC = () => {
             <Focatia className="ml-0 sm:ml-20 mt-20" />
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };

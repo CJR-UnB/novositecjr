@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CJR, DarkCJR, DarkMenu, Menu } from "../../SVGicons";
+import Whatsapp from "../../whatsappButton";
 import NavigationItem from "./navigationItems";
 
 export interface NavigationItem {
@@ -56,38 +57,41 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
     /* useEffect para detectar em que sessão a página está */
   }
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 }
-    );
+    const handleScroll = () => {
+      const sectionIds = [
+        "quem-somos",
+        "nossos-cases",
+        "servicos",
+        "nosso-time",
+        "depoimentos",
+        "contato",
+      ];
 
-    const sectionIds = [
-      "quem-somos",
-      "nossos-cases",
-      "servicos",
-      "nosso-time",
-      "contato",
-    ];
-    sectionIds.forEach((id) => {
-      const section = document.getElementById(id);
-      if (section) {
-        observer.observe(section);
-      }
-    });
+      let currentActiveSection = "";
+      let currentScrollPosition = window.scrollY + window.innerHeight / 2; // Adjust this value based on where you consider the section to be "active"
 
-    return () => {
       sectionIds.forEach((id) => {
         const section = document.getElementById(id);
         if (section) {
-          observer.unobserve(section);
+          const sectionPosition =
+            section.getBoundingClientRect().top + window.scrollY;
+          const sectionHeight = section.offsetHeight;
+          // Check if the section is in the viewport and more than half of it is visible
+          if (
+            sectionPosition <= currentScrollPosition &&
+            sectionPosition + sectionHeight >= currentScrollPosition
+          ) {
+            currentActiveSection = id;
+          }
         }
       });
+
+      setActiveSection(currentActiveSection);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -140,7 +144,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               />
               <NavigationItem
                 key={"nossos-cases"}
-                label={"Nossos Cases"}
+                label={"Cases"}
                 id={"nossos-cases"}
                 onClick={scrollToSection}
                 normal={true}
@@ -149,7 +153,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               />
               <NavigationItem
                 key={"servicos"}
-                label={"Serviços e Produtos"}
+                label={"Serviços"}
                 id={"servicos"}
                 onClick={scrollToSection}
                 normal={true}
@@ -234,7 +238,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
             />
             <NavigationItem
               label="Nosso Time"
-              id="time"
+              id="nosso-time"
               onClick={scrollToSection}
               normal={false}
               text={true}
@@ -251,6 +255,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
           </div>
         </div>
       </header>
+      <Whatsapp />
     </>
   );
 };
