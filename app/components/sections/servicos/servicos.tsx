@@ -37,13 +37,6 @@ const Servicos: React.FC = () => {
               detalhes="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus, purus at aliquam placerat, elit risus faucibus ante, id vehicula magna quam elementum orci. Phasellus facilisis eu dolor ut ultrices. Maecenas vitae tempor tortor. Etiam mattis justo eget pellentesque scelerisque. Integer placerat dignissim odio quis sagittis. Pellentesque sit amet lacinia erat. In hac habitasse platea dictumst."
             />
             <ServiceBox
-              icone={consultoriaIcon}
-              tipo="Consultoria"
-              subtitulo="Prestação de consultas profissionais visando atender as necessidades do cliente"
-              temDetalhes={true}
-              detalhes="Esse é um exemplo para colocar detalhes"
-            />
-            <ServiceBox
               icone={PWAIcon}
               tipo="PWA"
               subtitulo="Desenvolvimento de Progressive Web Apps para melhorar a experiência do usuário"

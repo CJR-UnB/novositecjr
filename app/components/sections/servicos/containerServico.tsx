@@ -10,11 +10,11 @@ export default function ServiceBox({
   detalhes,
   temDetalhes,
 }: {
-  icone: string;
+  icone: React.ReactNode;
   tipo: string;
   subtitulo: string;
-  detalhes: string;
-  temDetalhes: boolean;
+  detalhes?: string;
+  temDetalhes?: boolean;
 }) {
   const [isDropdown, setIsDropdown] = useState(false);
 
@@ -70,8 +70,8 @@ export default function ServiceBox({
         <motion.button
           whileHover={{ scale: 1.3 }}
           whileTap={{ scale: 1 }}
-          onHoverStart={(e) => {}}
-          onHoverEnd={(e) => {}}
+          onHoverStart={(e) => setIsDropdown(true)}
+          onHoverEnd={(e) => setIsDropdown(false)}
           transition={{ duration: 0.2 }}
           onClick={() => setIsDropdown((prevState) => !prevState)}
         >
