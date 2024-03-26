@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CJR, DarkCJR, DarkMenu, Menu } from "../../SVGicons";
+import Whatsapp from "../../whatsappButton";
 import NavigationItem from "./navigationItems";
 
 export interface NavigationItem {
@@ -254,6 +255,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
           </div>
         </div>
       </header>
+      <Whatsapp />
     </>
   );
 };

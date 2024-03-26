@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Focatia, Instagram, MessageApp } from "../../SVGicons";
-import Orcamento from "./botaoOrcamento";
+import Orcamento from "../../botaoOrcamento";
 
 const Contato: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

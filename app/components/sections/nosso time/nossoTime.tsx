@@ -51,6 +51,14 @@ const NossoTime: React.FC = () => {
             github=""
             texto="Eu to ficando mei doido das ideias"
           />
+          <Card
+            imageSrc="/lagartixa.png"
+            nome="Largatixa"
+            cargo="Líder da máfia chinesa"
+            linkedin=""
+            github=""
+            texto="eu amo subir paredes aleatórias"
+          />
         </div>
       </section>
     </>
