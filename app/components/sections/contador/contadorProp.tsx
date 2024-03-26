@@ -1,11 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 
-const Counter = ({ duration, target }) => {
+interface CounterProps {
+  duration: number;
+  target: number;
+}
+
+const Counter = ({ duration, target }: CounterProps) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const counterRef = useRef(null);
 
   useEffect(() => {
+    const currentRef = counterRef.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -15,13 +22,13 @@ const Counter = ({ duration, target }) => {
       { threshold: 1 } // Adjust the threshold as per your requirement
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

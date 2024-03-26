@@ -19,8 +19,9 @@ const config: Config = {
         green: "#38C28A",
         mutedSpaceblue: "#4A5A6B",
       },
+      fontFamily: { lora: ["lora", "serif"] },
     },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [require("flowbite/plugin"), require("@tailwindcss/aspect-ratio")],
 };
 export default config;

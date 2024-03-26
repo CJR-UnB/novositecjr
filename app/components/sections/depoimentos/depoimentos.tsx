@@ -6,7 +6,7 @@ import CardDepoimento from "./cardDepoimentos";
 
 function Depoimentos() {
   return (
-    <section className="px-5 md:px-14">
+    <section className="px-5 md:px-14" id="depoimentos">
       <div className="md:mx-10 mb-20 bg-transparent rounded-lg shadow-xl">
         <Carousel
           pauseOnHover={true}

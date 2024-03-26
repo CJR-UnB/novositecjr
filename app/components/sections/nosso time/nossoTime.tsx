@@ -4,8 +4,8 @@ import Card from "./cardEquipe";
 const NossoTime: React.FC = () => {
   return (
     <>
-      <section id="nosso-time">
-        <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl mt-10">
+      <section className="mt-20" id="nosso-time">
+        <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl">
           NOSSO TIME
         </h1>
         <PageBreak />
@@ -46,10 +46,18 @@ const NossoTime: React.FC = () => {
           <Card
             imageSrc="/rafael.png"
             nome="Rafael"
-            cargo="Líder desse site"
+            cargo="frontenddev"
             linkedin=""
             github=""
             texto="Eu to ficando mei doido das ideias"
+          />
+          <Card
+            imageSrc="/lagartixa.png"
+            nome="Largatixa"
+            cargo="Líder da máfia chinesa"
+            linkedin=""
+            github=""
+            texto="eu amo subir paredes aleatórias"
           />
         </div>
       </section>
