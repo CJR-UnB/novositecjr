@@ -4,7 +4,7 @@ import Map from "./map";
 const OndeEstamos: React.FC = () => {
   return (
     <>
-      <section className="" id="onde-estamos">
+      <section className="mt-20" id="onde-estamos">
         <h1 className="text-center text-spaceblue font-bold  text-3xl md:text-4xl">
           ONDE ESTAMOS
         </h1>

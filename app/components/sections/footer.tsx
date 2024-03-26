@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Instagram, Linkedin } from "../../SVGicons";
+import { Facebook, Instagram2, Linkedin } from "../SVGicons";
 
 const Footer: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
           <div className="self-center mb-5 md:mb-0">
             <button className="hover:scale-110 transition-all duration-300">
               <a href="https://www.instagram.com/cjr.unb/" target="_blank">
-                <Instagram />
+                <Instagram2 />
               </a>
             </button>
             <button className="ml-6 hover:scale-110 transition-all duration-300">
