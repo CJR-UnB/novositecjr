@@ -17,7 +17,6 @@ const NossoTime: React.FC = () => {
             cargo="Presidente"
             linkedin=""
             github=""
-            texto="Eu sou simplesmente incrível"
           />
           <Card
             imageSrc="/daniel.png"
@@ -25,7 +24,6 @@ const NossoTime: React.FC = () => {
             cargo="Líder imagem e publicidade"
             linkedin=""
             github=""
-            texto="Eu nem sou mais líder kkkkkkk"
           />
           <Card
             imageSrc="/lagartixa.png"
@@ -33,7 +31,6 @@ const NossoTime: React.FC = () => {
             cargo="Líder da máfia chinesa"
             linkedin=""
             github=""
-            texto="eu amo subir paredes aleatórias"
           />
           <Card
             imageSrc="/mulher.png"
@@ -41,7 +38,6 @@ const NossoTime: React.FC = () => {
             cargo="funcionária pública"
             linkedin=""
             github=""
-            texto="Fui assaltada"
           />
           <Card
             imageSrc="/rafael.png"
@@ -49,7 +45,6 @@ const NossoTime: React.FC = () => {
             cargo="frontenddev"
             linkedin=""
             github=""
-            texto="Eu to ficando mei doido das ideias"
           />
           <Card
             imageSrc="/lagartixa.png"
@@ -57,7 +52,6 @@ const NossoTime: React.FC = () => {
             cargo="Líder da máfia chinesa"
             linkedin=""
             github=""
-            texto="eu amo subir paredes aleatórias"
           />
         </div>
       </section>

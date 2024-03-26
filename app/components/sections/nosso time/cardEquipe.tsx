@@ -10,7 +10,6 @@ interface CardProps {
   cargo: string;
   linkedin: string;
   github: string;
-  texto?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -19,7 +18,6 @@ const Card: React.FC<CardProps> = ({
   cargo,
   linkedin,
   github,
-  texto,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
@@ -34,7 +32,11 @@ const Card: React.FC<CardProps> = ({
         animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.5 }}
         ref={ref}
-        className="border-2 border-navyblue flex-col flex items-center justify-center w-fit p-5 m-10 mx-10 md:mx-32 rounded-lg bg-gradient-to-t from-gray-100 to-offwhite shadow-lg "
+        className="flex-col flex items-center justify-center w-fit p-5 m-10 mx-10 md:mx-32 bg-offwhite"
+        style={{
+          borderRadius: 97,
+          boxShadow: "33px 33px 73px #d0d0d0,-33px -33px 73px #f0f0f0",
+        }}
       >
         <Image
           src={imageSrc}
@@ -55,9 +57,6 @@ const Card: React.FC<CardProps> = ({
           <h2 className="w-full max-w-xs text-xl text-center font-semibold text-mutedSpaceblue mb-3">
             {cargo}
           </h2>
-          <p className="w-full max-w-xs mb-6 text-center text-mutedSpaceblue">
-            {texto}
-          </p>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}
