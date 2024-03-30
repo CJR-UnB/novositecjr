@@ -10,6 +10,7 @@ interface CardProps {
   cargo: string;
   linkedin: string;
   github: string;
+  tipo: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -18,6 +19,7 @@ const Card: React.FC<CardProps> = ({
   cargo,
   linkedin,
   github,
+  tipo,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const { ref, inView } = useInView({
@@ -32,10 +34,24 @@ const Card: React.FC<CardProps> = ({
         animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.5 }}
         ref={ref}
-        className="flex-col flex items-center justify-center w-fit p-5 m-10 mx-10 md:mx-32 bg-offwhite"
+        className="flex-col flex items-center justify-center my-20 bg-transparent"
         style={{
           borderRadius: 97,
-          boxShadow: "33px 33px 73px #d0d0d0,-33px -33px 73px #f0f0f0",
+
+          backgroundImage: `url(${
+            tipo === "1"
+              ? "/fundo.svg"
+              : tipo === "2"
+              ? "fundo1.svg"
+              : "fundo2.svg"
+          })`,
+          backgroundPositionX: "50%",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+
+          width: 600,
+          height: 580,
         }}
       >
         <Image
@@ -43,18 +59,22 @@ const Card: React.FC<CardProps> = ({
           width={250}
           height={250}
           alt="foto de perfil"
-          className="mb-5 rounded-full"
+          className="mb-5 z-40"
+          style={{
+            borderRadius: "30%",
+          }}
         />
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.5 }}
+          className="z-40"
         >
-          <h1 className="w-full max-w-xs text-3xl font-bold text-center mb-2 text-spaceblue">
+          <h1 className="w-full max-w-xs text-3xl font-bold text-center mb-2 text-white">
             {nome}
           </h1>
-          <h2 className="w-full max-w-xs text-xl text-center font-semibold text-mutedSpaceblue mb-3">
+          <h2 className="w-full max-w-xs text-xl text-center font-semibold text-gray-300 mb-3">
             {cargo}
           </h2>
           <motion.div
