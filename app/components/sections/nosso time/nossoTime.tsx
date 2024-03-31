@@ -38,7 +38,7 @@ const NossoTime: React.FC = () => {
           <Card
             imageSrc="/mulher.png"
             nome="Leandro Kornelius"
-            cargo="Diretor de aquisição de talentos"
+            cargo="Diretor de Talentos"
             linkedin="https://www.linkedin.com/in/leandrokornelius/"
             github="https://github.com/LeoKornelius"
             tipo="2"
@@ -46,10 +46,10 @@ const NossoTime: React.FC = () => {
           <Card
             imageSrc="/user.jpeg"
             nome="Rodrigo Rafik"
-            cargo="Diretor de Imagem e Publicidade"
+            cargo="Diretor de Publicidade"
             linkedin="https://www.linkedin.com/in/rodrigorafik/"
             github="https://github.com/maetsuji"
-            tipo="3"
+            tipo="1"
           />
           <Card
             imageSrc="/lagartixa.png"
@@ -57,7 +57,7 @@ const NossoTime: React.FC = () => {
             cargo="Diretora de Projetos"
             linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"
             github="https://github.com/luizadsantos"
-            tipo="1"
+            tipo="3"
           />
         </div>
       </section>

@@ -34,7 +34,7 @@ const Card: React.FC<CardProps> = ({
         animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.5 }}
         ref={ref}
-        className="flex-col flex items-center justify-center my-20 bg-transparent"
+        className="flex-col flex items-center justify-center my-5 bg-transparent"
         style={{
           borderRadius: 97,
 
@@ -59,7 +59,7 @@ const Card: React.FC<CardProps> = ({
           width={250}
           height={250}
           alt="foto de perfil"
-          className="mb-5 z-40"
+          className="mb-5 z-40 shadow-2xl"
           style={{
             borderRadius: "30%",
           }}

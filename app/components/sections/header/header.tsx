@@ -115,7 +115,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
       <header
         className={`sticky top-0 md:justify-between flex px-2 z-50 transition-colors duration-250 ${
           isScrolled
-            ? "bg-white text-spaceblue shadow-lg opacity-90 "
+            ? "bg-white bg-opacity-70 text-spaceblue shadow-lg opacity-90 backdrop-blur-md"
             : "bg-spaceblue text-gray-300"
         }`}
         style={{ minHeight: "fit-content", maxHeight: "5rem" }}
@@ -197,7 +197,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
           {isScrolled ? <DarkMenu /> : <Menu />}
         </button>
         <div
-          className={`absolute top-20 z-50 left-0 transition-all duration-300 transform origin-top ${
+          className={`absolute top-20 z-50 left-0 transition-all duration-300 transform origin-top bg-white bg-opacity-70 text-spaceblue shadow-lg opacity-90 backdrop-blur-md ${
             isMenuOpen ? "scale-y-100" : "scale-y-0"
           }`}
           style={{ width: "100vw", height: "100vh" }}
