@@ -12,23 +12,29 @@ const Contador: React.FC = () => {
     onChange: setIsVisible, // Update isVisible state when component is in view
   });
 
+  const currentYear = new Date().getFullYear();
+  const startingYear = 1999;
+  const functioningYears = currentYear - startingYear;
+
+  const activeMembers = 70;
+
   return (
     <section className="">
-      <motion.div ref={ref} className="w-full h-fit bg-aquagreen mb-4">
+      <motion.div ref={ref} className="w-full h-fit bg-aquagreen mb-4 z-40">
         <div className="flex flex-col md:flex-row justify-around p-5 text-2xl font-semibold">
           <div className="text-center z-40">
             <Calendar />
-            <Counter duration={60} target={23} />
+            <Counter duration={60} target={functioningYears} />
             <h1>Anos de funcionamento</h1>
           </div>
           <div className="text-center z-40">
             <Code />
-            <Counter duration={20} target={60} />
-            <h1>Projetos recentes</h1>
+            <Counter projetos={true} duration={20} target={60} />
+            <h1>Projetos finalizados</h1>
           </div>
           <div className="text-center z-40">
             <Members />
-            <Counter duration={20} target={54} />
+            <Counter duration={20} target={activeMembers} />
             <h1>Membros ativos</h1>
           </div>
           <div className="text-center z-40">
