@@ -6,6 +6,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* Add the Lora font link here */}
+          <link rel="icon" href="public\favicon.ico" sizes="any" />
           <link
             href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
             rel="stylesheet"
