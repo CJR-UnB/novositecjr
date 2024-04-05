@@ -17,7 +17,7 @@ const NossoTime: React.FC = () => {
             cargo="Presidente"
             linkedin="https://www.linkedin.com/in/pedro-joão-reffatti-pinheiro-b3b77b2aa/"
             github=""
-            tipo="1"
+            backgroundSrc="background.png"
           />
           <Card
             imageSrc="/daniel.png"
@@ -25,7 +25,7 @@ const NossoTime: React.FC = () => {
             cargo="Diretora de Organização Empresarial"
             linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
             github=""
-            tipo="2"
+            backgroundSrc="background.png"
           />
           <Card
             imageSrc="/lagartixa.png"
@@ -33,7 +33,7 @@ const NossoTime: React.FC = () => {
             cargo="Diretor Comercial"
             linkedin="https://www.linkedin.com/in/luiz-augusto-araújo-da-silva-09a937213/"
             github="https://github.com/LuizAugus10"
-            tipo="3"
+            backgroundSrc="background.png"
           />
           <Card
             imageSrc="/mulher.png"
@@ -41,7 +41,7 @@ const NossoTime: React.FC = () => {
             cargo="Diretor de Talentos"
             linkedin="https://www.linkedin.com/in/leandrokornelius/"
             github="https://github.com/LeoKornelius"
-            tipo="2"
+            backgroundSrc="background.png"
           />
           <Card
             imageSrc="/user.jpeg"
@@ -49,7 +49,7 @@ const NossoTime: React.FC = () => {
             cargo="Diretor de Publicidade"
             linkedin="https://www.linkedin.com/in/rodrigorafik/"
             github="https://github.com/maetsuji"
-            tipo="1"
+            backgroundSrc="background.png"
           />
           <Card
             imageSrc="/lagartixa.png"
@@ -57,7 +57,7 @@ const NossoTime: React.FC = () => {
             cargo="Diretora de Projetos"
             linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"
             github="https://github.com/luizadsantos"
-            tipo="3"
+            backgroundSrc="background.png"
           />
         </div>
       </section>

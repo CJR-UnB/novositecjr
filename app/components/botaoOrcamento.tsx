@@ -6,7 +6,7 @@ const Orcamento: React.FC = () => {
     <>
       <a href="https://tally.so/r/3jeXOJ" target="_blank">
         <motion.button
-          className="flex bg-green items-center p-2 w-fit text-black"
+          className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10"
           whileHover={{ scale: 1.15 }}
           onHoverStart={(e) => {}}
           onHoverEnd={(e) => {}}
