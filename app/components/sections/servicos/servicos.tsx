@@ -33,37 +33,37 @@ const Servicos: React.FC = () => {
               icone={sistemasWebIcon}
               tipo="Sistemas Web"
               subtitulo="Desenvolvimentos de sistemas web personalizados para atender as necessidades do cliente"
-              temDetalhes={true}
-              detalhes="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus, purus at aliquam placerat, elit risus faucibus ante, id vehicula magna quam elementum orci. Phasellus facilisis eu dolor ut ultrices. Maecenas vitae tempor tortor. Etiam mattis justo eget pellentesque scelerisque. Integer placerat dignissim odio quis sagittis. Pellentesque sit amet lacinia erat. In hac habitasse platea dictumst."
+              sub2="aqui vem mais explicações sobre o serviço"
             />
             <ServiceBox
               icone={consultoriaIcon}
               tipo="Consultoria"
               subtitulo="Prestação de consultas profissionais visando atender as necessidades do cliente"
-              temDetalhes={true}
-              detalhes="Esse é um exemplo para colocar detalhes"
+              sub2="aqui vem mais explicações sobre o serviço"
             />
             <ServiceBox
               icone={PWAIcon}
               tipo="PWA"
               subtitulo="Desenvolvimento de Progressive Web Apps para melhorar a experiência do usuário"
-              temDetalhes={true}
+              sub2="aqui vem mais explicações sobre o serviço"
             />
             <ServiceBox
               icone={ecommerceIcon}
               tipo="E-Commerce"
               subtitulo="Desenvolvimento de lojas virtuais para venda de produtos e serviços"
+              sub2="aqui vem mais explicações sobre o serviço"
             />
             <ServiceBox
               icone={appIcon}
               tipo="Aplicativo Móvel"
               subtitulo="Desenvolvimento de aplicativos móveis para Android e iOS"
-              temDetalhes={true}
+              sub2="aqui vem mais explicações sobre o serviço"
             />
             <ServiceBox
               icone={siteInstitucionalIcon}
               tipo="Site Institucional"
               subtitulo="Desenvolvimento de sites institucionais para apresentação de empresas e serviços"
+              sub2="aqui vem mais explicações sobre o serviço"
             />
           </div>
         </div>
