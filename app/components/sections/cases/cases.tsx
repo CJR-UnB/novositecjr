@@ -41,7 +41,7 @@ const Cases: React.FC = () => {
             por indivíduos apaixonados e experientes, que se dedicam a entender
             as necessidades únicas de cada cliente.
           </p>
-          <Link href="/portfolio" target="_blank">
+          <Link href="/portfolio">
             <motion.button
               className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10"
               whileHover={{ scale: 1.15 }}
@@ -50,7 +50,6 @@ const Cases: React.FC = () => {
               whileTap={{ scale: 1 }}
             >
               <h1 className="mr-2">Conheça nosso portfolio</h1>
-              <ArrowSquare />
             </motion.button>
           </Link>
         </motion.div>

@@ -13,7 +13,7 @@ export default function portfolio() {
       <Header navigationItems={navigationItems} />
       <section
         id="portfolo"
-        className="flex flex-wrap justify-around items-center mt-10 mx-5"
+        className="flex flex-wrap justify-around items-center mt-10 mx-2"
       >
         <CaseCard
           titulo="Algum case"
