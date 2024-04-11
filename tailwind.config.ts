@@ -12,7 +12,7 @@ const config: Config = {
       colors: {
         aquagreen: "#27BD80",
         spaceblue: "#001830",
-        offwhite: "#F7F7F7",
+        offwhite: "#f2f2f2",
         navyblue: "#002F67",
         white: "#FFFFFF",
         black: "#000000",

@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { PageBreak } from "../../SVGicons";
+import { ArrowSquare, PageBreak } from "../../SVGicons";
 import CasesCarousel from "./casesCarousel";
 
 const Cases: React.FC = () => {
@@ -15,7 +16,7 @@ const Cases: React.FC = () => {
   return (
     <motion.section className="px-14 mt-20" id="nossos-cases">
       <h1 className="text-center text-spaceblue font-bold  text-3xl md:text-4xl">
-        NOSSO CASES
+        NOSSO PORTFOLIO
       </h1>
       <PageBreak />
       <div className="flex flex-col items-center lg:flex-row justify-around">
@@ -40,6 +41,18 @@ const Cases: React.FC = () => {
             por indivíduos apaixonados e experientes, que se dedicam a entender
             as necessidades únicas de cada cliente.
           </p>
+          <Link href="/portfolio" target="_blank">
+            <motion.button
+              className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10"
+              whileHover={{ scale: 1.15 }}
+              onHoverStart={(e) => {}}
+              onHoverEnd={(e) => {}}
+              whileTap={{ scale: 1 }}
+            >
+              <h1 className="mr-2">Conheça nosso portfolio</h1>
+              <ArrowSquare />
+            </motion.button>
+          </Link>
         </motion.div>
         <div className="mx-5 md:mx-14 lg:mx-10 xl:mx-10 2xl:mx-10">
           <CasesCarousel />
