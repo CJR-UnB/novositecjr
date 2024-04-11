@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-interface ServiceBoxProps {
+interface cardServicoProps {
   icone: React.ReactNode;
   tipo: string;
   sub2: string;
   subtitulo: string;
 }
 
-const ServiceBox: React.FC<ServiceBoxProps> = ({
+const CardServico: React.FC<cardServicoProps> = ({
   icone,
   tipo,
   subtitulo,
@@ -63,4 +63,4 @@ const ServiceBox: React.FC<ServiceBoxProps> = ({
   );
 };
 
-export default ServiceBox;
+export default CardServico;
