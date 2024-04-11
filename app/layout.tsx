@@ -7,6 +7,13 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Empresa Júnior de Computação - CJR",
   description: "Site da Empresa Júnior de Computação da UnB - CJR",
+  keywords: [
+    "Desenvolvimento Web",
+    "Consultoria",
+    "Aplicativos",
+    "Sistemas Web",
+    "E-commerce",
+  ],
 };
 
 export default function RootLayout({
@@ -16,6 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );

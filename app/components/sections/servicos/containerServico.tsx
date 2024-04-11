@@ -1,20 +1,16 @@
-import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 export default function ServiceBox({
   icone,
   tipo,
+  sub2,
   subtitulo,
-  detalhes,
-  temDetalhes,
 }: {
   icone: React.ReactNode;
   tipo: string;
+  sub2: string;
   subtitulo: string;
-  detalhes?: string;
-  temDetalhes?: boolean;
 }) {
   const [isDropdown, setIsDropdown] = useState(false);
 
@@ -26,88 +22,41 @@ export default function ServiceBox({
   });
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isVisible ? 1 : 0 }}
-      transition={{ duration: 0.5 }}
-      className={`flex flex-col py-2 px-2 items-center justify-center border-solid border-2 border-navyblue rounded-lg md:max-w-96 min-h-32 md:h-auto md:w-auto overflow-hidden ${
-        isDropdown ? "w-full" : "w-40 transition-all duration-500"
-      }`}
+    <div
+      className="flex flex-col py-2 px-2 items-center justify-center border-solid border-2 border-navyblue 
+    rounded-lg w-full md:max-w-96 min-h-32 md:h-auto md:w-auto overflow-hidden"
     >
-      <motion.div
-        className="items-center justify-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <i className="flex items-center justify-center size-10 md:size-16">
-          {icone}
-        </i>
-      </motion.div>
+      <div className="w-[350px] h-72 bg-transparent cursor-pointer group rounded-3xl perspective-1000">
+        <div className="relative w-full h-full preserve-3d group-hover:rotate-y-180 duration-500">
+          <div className="flex flex-col items-center pt-4 w-full h-full absolute rounded-3xl overflow-hidden">
+            <i className="flex items-center justify-center size-10 md:size-16">
+              {icone}
+            </i>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <p className="text-center p-2 text-sm text-spaceblue md:text-3xl">
-          {tipo}
-        </p>
-      </motion.div>
+            <p className="text-center p-2 text-spaceblue text-2xl md:text-2xl">
+              {tipo}
+            </p>
 
-      <motion.div
-        className="h-fit mb-8 hidden md:block md:text-warp"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 1 : 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <p className="text-center text-wrap text-navyblue text-lg font-normal ">
-          {subtitulo}
-        </p>
-      </motion.div>
-      {temDetalhes && (
-        <motion.button
-          whileHover={{ scale: 1.3 }}
-          whileTap={{ scale: 1 }}
-          onHoverStart={(e) => setIsDropdown(true)}
-          onHoverEnd={(e) => setIsDropdown(false)}
-          transition={{ duration: 0.2 }}
-          onClick={() => setIsDropdown((prevState) => !prevState)}
-        >
-          <Image
-            src={isDropdown ? "/dropup.svg" : "/dropdown.svg"}
-            width={30}
-            height={30}
-            alt="botao"
-          />
-        </motion.button>
-      )}
-      <AnimatePresence>
-        {isDropdown && (
-          <motion.div
-            initial={{ height: 0, opacity: 0, width: 0 }}
-            animate={{ height: "auto", opacity: 1, width: "auto" }}
-            exit={{ height: 0, opacity: 0, width: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className={`${isDropdown ? "block" : "hidden"}`}
-          >
-            <motion.p
-              initial={{ opacity: 0, width: "full" }}
-              animate={{ opacity: 1, width: "full" }}
-              exit={{ opacity: 0, width: "full" }}
-              transition={{
-                delay: 0.4, // Delay only when opening
-                duration: 0.4,
-                ease: "easeInOut",
-              }}
-              className="text-lg text-mutedSpaceblue font-normal py-2 px-2 items-center justify-center"
+            <p
+              className="text-center w-3/4 align-bottom text-wrap text-navyblue text-lg font-normal
+            h-20 mb-8 md:block md:text-lg md:9/12"
             >
-              {detalhes}
-            </motion.p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+              {subtitulo}
+            </p>
+          </div>
+
+          {/* This is the back face of the card */}
+          <div className="absolute rotate-y-180 w-full h-full bg-navyblue rounded-lg overflow-hidden p-10 text-white backface-hidden">
+            <div>
+              <span className="font-bold text-2xl text-green">{tipo}</span>
+            </div>
+
+            <span className="text-sm text-justify font-normal text-wrap text-white">
+              Texto aqui!!!
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
