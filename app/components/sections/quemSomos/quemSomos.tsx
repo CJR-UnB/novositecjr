@@ -8,7 +8,7 @@ const QuemSomos: React.FC = () => {
       id="quem-somos"
       style={{}}
     >
-      <div className="absolute right-0 transform translate-y-96 md:translate-y-60 lg:-translate-y-20">
+      <div className="absolute right-0 transform -translate-y-10">
         <svg
           width="366"
           height="517"
@@ -29,6 +29,14 @@ const QuemSomos: React.FC = () => {
         </svg>
       </div>
       <div className="flex flex-col items-center lg:flex-row justify-around px-14  z-50">
+        <div className="z-30 p-5">
+          <Image
+            src="/lagartixa.png"
+            width={400}
+            height={400}
+            alt="foto do time"
+          />
+        </div>
         <div className="mb-10 mr-5 z-40">
           <h1 className="text-3xl w-full max-w-lg font-bold text-spaceblue">
             Algum título legal
@@ -44,14 +52,6 @@ const QuemSomos: React.FC = () => {
             pequeno
           </p>
           <Orcamento />
-        </div>
-        <div className="z-30 p-5">
-          <Image
-            src="/lagartixa.png"
-            width={400}
-            height={400}
-            alt="foto do time"
-          />
         </div>
       </div>
     </section>

@@ -3,9 +3,10 @@ import { useEffect, useRef, useState } from "react";
 interface CounterProps {
   duration: number;
   target: number;
+  projetos?: boolean;
 }
 
-const Counter = ({ duration, target }: CounterProps) => {
+const Counter = ({ duration, target, projetos }: CounterProps) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const counterRef = useRef(null);
@@ -47,6 +48,7 @@ const Counter = ({ duration, target }: CounterProps) => {
 
   return (
     <div className="text-5xl font-bold mb-4" ref={counterRef}>
+      {projetos ? "+" : ""}
       {isVisible ? count : ""}
     </div>
   );
