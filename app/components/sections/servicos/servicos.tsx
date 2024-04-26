@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { PageBreak } from "../../SVGicons";
-import ServiceBox from "./containerServico";
+import CardServico from "./cardServico";
 
 const sistemasWebIcon = <FontAwesomeIcon icon={faCode} />;
 const consultoriaIcon = <FontAwesomeIcon icon={faMugSaucer} />;
@@ -29,41 +29,41 @@ const Servicos: React.FC = () => {
         </p>
         <div className="flex justify-center items-center mt-10">
           <div className="grid md:grid-cols-3 gap-6 px-10 w-fit">
-            <ServiceBox
+            <CardServico
               icone={sistemasWebIcon}
               tipo="Sistemas Web"
               subtitulo="Desenvolvimentos de sistemas web personalizados para atender as necessidades do cliente"
-              temDetalhes={true}
-              detalhes="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus, purus at aliquam placerat, elit risus faucibus ante, id vehicula magna quam elementum orci. Phasellus facilisis eu dolor ut ultrices. Maecenas vitae tempor tortor. Etiam mattis justo eget pellentesque scelerisque. Integer placerat dignissim odio quis sagittis. Pellentesque sit amet lacinia erat. In hac habitasse platea dictumst."
+              sub2="aqui vem mais explicações sobre o serviço"
             />
-            <ServiceBox
+            <CardServico
               icone={consultoriaIcon}
               tipo="Consultoria"
               subtitulo="Prestação de consultas profissionais visando atender as necessidades do cliente"
-              temDetalhes={true}
-              detalhes="Esse é um exemplo para colocar detalhes"
+              sub2="aqui vem mais explicações sobre o serviço"
             />
-            <ServiceBox
+            <CardServico
               icone={PWAIcon}
               tipo="PWA"
               subtitulo="Desenvolvimento de Progressive Web Apps para melhorar a experiência do usuário"
-              temDetalhes={true}
+              sub2="aqui vem mais explicações sobre o serviço"
             />
-            <ServiceBox
+            <CardServico
               icone={ecommerceIcon}
               tipo="E-Commerce"
               subtitulo="Desenvolvimento de lojas virtuais para venda de produtos e serviços"
+              sub2="aqui vem mais explicações sobre o serviço"
             />
-            <ServiceBox
+            <CardServico
               icone={appIcon}
               tipo="Aplicativo Móvel"
               subtitulo="Desenvolvimento de aplicativos móveis para Android e iOS"
-              temDetalhes={true}
+              sub2="aqui vem mais explicações sobre o serviço"
             />
-            <ServiceBox
+            <CardServico
               icone={siteInstitucionalIcon}
               tipo="Site Institucional"
               subtitulo="Desenvolvimento de sites institucionais para apresentação de empresas e serviços"
+              sub2="aqui vem mais explicações sobre o serviço"
             />
           </div>
         </div>

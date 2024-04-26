@@ -718,8 +718,8 @@ const QuemSomosDesign: React.FC<CustomIconProps> = ({ className }) => {
 };
 export {
   ArrowSquare,
-  Calendar,
   CJR,
+  Calendar,
   Code,
   DarkCJR,
   DarkMenu,
