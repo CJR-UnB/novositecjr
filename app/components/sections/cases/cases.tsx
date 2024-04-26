@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { ArrowSquare, PageBreak } from "../../SVGicons";
+import { PageBreak } from "../../SVGicons";
 import CasesCarousel from "./casesCarousel";
 
 const Cases: React.FC = () => {
@@ -14,7 +14,7 @@ const Cases: React.FC = () => {
   });
 
   return (
-    <motion.section className="px-14 mt-20" id="nossos-cases">
+    <motion.section className="px-5 mt-20" id="nossos-cases">
       <h1 className="text-center text-spaceblue font-bold  text-3xl md:text-4xl">
         NOSSO PORTFOLIO
       </h1>
@@ -28,12 +28,12 @@ const Cases: React.FC = () => {
             y: isVisible ? -50 : 0,
           }}
           transition={{ duration: 1 }}
-          className="mr-0 lg:mr-12 mb-10 lg:mb-0 mt-10"
+          className="mr-0 lg:mr-12 mb-10 lg:mb-0 mt-10 items-center flex flex-col lg:items-start"
         >
-          <h1 className="text-2xl w-full max-w-lg font-bold text-spaceblue">
+          <h1 className="text-2xl w-full lg:max-w-lg max-w-full font-bold text-spaceblue">
             Desenvolvidos por pessoas que entendem sua dor, e entregam solução.
           </h1>
-          <p className="pt-[15px] leading-snug text-lg w-full max-w-lg px-0 text-mutedSpaceblue">
+          <p className="pt-[15px] leading-snug text-lg w-full lg:max-w-lg max-w-full px-0 text-mutedSpaceblue">
             Acreditamos firmemente que o verdadeiro valor de uma empresa reside
             em sua capacidade de compreender as dores do cliente e fornecer
             soluções eficazes e personalizadas. Cada caso apresentado é o
@@ -41,7 +41,7 @@ const Cases: React.FC = () => {
             por indivíduos apaixonados e experientes, que se dedicam a entender
             as necessidades únicas de cada cliente.
           </p>
-          <Link href="/portfolio" target="_blank">
+          <Link href="/portfolio">
             <motion.button
               className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10"
               whileHover={{ scale: 1.15 }}
@@ -50,7 +50,6 @@ const Cases: React.FC = () => {
               whileTap={{ scale: 1 }}
             >
               <h1 className="mr-2">Conheça nosso portfolio</h1>
-              <ArrowSquare />
             </motion.button>
           </Link>
         </motion.div>
