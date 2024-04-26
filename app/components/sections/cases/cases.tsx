@@ -30,10 +30,10 @@ const Cases: React.FC = () => {
           transition={{ duration: 1 }}
           className="mr-0 lg:mr-12 mb-10 lg:mb-0 mt-10 items-center flex flex-col lg:items-start"
         >
-          <h1 className="text-2xl w-full lg:max-w-lg max-w-full font-bold text-spaceblue">
+          <h1 className="text-3xl w-full lg:max-w-lg max-w-full font-bold text-spaceblue">
             Desenvolvidos por pessoas que entendem sua dor, e entregam solução.
           </h1>
-          <p className="pt-[15px] leading-snug text-lg w-full lg:max-w-lg max-w-full px-0 text-mutedSpaceblue">
+          <p className="pt-[15px] leading-snug text-xl w-full lg:max-w-lg max-w-full px-0 text-mutedSpaceblue">
             Acreditamos firmemente que o verdadeiro valor de uma empresa reside
             em sua capacidade de compreender as dores do cliente e fornecer
             soluções eficazes e personalizadas. Cada caso apresentado é o

@@ -40,9 +40,9 @@ const QuemSomos: React.FC = () => {
         </div>
         <div className="mb-10 mr-5 z-40 flex flex-col lg:items-start items-center">
           <h1 className="text-3xl w-full text-center lg:text-start max-w-2xl font-bold text-spaceblue">
-            Há {functioningYears} transformando ideias em soluções
+            Há {functioningYears} anos transformando ideias em soluções
           </h1>
-          <p className="pt-[15px] text-lg text-mutedSpaceblue leading-snug w-full max-w-3xl mb-8">
+          <p className="pt-[15px] text-xl text-mutedSpaceblue leading-snug w-full max-w-3xl mb-8">
             A CJR é uma empresa sem fins lucrativos fundada em 1999 por alunos
             da UnB com o objetivo de proporcionar um abiente de aprendizado,
             empreendedorismo e colaborativismo para universitários de cursos de
