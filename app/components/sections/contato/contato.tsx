@@ -30,7 +30,7 @@ const Contato: React.FC = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: isVisible ? 1 : 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.2 }}
               className="hover:scale-110 transition-all duration-300 my-6"
             >
               <a href="" target="_blank" className="flex items-center">
@@ -41,7 +41,7 @@ const Contato: React.FC = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: isVisible ? 1 : 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.2 }}
               className="hover:scale-110 transition-all duration-300 my-6"
             >
               <a

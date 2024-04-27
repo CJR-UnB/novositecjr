@@ -36,44 +36,6 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
   {
     /* useEffect para detectar em que sessão a página está */
   }
-  useEffect(() => {
-    const handleScroll = () => {
-      const sectionIds = [
-        "quem-somos",
-        "nossos-cases",
-        "servicos",
-        "nosso-time",
-        "depoimentos",
-        "contato",
-      ];
-
-      let currentActiveSection = "";
-      let currentScrollPosition = window.scrollY + window.innerHeight / 2; // Adjust this value based on where you consider the section to be "active"
-
-      sectionIds.forEach((id) => {
-        const section = document.getElementById(id);
-        if (section) {
-          const sectionPosition =
-            section.getBoundingClientRect().top + window.scrollY;
-          const sectionHeight = section.offsetHeight;
-          // Check if the section is in the viewport and more than half of it is visible
-          if (
-            sectionPosition <= currentScrollPosition &&
-            sectionPosition + sectionHeight >= currentScrollPosition
-          ) {
-            currentActiveSection = id;
-          }
-        }
-      });
-
-      setActiveSection(currentActiveSection);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   {
     /* useEffect para detectar se a página está no topo para mudar a cor do header*/
@@ -108,8 +70,21 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
         </button>
 
         <div className="self-center text-2xl mr-10 space-x-16 flex">
+          <button className="group transition duration-300">
+            <a href="https://tally.so/r/3jeXOJ" target="_blank">
+              Fazer um orçamento
+            </a>
+            <span
+              className={`max-w-0 block group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen`}
+            ></span>
+          </button>
           <Link href="/" className="group transition duration-300">
-            Voltar para o início
+            <img
+              src={
+                isScrolled ? "/arrow-left-dark.svg" : "/arrow-left-white.svg"
+              }
+              alt=""
+            />
             <span
               className={`max-w-0 block group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen`}
             ></span>

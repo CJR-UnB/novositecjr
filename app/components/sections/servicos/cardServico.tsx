@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-export default function ServiceBox({
-  icone,
-  tipo,
-  sub2,
-  subtitulo,
-}: {
+interface cardServicoProps {
   icone: React.ReactNode;
   tipo: string;
   sub2: string;
   subtitulo: string;
-}) {
+}
+
+const CardServico: React.FC<cardServicoProps> = ({
+  icone,
+  tipo,
+  subtitulo,
+  sub2,
+}) => {
   const [isDropdown, setIsDropdown] = useState(false);
 
   const [isVisible, setIsVisible] = useState(false);
@@ -52,11 +54,13 @@ export default function ServiceBox({
             </div>
 
             <span className="text-sm text-justify font-normal text-wrap text-white">
-              Texto aqui!!!
+              {sub2}
             </span>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default CardServico;

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Cases from "./components/sections/cases/cases";
 import Contador from "./components/sections/contador/contador";
-import Contato from "./components/sections/contato/contato";
 import Depoimentos from "./components/sections/depoimentos/depoimentos";
 import Footer from "./components/sections/footer";
 import Header from "./components/sections/header/header";
@@ -13,6 +12,7 @@ import OndeEstamos from "./components/sections/onde estamos/OndeEstamos";
 import Parceiros from "./components/sections/parceiros";
 import QuemSomos from "./components/sections/quemSomos/quemSomos";
 import Servicos from "./components/sections/servicos/servicos";
+import Contato from "./components/sections/contato/contato";
 {
   /* As cores principais que combinamos no figma já estão gravadas nos arquivos do projeto com os seguintes nomes:
     aquagreen: "#27BD80",
