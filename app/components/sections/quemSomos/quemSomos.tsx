@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowSquare } from "../../SVGicons";
+import Orcamento from "../../botaoOrcamento";
 
 const QuemSomos: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -52,18 +50,7 @@ const QuemSomos: React.FC = () => {
             Algum texto maior e mais legal falando sobre a gente né poxa tá
             pequeno
           </p>
-          <Link href="https://tally.so/r/3jeXOJ" target="_blank">
-            <motion.button
-              className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10"
-              whileHover={{ scale: 1.15 }}
-              onHoverStart={(e) => {}}
-              onHoverEnd={(e) => {}}
-              whileTap={{ scale: 1 }}
-            >
-              <h1 className="mr-2">Conheça nosso portfolio</h1>
-              <ArrowSquare />
-            </motion.button>
-          </Link>
+          <Orcamento className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10" />
         </div>
       </div>
     </section>
