@@ -1,3 +1,4 @@
+import axios from "axios";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { ArrowSquare } from "./SVGicons";
@@ -8,29 +9,44 @@ interface OrcamentoProps {
 
 const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [phone, setPhone] = useState("");
+  const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    telefone: "",
+    conheceuPor: "",
+    descricaoProjeto: "",
+  });
 
   const toggleModal = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsModalOpen(!isModalOpen);
-    if (!isModalOpen) {
-      setPhone(""); // Clear phone number when modal is opened
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("form data:", formData);
+    try {
+      const response = await axios.post(
+        "https://hook.us1.make.com/w1shsh8qtkjjaehtjpj6k9lqrhgbfh28",
+        formData
+      );
+      console.log("webhook response:", response.data);
+      setIsModalOpen(false);
+    } catch (error) {
+      console.error("webhook error:", error);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
-    const formattedValue = formatPhone(inputValue); // Format phone number
-    setPhone(formattedValue);
-  };
-
-  const formatPhone = (value: string) => {
-    // Format phone number as (xx) xxxxx-xxxx
-    const formattedValue = value.replace(
-      /^(\d{0,2})(\d{0,5})(\d{0,4})/,
-      "($1) $2-$3"
-    );
-    return formattedValue.trim(); // Remove leading/trailing spaces
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
   return (
@@ -45,7 +61,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
           whileHover={{ scale: 1.15 }}
           whileTap={{ scale: 1 }}
         >
-          <h1 className="mr-2">Faça um diagnóstico grátis</h1>
+          <h1 className="mr-2">Faça seu diagnóstico gratuito</h1>
           <ArrowSquare />
         </motion.button>
       </a>
@@ -62,49 +78,59 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
             onClick={(e: React.MouseEvent<HTMLAnchorElement>) => toggleModal(e)}
           ></div>
           <div className="bg-white text-black p-10 rounded-md z-10">
-            {/* Modal content here */}
             <div className="mb-5">
-              <h1>Atendimento CJR</h1>
+              <div className="flex justify-between">
+                <h1>Atendimento CJR</h1>
+                <button
+                  onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                    toggleModal(e)
+                  }
+                >
+                  Close Modal
+                </button>
+              </div>
               <h2>Tire seu projeto do papel</h2>
               <h3>
                 Por favor, responda esse pequeno questionário para podermos
                 entrar em contato!
               </h3>
             </div>
-            <form action="submit" className="flex flex-col">
+            <form onSubmit={handleSubmit} className="flex flex-col">
               Qual é o seu nome?
               <input
                 type="text"
                 required
                 autoFocus
                 placeholder="Coloque seu nome aqui..."
+                className="my-2"
+                name="nome"
+                onChange={handleChange}
               />
               Qual é o seu email?
-              <input type="email" placeholder="seu.email@exemplo.com" />
+              <input
+                type="email"
+                placeholder="seu.email@exemplo.com"
+                required
+                className="my-2"
+                name="email"
+                onChange={handleChange}
+              />
               Qual é o seu telefone?
               <input
                 type="tel"
-                value={phone}
-                onChange={handleChange}
                 placeholder="(xx) xxxxx-xxxx"
-                maxLength={15} // Limit input to 15 characters
-                pattern="[0-9]*" // Only allow numeric input
-                inputMode="numeric" // Open numeric keyboard on mobile
+                className="my-2"
+                name="telefone"
+                pattern="[0-9]*"
+                inputMode="numeric"
+                onChange={handleChange}
               />
-              Se for para uma empresa, qual seria o nome dela?
-              <input type="text" />
-              Qual é o seu tipo de projeto?
-              <select name="tipo" id="">
-                <option value="" disabled selected>
-                  Escolha uma opção
-                </option>
-                <option value="site">Site</option>
-                <option value="app">Aplicativo</option>
-                <option value="sistema">Sistema</option>
-                <option value="consultoria">Consultoria</option>
-              </select>
               Como você conheceu a CJR?
-              <select name="conheceu por" id="">
+              <select
+                name="conheceuPor"
+                className="my-2"
+                onChange={handleChange}
+              >
                 <option value="" disabled selected>
                   Escolha uma opção
                 </option>
@@ -116,25 +142,17 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               </select>
               Conte para nós sobre do que se trata o seu projeto.
               <textarea
-                name=""
-                id=""
+                name="descricaoProjeto"
                 rows={3} // Set number of visible rows
                 style={{ resize: "vertical" }} // Allow vertical resizing
                 placeholder="Descreva seu projeto aqui..."
+                className="my-2"
+                onChange={handleChange}
               ></textarea>
-              <input
-                type="submit"
-                value="submit"
-                className="hover:cursor-pointer"
-              />
+              <button type="submit" className="hover:cursor-pointer my-2">
+                submit
+              </button>
             </form>
-            <button
-              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                toggleModal(e)
-              }
-            >
-              Close Modal
-            </button>
           </div>
         </motion.div>
       )}
