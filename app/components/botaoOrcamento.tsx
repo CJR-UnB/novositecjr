@@ -1,5 +1,5 @@
 import axios from "axios";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { ArrowSquare } from "./SVGicons";
 
@@ -9,7 +9,7 @@ interface OrcamentoProps {
 
 const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false); // New state variable
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const [formData, setFormData] = useState({
     nome: "",
@@ -29,7 +29,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
     console.log("form data:", formData);
     try {
       const response = await axios.post(
-        "https://hook.us1.make.com/w1shsh8qtkjjaehtjpj6k9lqrhgbfh28",
+        "https://hook.us1.make.com/kpqx58untrlts3fd1u8f83qj3ab7u4ev",
         formData
       );
       console.log("webhook response:", response.data);
@@ -67,134 +67,179 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
           <ArrowSquare />
         </motion.button>
       </a>
-      {isModalOpen && (
-        <motion.div
-          className="fixed inset-0 flex items-center justify-center z-50 transition-all duration-300"
-          initial={{ opacity: 0, scale: 1 }} // Initial animation properties
-          animate={{ opacity: 1, scale: 1 }} // Animation properties to animate to
-          exit={{ opacity: 0, scale: 0.8 }} // Exit animation properties
-          transition={{ duration: 0.3 }} // Animation duration
-        >
-          <div
-            className="absolute inset-0 bg-gray-900 opacity-50"
-            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-              isSubmitted ? setIsSubmitted(false) : "";
-              toggleModal(e);
-            }}
-          ></div>
-          <motion.div className="bg-white text-black p-10 rounded-xl z-10 flex flex-col">
-            <div className="mb-5">
-              <div className="flex justify-between">
-                <h1 className="text-4xl text-spaceblue font-semibold">
-                  Atendimento CJR
-                </h1>
-                <button
-                  className={isSubmitted ? "hidden" : "flex"}
-                  onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                    toggleModal(e)
-                  }
+      <AnimatePresence>
+        {isModalOpen && (
+          <div className="fixed inset-0 flex items-center justify-center z-50">
+            <div
+              className="absolute inset-0 bg-gray-900 opacity-50"
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                isSubmitted ? setIsSubmitted(false) : "";
+                toggleModal(e);
+              }}
+            ></div>
+            <motion.div
+              className="bg-white text-black py-5 px-10 rounded-xl z-10 flex flex-col"
+              initial={{ opacity: 0, scale: 1 }} // Initial animation properties
+              animate={{ opacity: 1, scale: 1, scaleX: 1 }} // Animation properties to animate to
+              exit={{ opacity: 0 }} // Exit animation properties
+              transition={{ ease: "easeOut", duration: 0.2 }} // Animation duration
+              layout
+              key="modal"
+            >
+              <motion.div className="flex flex-col" layout>
+                <svg
+                  width="90"
+                  height="90"
+                  viewBox="0 0 32 31"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="self-center mb-5"
                 >
-                  Close Modal
-                </button>
-              </div>
-              <h2 className="text-xl mb-5  text-mutedSpaceblue font-medium">
-                Tire seu projeto do papel
-              </h2>
-              <h3 className="text-spaceblue text-lg">
-                {isSubmitted
-                  ? "Obrigado pela resposta, entraremos em contato o mais rápido possível!"
-                  : "Por favor, responda esse pequeno questionário para podermos entrar em contato!"}
-              </h3>
-            </div>
-            <motion.button
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 1 }}
-              className={`hover:cursor-pointer my-2 bg-green/70 p-3 w-fit self-center rounded-lg font-semibold text-lg ${
-                isSubmitted ? "flex" : "hidden"
-              }`}
-              onClick={() => {
-                setIsModalOpen(false);
-                setIsSubmitted(false);
-              }} // Set isSubmitted to true upon button click
-            >
-              Voltar para o site
-            </motion.button>
-            <motion.form
-              initial={{ opacity: 0, scale: 0.8 }} // Initial animation properties
-              animate={{ opacity: 1, scale: 1 }} // Animation properties to animate to
-              exit={{ opacity: 0, scale: 0.8 }} // Exit animation properties
-              transition={{ duration: 0.3 }} // Animation duration
-              onSubmit={handleSubmit}
-              className={`flex-col text-md font-semibold text-spaceblue ${
-                isSubmitted ? "hidden" : "flex"
-              }`}
-            >
-              Qual é o seu nome?
-              <input
-                type="text"
-                required
-                autoFocus
-                placeholder="Coloque seu nome aqui..."
-                className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
-                name="nome"
-                onChange={handleChange}
-              />
-              Qual é o seu email?
-              <input
-                type="email"
-                placeholder="seu.email@exemplo.com"
-                required
-                className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
-                name="email"
-                onChange={handleChange}
-              />
-              Qual é o seu telefone?
-              <input
-                type="tel"
-                placeholder="ex: 21 912345678"
-                className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
-                name="telefone"
-                pattern="[0-9]*"
-                inputMode="numeric"
-                onChange={handleChange}
-              />
-              Como você conheceu a CJR?
-              <select
-                name="conheceuPor"
-                className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
-                onChange={handleChange}
-              >
-                <option value="" disabled selected>
-                  Escolha uma opção
-                </option>
-                <option value="instagram">Instagram</option>
-                <option value="facebook">Facebook</option>
-                <option value="linkedin">Linkedin</option>
-                <option value="google">Google</option>
-                <option value="outro">Outro</option>
-              </select>
-              Conte para nós sobre do que se trata o seu projeto.
-              <textarea
-                name="descricaoProjeto"
-                rows={3} // Set number of visible rows
-                style={{ resize: "vertical" }} // Allow vertical resizing
-                placeholder="Descreva seu projeto aqui..."
-                className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
-                onChange={handleChange}
-              ></textarea>
+                  <ellipse cx="16" cy="15.5" rx="16" ry="15.5" fill="#001830" />
+                  <g clip-path="url(#clip0_5287_26)">
+                    <path
+                      d="M17.7734 21.1277H11.411V28H17.8123V21.1581C17.7978 21.1502 17.7847 21.14 17.7734 21.1277Z"
+                      fill="#27BD80"
+                    />
+                    <path
+                      d="M20.9223 10.8855L17.7864 14.2529V21.1277L21 17.7154V10.8564L20.9223 10.8855Z"
+                      fill="#F5F5F5"
+                    />
+                    <path
+                      d="M20.7347 4H14.3333V10.8564H20.7347V4Z"
+                      fill="#27BD80"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_5287_26">
+                      <rect
+                        width="10"
+                        height="24"
+                        fill="white"
+                        transform="translate(11 4)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <motion.div layout className="flex justify-between">
+                  <h1 className="text-4xl text-spaceblue font-semibold">
+                    Atendimento CJR
+                  </h1>
+                  <button
+                    className={isSubmitted ? "hidden" : "flex"}
+                    onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                      toggleModal(e)
+                    }
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="#000000"
+                      viewBox="0 0 256 256"
+                    >
+                      <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+                    </svg>
+                  </button>
+                </motion.div>
+                <h2 className="text-xl mb-5  text-mutedSpaceblue font-medium">
+                  Tire seu projeto do papel
+                </h2>
+                <h3
+                  className={`text-spaceblue text-lg ${
+                    isSubmitted ? "w-full max-w-md " : ""
+                  }`}
+                >
+                  {isSubmitted
+                    ? "Obrigado pela resposta, entraremos em contato o mais rápido possível!"
+                    : "Por favor, responda esse pequeno questionário para podermos entrar em contato!"}
+                </h3>
+              </motion.div>
               <motion.button
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 1 }}
-                type="submit"
-                className="hover:cursor-pointer my-2 bg-green/70 p-3 w-fit self-center rounded-lg font-semibold text-lg "
-                onClick={() => setIsSubmitted(true)} // Set isSubmitted to true upon button click
+                className={`hover:cursor-pointer my-2 bg-green/70 p-3 w-fit self-center rounded-lg font-semibold text-lg ${
+                  isSubmitted ? "flex" : "hidden"
+                }`}
+                onClick={() => {
+                  setIsModalOpen(false);
+                  setIsSubmitted(false);
+                }} // Set isSubmitted to true upon button click
               >
-                Enviar proposta
+                Voltar para o site
               </motion.button>
-            </motion.form>
-          </motion.div>
-        </motion.div>
-      )}
+              <motion.form
+                onSubmit={handleSubmit}
+                className={`flex-col text-md font-semibold text-spaceblue ${
+                  isSubmitted ? "hidden" : "flex"
+                }`}
+              >
+                Qual é o seu nome?
+                <input
+                  type="text"
+                  required
+                  autoFocus
+                  placeholder="Coloque seu nome aqui..."
+                  className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
+                  name="nome"
+                  onChange={handleChange}
+                />
+                Qual é o seu email?
+                <input
+                  type="email"
+                  placeholder="seu.email@exemplo.com"
+                  required
+                  className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
+                  name="email"
+                  onChange={handleChange}
+                />
+                Qual é o seu telefone?
+                <input
+                  type="tel"
+                  placeholder="ex: 21 912345678"
+                  className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
+                  name="telefone"
+                  pattern="[0-9]*"
+                  inputMode="numeric"
+                  onChange={handleChange}
+                />
+                Como você conheceu a CJR?
+                <select
+                  name="conheceuPor"
+                  className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
+                  onChange={handleChange}
+                >
+                  <option value="" disabled selected>
+                    Escolha uma opção
+                  </option>
+                  <option value="instagram">Instagram</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="linkedin">Linkedin</option>
+                  <option value="google">Google</option>
+                  <option value="outro">Outro</option>
+                </select>
+                Conte para nós sobre do que se trata o seu projeto.
+                <textarea
+                  name="descricaoProjeto"
+                  rows={3} // Set number of visible rows
+                  style={{ resize: "vertical" }} // Allow vertical resizing
+                  placeholder="Descreva seu projeto aqui..."
+                  className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
+                  onChange={handleChange}
+                ></textarea>
+                <motion.button
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 1 }}
+                  type="submit"
+                  className="hover:cursor-pointer my-2 bg-green/70 p-3 w-fit self-center rounded-lg font-semibold text-lg "
+                >
+                  Enviar proposta
+                </motion.button>
+              </motion.form>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

@@ -113,7 +113,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
   return (
     <>
       <header
-        className={`sticky top-0 md:justify-between flex px-2 z-50 transition-colors duration-250 ${
+        className={`sticky top-0 md:justify-between flex px-2 z-40 transition-colors duration-250 ${
           isScrolled
             ? "bg-white bg-opacity-70 text-spaceblue shadow-lg opacity-90 backdrop-blur-md"
             : "bg-spaceblue text-gray-300"

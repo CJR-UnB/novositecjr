@@ -36,7 +36,7 @@ const QuemSomos: React.FC = () => {
         <div className="z-30 p-5">
           <Image src="/TIME.png" width={800} height={800} alt="foto do time" />
         </div>
-        <div className="mb-10 mr-5 z-40 flex flex-col lg:items-start items-center">
+        <div className="mb-10 mr-5 z-30 flex flex-col lg:items-start items-center">
           <h1 className="text-3xl w-full text-center lg:text-start max-w-2xl font-bold text-spaceblue">
             Há {functioningYears} anos transformando ideias em soluções
           </h1>

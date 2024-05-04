@@ -20,24 +20,24 @@ const Contador: React.FC = () => {
 
   return (
     <section className="">
-      <motion.div ref={ref} className="w-full h-fit bg-aquagreen mb-4 z-40">
+      <motion.div ref={ref} className="w-full h-fit bg-aquagreen mb-4 z-30">
         <div className="flex flex-col md:flex-row justify-around p-5 text-2xl font-semibold">
-          <div className="text-center z-40">
+          <div className="text-center z-30">
             <Calendar />
             <Counter duration={60} target={functioningYears} />
             <h1>Anos de funcionamento</h1>
           </div>
-          <div className="text-center z-40">
+          <div className="text-center z-30">
             <Code />
             <Counter projetos={true} duration={20} target={60} />
             <h1>Projetos finalizados</h1>
           </div>
-          <div className="text-center z-40">
+          <div className="text-center z-30">
             <Members />
             <Counter duration={20} target={activeMembers} />
             <h1>Membros ativos</h1>
           </div>
-          <div className="text-center z-40">
+          <div className="text-center z-30">
             <Face />
             <Counter duration={10} target={100} />
             <h1>Nota de satisfação</h1>
