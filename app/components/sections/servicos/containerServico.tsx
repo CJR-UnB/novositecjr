@@ -44,12 +44,12 @@ export default function ServiceBox({
           </div>
 
           {/* This is the back face of the card */}
-          <div className="absolute rotate-y-180 w-full h-full max-w-96 min-w-16 bg-navyblue rounded-lg overflow-hidden p-6 text-white backface-hidden">
+          <div className="absolute rotate-y-180 w-full h-full max-w-96 min-w-16 bg-navyblue rounded-md leading-4 overflow-hidden p-6 text-white backface-hidden">
             {/* <div>
               <span className="font-bold text-2xl text-green">{tipo}</span>
             </div> */}
 
-            <span className="text-xs leading-3 text-justify font-normal text-pretty text-white">
+            <span className="self-center flex text-sm text-justify font-normal text-pretty text-white">
               {descricao_back}
             </span>
           </div>
