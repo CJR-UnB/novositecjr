@@ -1,7 +1,5 @@
-import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowSquare } from "../../SVGicons";
+import Orcamento from "../../botaoOrcamento";
 
 const QuemSomos: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -14,7 +12,7 @@ const QuemSomos: React.FC = () => {
       id="quem-somos"
       style={{}}
     >
-      <div className="absolute right-0 transform -translate-y-10">
+      <div className="absolute right-0 transform -translate-y-10 z-10">
         <svg
           width="366"
           height="517"
@@ -34,11 +32,11 @@ const QuemSomos: React.FC = () => {
           />
         </svg>
       </div>
-      <div className="flex flex-col items-center lg:flex-row justify-around px-5  z-50">
-        <div className="z-30 p-5">
+      <div className="flex flex-col items-center lg:flex-row justify-around px-5">
+        <div className="z-20 p-5">
           <Image src="/TIME.png" width={800} height={800} alt="foto do time" />
         </div>
-        <div className="mb-10 mr-5 z-40 flex flex-col lg:items-start items-center">
+        <div className="mb-10 mr-5 flex flex-col lg:items-start items-center z-20">
           <h1 className="text-3xl w-full text-center lg:text-start max-w-2xl font-bold text-spaceblue">
             Há {functioningYears} anos transformando ideias em soluções
           </h1>
@@ -52,18 +50,7 @@ const QuemSomos: React.FC = () => {
             Algum texto maior e mais legal falando sobre a gente né poxa tá
             pequeno
           </p>
-          <Link href="https://tally.so/r/3jeXOJ" target="_blank">
-            <motion.button
-              className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10"
-              whileHover={{ scale: 1.15 }}
-              onHoverStart={(e) => {}}
-              onHoverEnd={(e) => {}}
-              whileTap={{ scale: 1 }}
-            >
-              <h1 className="mr-2">Conheça nosso portfolio</h1>
-              <ArrowSquare />
-            </motion.button>
-          </Link>
+          <Orcamento className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10" />
         </div>
       </div>
     </section>

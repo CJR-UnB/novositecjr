@@ -13,15 +13,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const [activeSection, setActiveSection] = useState("");
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   {
     /* função para fazer a página voltar para o topo */
@@ -55,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
   return (
     <>
       <header
-        className={`sticky top-0 justify-between flex px-2 z-50 transition-colors duration-250 ${
+        className={`sticky top-0 justify-between flex px-2 z-50 transition-colors duration-250 items-center ${
           isScrolled
             ? "bg-white bg-opacity-70 text-spaceblue shadow-lg opacity-90 backdrop-blur-md"
             : "bg-spaceblue text-gray-300"
@@ -64,32 +56,20 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
       >
         <button
           onClick={() => scrollTop("homepage")}
-          className="scale-125 self-center py-5 ml-10"
+          className="scale-125 py-5 ml-10"
         >
           {isScrolled ? <DarkCJR /> : <CJR />}
         </button>
 
-        <div className="self-center text-2xl mr-10 space-x-16 flex">
-          <button className="group transition duration-300">
-            <a href="https://tally.so/r/3jeXOJ" target="_blank">
-              Fazer um orçamento
-            </a>
-            <span
-              className={`max-w-0 block group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen`}
-            ></span>
-          </button>
-          <Link href="/" className="group transition duration-300">
-            <img
-              src={
-                isScrolled ? "/arrow-left-dark.svg" : "/arrow-left-white.svg"
-              }
-              alt=""
-            />
-            <span
-              className={`max-w-0 block group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen`}
-            ></span>
-          </Link>
-        </div>
+        <Link href="/" className="group transition duration-300 mr-10">
+          <img
+            src={isScrolled ? "/arrow-left-dark.svg" : "/arrow-left-white.svg"}
+            alt=""
+          />
+          <span
+            className={`max-w-0 block group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen`}
+          ></span>
+        </Link>
       </header>
       <Whatsapp />
     </>

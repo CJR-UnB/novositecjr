@@ -29,15 +29,21 @@ export default function ServiceBox({
             >
               {descricao}
             </p>
+            <span className="text-sm mt-3 text-mutedSpaceblue font-medium md:hidden block">
+              clique para saber mais
+            </span>
+            <span className="text-sm mt-3 text-mutedSpaceblue font-medium md:block hidden">
+              Passe o mouse para saber mais
+            </span>
           </div>
 
           {/* This is the back face of the card */}
-          <div className="absolute rotate-y-180 w-full h-full max-w-96 min-w-16 bg-navyblue rounded-md leading-4 overflow-hidden p-6 text-white backface-hidden">
+          <div className="absolute flex rotate-y-180 w-full h-full max-w-96 min-w-16 bg-white text-navyblue rounded-md leading-6 overflow-hidden p-6 backface-hidden">
             {/* <div>
               <span className="font-bold text-2xl text-green">{tipo}</span>
             </div> */}
 
-            <span className="self-center flex text-sm text-justify font-normal text-pretty text-white">
+            <span className="self-center flex text-[18px] font-normal text-pretty">
               {descricao_back}
             </span>
           </div>
