@@ -78,11 +78,11 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               }}
             ></div>
             <motion.div
-              className="bg-white text-black py-5 px-10 rounded-xl z-10 flex flex-col"
+              className="bg-white text-black py-5 px-10 rounded-xl z-50 flex flex-col"
               initial={{ opacity: 0, scale: 1 }} // Initial animation properties
               animate={{ opacity: 1, scale: 1, scaleX: 1 }} // Animation properties to animate to
               exit={{ opacity: 0 }} // Exit animation properties
-              transition={{ ease: "easeOut", duration: 0.2 }} // Animation duration
+              transition={{ ease: "easeOut", duration: 0.4 }} // Animation duration
               layout
               key="modal"
             >

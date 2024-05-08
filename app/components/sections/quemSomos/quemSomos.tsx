@@ -12,7 +12,7 @@ const QuemSomos: React.FC = () => {
       id="quem-somos"
       style={{}}
     >
-      <div className="absolute right-0 transform -translate-y-10">
+      <div className="absolute right-0 transform -translate-y-10 z-10">
         <svg
           width="366"
           height="517"
@@ -32,11 +32,11 @@ const QuemSomos: React.FC = () => {
           />
         </svg>
       </div>
-      <div className="flex flex-col items-center lg:flex-row justify-around px-5  z-50">
-        <div className="z-30 p-5">
+      <div className="flex flex-col items-center lg:flex-row justify-around px-5">
+        <div className="z-20 p-5">
           <Image src="/TIME.png" width={800} height={800} alt="foto do time" />
         </div>
-        <div className="mb-10 mr-5 z-30 flex flex-col lg:items-start items-center">
+        <div className="mb-10 mr-5 flex flex-col lg:items-start items-center z-20">
           <h1 className="text-3xl w-full text-center lg:text-start max-w-2xl font-bold text-spaceblue">
             Há {functioningYears} anos transformando ideias em soluções
           </h1>
