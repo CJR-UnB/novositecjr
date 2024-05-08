@@ -12,7 +12,7 @@ const NossoTime: React.FC = () => {
 
         <div className="flex flex-wrap justify-around items-center mb-20">
           <Card
-            imageSrc="/user.jpeg"
+            imageSrc="/pejao.jpg"
             nome="Pedro João Reffatti"
             cargo="Presidente"
             linkedin="https://www.linkedin.com/in/pedro-joão-reffatti-pinheiro-b3b77b2aa/"
@@ -20,7 +20,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/daniel.png"
+            imageSrc="/victoria.jpg"
             nome="Victória Rocha"
             cargo="Diretora de Organização Empresarial"
             linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
@@ -28,7 +28,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/lagartixa.png"
+            imageSrc="/luiz.jpg"
             nome="Luiz Augusto Araújo"
             cargo="Diretor Comercial"
             linkedin="https://www.linkedin.com/in/luiz-augusto-araújo-da-silva-09a937213/"
@@ -36,7 +36,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/mulher.png"
+            imageSrc="/leandro.jpg"
             nome="Leandro Kornelius"
             cargo="Diretor de Talentos"
             linkedin="https://www.linkedin.com/in/leandrokornelius/"
@@ -44,7 +44,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/user.jpeg"
+            imageSrc="/rafik.jpg"
             nome="Rodrigo Rafik"
             cargo="Diretor de Publicidade"
             linkedin="https://www.linkedin.com/in/rodrigorafik/"
@@ -52,7 +52,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/lagartixa.png"
+            imageSrc="/luiza.jpg"
             nome="Luiza dos Santos Costa"
             cargo="Diretora de Projetos"
             linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"

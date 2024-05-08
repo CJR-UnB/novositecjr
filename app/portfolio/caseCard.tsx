@@ -18,7 +18,7 @@ const CaseCard: React.FC<CaseCardProps> = ({
   invertido,
 }) => {
   return (
-    <div className="m-5">
+    <div className="m-2">
       <div className="relative flex w-full max-w-[48rem] flex-row rounded-xl bg-white bg-clip-border shadow-md">
         <div
           className={`hidden relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border ${

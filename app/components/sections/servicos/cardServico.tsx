@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { useInView } from "react-intersection-observer";
-
 export default function ServiceBox({
   icone,
   tipo,
@@ -12,15 +9,6 @@ export default function ServiceBox({
   descricao: string;
   descricao_back: string;
 }) {
-  const [isDropdown, setIsDropdown] = useState(false);
-
-  const [isVisible, setIsVisible] = useState(false);
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.5, // Trigger when 50% of the component is visible
-    onChange: setIsVisible, // Update isVisible state when component is in view
-  });
-
   return (
     <div
       className="flex flex-col items-center justify-center border-solid border-2 border-navyblue 

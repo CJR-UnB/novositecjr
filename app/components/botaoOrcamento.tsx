@@ -4,7 +4,11 @@ import { ArrowSquare } from "./SVGicons";
 const Orcamento: React.FC = () => {
   return (
     <>
-      <a href="https://tally.so/r/3jeXOJ" target="_blank">
+      <a
+        href="https://tally.so/r/3jeXOJ"
+        target="_blank"
+        className="flex self-center"
+      >
         <motion.button
           className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10"
           whileHover={{ scale: 1.15 }}
