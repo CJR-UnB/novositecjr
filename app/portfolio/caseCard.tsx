@@ -49,7 +49,7 @@ const CaseCard: React.FC<CaseCardProps> = ({
             </p>
             <a className="" href={link} target="_blank">
               <button
-                className="flex select-none items-center gap-2 rounded-lg py-3 text-center text-xs font-bold uppercase text-aquagreen transition-all hover:bg-aquagreen/10 active:bg-aquagreen/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                className="flex select-none items-center gap-2 rounded-lg p-3 text-center text-xs font-bold uppercase text-aquagreen transition-all hover:bg-aquagreen/10 active:bg-aquagreen/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="button"
               >
                 Veja o resultado

@@ -2,6 +2,7 @@
 
 "use client";
 
+import { PageBreak } from "../components/SVGicons";
 import CaseCard from "./caseCard";
 import Header from "./header";
 
@@ -11,8 +12,18 @@ export default function portfolio() {
   return (
     <main className="text-spaceblue bg-offwhite font-Roboto ">
       <Header navigationItems={navigationItems} />
+      <article>
+        <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl mt-10">
+          Nosso portfolio
+        </h1>
+        <PageBreak />
+        <p className="text-center text-xl text-mutedSpaceblue">
+          Conheça alguns dos projetos que nossa equipe finalizou nos últimos
+          anos.
+        </p>
+      </article>
       <section
-        id="portfolo"
+        id="portfolio"
         className="flex flex-wrap justify-around items-center mt-10 mx-2"
       >
         <CaseCard

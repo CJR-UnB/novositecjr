@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Typewriter from "typewriter-effect";
-import HomePageIcon, { ArrowSquare } from "../SVGicons";
+import HomePageIcon from "../SVGicons";
+import Orcamento from "../botaoOrcamento";
 
 const HomePage: React.FC = () => {
   return (
@@ -65,21 +66,11 @@ const HomePage: React.FC = () => {
             A CJR tem a solução certa para digitalizar sua empresa e escalar
             seus serviços
           </p>
-          <a href="https://tally.so/r/3jeXOJ" target="_blank">
-            <motion.button
-              className="bg-aquagreen rounded-xl mt-5 py-3 px-10 text-black transition-colors duration-300 hover:bg-green ease-linear
+          <Orcamento
+            className="bg-aquagreen rounded-xl mt-5 py-3 px-10 text-black transition-colors duration-300 hover:bg-green ease-linear
            hidden xs:hidden sm:hidden md:hidden lg:flex xl:flex 2xl:flex
            lg:text-xl xl:text-2xl 2xl:text-2xl"
-              whileHover={{ scale: 1.15 }}
-              onHoverStart={(e) => {}}
-              onHoverEnd={(e) => {}}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <h1 className="mr-2">Faça um orçamento grátis</h1>
-              <ArrowSquare />
-            </motion.button>
-          </a>
+          />
         </motion.div>
         <div
           className="

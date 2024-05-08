@@ -10,7 +10,7 @@ const NossoTime: React.FC = () => {
         </h1>
         <PageBreak />
 
-        <div className="flex flex-wrap justify-around items-center mb-20">
+        <div className="flex flex-wrap justify-around items-center mb-20 gap-20">
           <Card
             imageSrc="/pejao.jpg"
             nome="Pedro João Reffatti"

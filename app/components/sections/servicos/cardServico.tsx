@@ -29,6 +29,12 @@ export default function ServiceBox({
             >
               {descricao}
             </p>
+            <span className="text-sm mt-3 text-mutedSpaceblue font-medium md:hidden block">
+              clique para saber mais
+            </span>
+            <span className="text-sm mt-3 text-mutedSpaceblue font-medium md:block hidden">
+              Passe o mouse para saber mais
+            </span>
           </div>
 
           {/* This is the back face of the card */}

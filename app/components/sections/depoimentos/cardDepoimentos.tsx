@@ -16,7 +16,7 @@ const CardDepoimento: React.FC<depoimentosProps> = ({
   titulo,
 }) => {
   return (
-    <div className="flex flex-col px-16 xl:px-96 py-10 max-h-fit items-center justify-center rounded-lg bg-offwhite">
+    <div className="flex flex-col h-full px-16 xl:px-96 py-10 items-center justify-center rounded-lg bg-offwhite">
       <h1 className="text-center text-3xl font-semibold mb-2 text-spaceblue">
         {titulo}
       </h1>
