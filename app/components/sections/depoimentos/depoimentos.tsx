@@ -43,6 +43,14 @@ function Depoimentos() {
             nome="Largato"
             atividade="Ex-presidente da República"
           />
+          <CardDepoimento
+            titulo="Melhores anos da minha vida"
+            texto='"Ser um dos líders da empresa com certeza foi um dos melhores anos da minha vida. Me fez entender que liderar um time não é só passar tarefas. É sobre entender um pouquinho de cada coisa e ajudar a galera a ter um ponto de partida. Depois, as coisas andam, o time acredita naquilo que está fazendo e todo mundo cresce junto.
+            Tudo bem que, além da CJR, eu consegui um estágio, mas isso é o de menos eu acho. A CJR abriu minhas perspectivas e me possibilitou conhecer pessoas incríveis que estão comigo na caminhada até hoje. Enxergo, hoje, a possibilidade de empreender e gerar valor de uma forma diferente, que eu realmente gosto. Me juntei a quatro CJotinhas que também enxergam essa possibilidade e hoje temos uma Startup."'
+            imgSrc={"/arthursilvaCJR.jpg"}
+            nome="Arthur Silva"
+            atividade="Ex-Líder de Talentos da CJR"
+          />
         </Carousel>
       </div>
     </section>
