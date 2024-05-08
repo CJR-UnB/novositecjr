@@ -24,8 +24,8 @@ export default function ServiceBox({
             <p className="text-center p-2 text-spaceblue text-2xl">{tipo}</p>
 
             <p
-              className="text-center align-bottom text-pretty text-navyblue text-base font-normal px-12 md:px-18
-            h-20 mb-8 md:text-base lg:text-lg "
+              className="text-center align-bottom text-pretty text-navyblue text-base font-normal px-12 md:px-12
+            h-20 mb-8 md:text-base lg:text-lg  md:max-lg:mx-8"
             >
               {descricao}
             </p>
@@ -38,12 +38,15 @@ export default function ServiceBox({
           </div>
 
           {/* This is the back face of the card */}
-          <div className="absolute flex rotate-y-180 w-full h-full max-w-96 min-w-16 bg-white text-navyblue rounded-md leading-6 overflow-hidden p-6 backface-hidden">
-            {/* <div>
+          <div className="absolute rotate-y-180 w-full h-full max-w-96 min-w-16 bg-navyblue rounded-md leading-4 overflow-hidden p-6 text-white backface-hidden">
+            <div>
               <span className="font-bold text-2xl text-green">{tipo}</span>
-            </div> */}
+            </div>
 
-            <span className="self-center flex text-[18px] font-normal text-pretty">
+            <span
+              className="self-center flex text-sm text-center font-normal text-pretty text-white pt-1 
+            md:max-lg:px-14 min-[1024px]:px-8 min-[320px]:max-[400px]:px-6 xl:px-4"
+            >
               {descricao_back}
             </span>
           </div>
