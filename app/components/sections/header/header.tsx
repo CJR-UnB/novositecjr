@@ -143,15 +143,6 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
                 active={activeSection === "quem-somos"}
               />
               <NavigationItem
-                key={"nossos-cases"}
-                label={"Cases"}
-                id={"nossos-cases"}
-                onClick={scrollToSection}
-                normal={true}
-                text={true}
-                active={activeSection === "nossos-cases"}
-              />
-              <NavigationItem
                 key={"servicos"}
                 label={"Serviços"}
                 id={"servicos"}
@@ -159,6 +150,15 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
                 normal={true}
                 text={true}
                 active={activeSection === "servicos"}
+              />
+              <NavigationItem
+                key={"nossos-cases"}
+                label={"Cases"}
+                id={"nossos-cases"}
+                onClick={scrollToSection}
+                normal={true}
+                text={true}
+                active={activeSection === "nossos-cases"}
               />
               <NavigationItem
                 key={"nosso-time"}
@@ -197,7 +197,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
           {isScrolled ? <DarkMenu /> : <Menu />}
         </button>
         <div
-          className={`absolute top-20 z-40 left-0 transition-all duration-300 transform origin-top bg-white bg-opacity-70 text-spaceblue shadow-lg opacity-90 backdrop-blur-md ${
+          className={`absolute top-20 left-0 transition-all duration-300 transform origin-top bg-white bg-opacity-70 text-spaceblue shadow-lg opacity-90 backdrop-blur-md ${
             isMenuOpen ? "scale-y-100" : "scale-y-0"
           }`}
           style={{ width: "100vw", height: "100vh" }}
@@ -221,16 +221,16 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               style={"block mb-6"}
             />
             <NavigationItem
-              label="Nossos Cases"
-              id="nossos-cases"
+              label="Serviços e Produtos"
+              id="servicos"
               onClick={scrollToSection}
               normal={false}
               text={true}
               style={"block mb-6"}
             />
             <NavigationItem
-              label="Serviços e Produtos"
-              id="servicos"
+              label="Nossos Cases"
+              id="nossos-cases"
               onClick={scrollToSection}
               normal={false}
               text={true}

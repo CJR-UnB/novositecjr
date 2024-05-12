@@ -50,7 +50,7 @@ const QuemSomos: React.FC = () => {
             Algum texto maior e mais legal falando sobre a gente né poxa tá
             pequeno
           </p>
-          <Orcamento className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10" />
+          <Orcamento className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10  " />
         </div>
       </div>
     </section>
