@@ -30,7 +30,7 @@ const Contato: React.FC = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: isVisible ? 1 : 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.2 }}
               className="hover:scale-110 transition-all duration-300 my-6"
             >
               <a href="" target="_blank" className="flex items-center">
@@ -41,7 +41,7 @@ const Contato: React.FC = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: isVisible ? 1 : 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.2 }}
               className="hover:scale-110 transition-all duration-300 my-6"
             >
               <a
@@ -64,7 +64,7 @@ const Contato: React.FC = () => {
               Faça um orçamento e tire seu projeto do papel
             </h2>
             <div className="self-center lg:self-start px-5">
-              <Orcamento />
+              <Orcamento className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10" />
             </div>
             <div className="mt-14 block lg:hidden">
               <h1 className="text-2xl sm:text-3xl font-medium px-5 mb-2">

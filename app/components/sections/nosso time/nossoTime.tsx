@@ -10,54 +10,54 @@ const NossoTime: React.FC = () => {
         </h1>
         <PageBreak />
 
-        <div className="flex flex-wrap justify-around items-center mb-20">
+        <div className="flex flex-wrap justify-around items-center mb-20 gap-20">
           <Card
-            imageSrc="/user.jpeg"
-            nome="Usuário"
+            imageSrc="/pejao.jpg"
+            nome="Pedro João Reffatti"
             cargo="Presidente"
-            linkedin=""
+            linkedin="https://www.linkedin.com/in/pedro-joão-reffatti-pinheiro-b3b77b2aa/"
             github=""
-            texto="Eu sou simplesmente incrível"
+            backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/daniel.png"
-            nome="Daniel"
-            cargo="Líder imagem e publicidade"
-            linkedin=""
+            imageSrc="/victoria.jpg"
+            nome="Victória Rocha"
+            cargo="Diretora de Organização Empresarial"
+            linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
             github=""
-            texto="Eu nem sou mais líder kkkkkkk"
+            backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/lagartixa.png"
-            nome="Largatixa"
-            cargo="Líder da máfia chinesa"
-            linkedin=""
-            github=""
-            texto="eu amo subir paredes aleatórias"
+            imageSrc="/luiz.jpg"
+            nome="Luiz Augusto Araújo"
+            cargo="Diretor Comercial"
+            linkedin="https://www.linkedin.com/in/luiz-augusto-araújo-da-silva-09a937213/"
+            github="https://github.com/LuizAugus10"
+            backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/mulher.png"
-            nome="Mulher do GTA"
-            cargo="funcionária pública"
-            linkedin=""
-            github=""
-            texto="Fui assaltada"
+            imageSrc="/leandro.jpg"
+            nome="Leandro Kornelius"
+            cargo="Diretor de Talentos"
+            linkedin="https://www.linkedin.com/in/leandrokornelius/"
+            github="https://github.com/LeoKornelius"
+            backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/rafael.png"
-            nome="Rafael"
-            cargo="frontenddev"
-            linkedin=""
-            github=""
-            texto="Eu to ficando mei doido das ideias"
+            imageSrc="/rafik.jpg"
+            nome="Rodrigo Rafik"
+            cargo="Diretor de Publicidade"
+            linkedin="https://www.linkedin.com/in/rodrigorafik/"
+            github="https://github.com/maetsuji"
+            backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/lagartixa.png"
-            nome="Largatixa"
-            cargo="Líder da máfia chinesa"
-            linkedin=""
-            github=""
-            texto="eu amo subir paredes aleatórias"
+            imageSrc="/luiza.jpg"
+            nome="Luiza dos Santos Costa"
+            cargo="Diretora de Projetos"
+            linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"
+            github="https://github.com/luizadsantos"
+            backgroundSrc="background.png"
           />
         </div>
       </section>

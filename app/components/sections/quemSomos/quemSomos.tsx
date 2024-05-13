@@ -2,13 +2,17 @@ import Image from "next/image";
 import Orcamento from "../../botaoOrcamento";
 
 const QuemSomos: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+  const startingYear = 1999;
+  const functioningYears = currentYear - startingYear;
+
   return (
     <section
       className="mt-28 sm:mt-40 lg:mt-60 xl:mt-96 text-mutedSpaceblue"
       id="quem-somos"
       style={{}}
     >
-      <div className="absolute right-0 transform translate-y-96 md:translate-y-60 lg:-translate-y-20">
+      <div className="absolute right-0 transform -translate-y-10 z-10">
         <svg
           width="366"
           height="517"
@@ -28,12 +32,15 @@ const QuemSomos: React.FC = () => {
           />
         </svg>
       </div>
-      <div className="flex flex-col items-center lg:flex-row justify-around px-14  z-50">
-        <div className="mb-10 mr-5 z-40">
-          <h1 className="text-3xl w-full max-w-lg font-bold text-spaceblue">
-            Algum título legal
+      <div className="flex flex-col items-center lg:flex-row justify-around px-5">
+        <div className="z-20 p-5">
+          <Image src="/TIME.png" width={800} height={800} alt="foto do time" />
+        </div>
+        <div className="mb-10 mr-5 flex flex-col lg:items-start items-center z-20">
+          <h1 className="text-3xl w-full text-center lg:text-start max-w-2xl font-bold text-spaceblue">
+            Há {functioningYears} anos transformando ideias em soluções
           </h1>
-          <p className="pt-[15px] text-lg text-mutedSpaceblue leading-snug w-full max-w-3xl mb-8">
+          <p className="pt-[15px] text-xl text-mutedSpaceblue leading-snug w-full max-w-3xl mb-8">
             A CJR é uma empresa sem fins lucrativos fundada em 1999 por alunos
             da UnB com o objetivo de proporcionar um abiente de aprendizado,
             empreendedorismo e colaborativismo para universitários de cursos de
@@ -43,15 +50,7 @@ const QuemSomos: React.FC = () => {
             Algum texto maior e mais legal falando sobre a gente né poxa tá
             pequeno
           </p>
-          <Orcamento />
-        </div>
-        <div className="z-30 p-5">
-          <Image
-            src="/lagartixa.png"
-            width={400}
-            height={400}
-            alt="foto do time"
-          />
+          <Orcamento className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10" />
         </div>
       </div>
     </section>

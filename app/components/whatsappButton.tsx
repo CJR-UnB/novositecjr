@@ -12,7 +12,7 @@ const Whatsapp: React.FC = () => {
 
   return (
     <>
-      <div className="fixed flex bottom-4 right-4 z-40 items-center">
+      <div className="fixed flex bottom-4 right-4 z-50 items-center">
         <motion.div
           className={`text-black bg-offwhite h-fit p-3 mr-4 rounded-3xl shadow-xl text-lg`}
           initial="hidden"
@@ -28,7 +28,7 @@ const Whatsapp: React.FC = () => {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <WhatsappImage className="h-20 w-20 md:h-24 md:w-24  lg:h-32 lg:w-32" />
+          <WhatsappImage className="h-14 w-14 md:h-20 md:w-20  lg:h-24 lg:w-24 z-50" />
         </a>
       </div>
     </>
