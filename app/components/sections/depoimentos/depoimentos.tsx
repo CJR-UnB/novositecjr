@@ -30,18 +30,18 @@ function Depoimentos() {
           }
         >
           <CardDepoimento
-            titulo="realmente bem efetiva"
-            texto='"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus, purus at aliquam placerat, elit risus faucibus ante, id vehicula magna quam elementum orci. Phasellus facilisis eu dolor ut ultrices. Maecenas vitae tempor tortor. Etiam mattis justo eget pellentesque scelerisque. Integer placerat dignissim odio quis sagittis. Pellentesque sit amet lacinia erat. In hac habitasse platea dictumst."'
-            imgSrc={"/rafael.png"}
-            nome="Rafael"
-            atividade="residente de um hospício"
+            titulo="Networking valioso"
+            texto='"Durante meu tempo na empresa júnior de computação, além de aplicar conceitos teóricos em projetos reais, fiz networking valioso e construí amizades duradouras. Desenvolvi habilidades de liderança e trabalho em equipe, aprofundando meu conhecimento técnico. A experiência foi crucial para minha formação, enfrentando desafios práticos e contribuindo significativamente para meu crescimento profissional."'
+            imgSrc={"/depoimento_bruno.jpg"}
+            nome="Bruno Sanguinetti"
+            atividade="Ex-membro da CJR e Fundador da Startup Explanada dos Mistérios"
           />
           <CardDepoimento
-            titulo="Isso é outro teste"
-            texto='"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus, purus at aliquam placerat, elit risus faucibus ante, id vehicula magna quam elementum orci. Phasellus facilisis eu dolor ut ultrices. Maecenas vitae tempor tortor. Etiam mattis justo eget pellentesque scelerisque. Integer placerat dignissim odio quis sagittis. Pellentesque sit amet lacinia erat. In hac habitasse platea dictumst."'
-            imgSrc={"/lagartixa.png"}
-            nome="Largato"
-            atividade="Ex-presidente da República"
+            titulo="Habilidades profissionais e interpessoais"
+            texto='"A CJR foi uma ótima experiência durante a minha graduação, me permitiu experienciar o mercado de trabalho e aprender linguagens e frameworks que eu não aprenderia durante o curso de ciência da computação. Além disso, fiz muitos amigos, dos quais sou próximo até hoje."'
+            imgSrc={"/depoimento_victor.png"}
+            nome="Victor Naves"
+            atividade="Ex-membro da CJR"
           />
           <CardDepoimento
             titulo="Melhores anos da minha vida"

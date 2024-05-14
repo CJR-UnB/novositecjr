@@ -82,7 +82,7 @@ const Contato: React.FC = () => {
                 e nossa equipe entrará em contato o mais rápido possível
               </h2>
             </div>
-            <Focatia className="ml-0 sm:ml-20 mt-20" />
+            <Focatia className="w-full ml-0 sm:ml-20 mt-20" />
           </div>
         </div>
       </motion.section>
