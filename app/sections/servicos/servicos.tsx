@@ -1,3 +1,4 @@
+import { PageBreak } from "@/app/components/SVGicons";
 import {
   faCartShopping,
   faCode,
@@ -8,7 +9,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { PageBreak } from "../../SVGicons";
 import CardServico from "./cardServico";
 
 const sistemasWebIcon = <FontAwesomeIcon icon={faCode} />;

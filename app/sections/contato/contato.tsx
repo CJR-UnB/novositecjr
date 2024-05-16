@@ -1,8 +1,8 @@
+import Orcamento from "@/app/components/botaoOrcamento";
+import { MessageApp, Instagram, Focatia } from "@/app/components/SVGicons";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { Focatia, Instagram, MessageApp } from "../../SVGicons";
-import Orcamento from "../../botaoOrcamento";
 
 const Contato: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);

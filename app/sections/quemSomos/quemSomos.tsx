@@ -1,5 +1,5 @@
+import Orcamento from "@/app/components/botaoOrcamento";
 import Image from "next/image";
-import Orcamento from "../../botaoOrcamento";
 
 const QuemSomos: React.FC = () => {
   const currentYear = new Date().getFullYear();

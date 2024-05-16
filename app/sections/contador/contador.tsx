@@ -1,7 +1,7 @@
+import { Calendar, Code, Face, Members } from "@/app/components/SVGicons";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { Calendar, Code, Face, Members } from "../../SVGicons";
 import Counter from "./contadorProp";
 
 const Contador: React.FC = () => {

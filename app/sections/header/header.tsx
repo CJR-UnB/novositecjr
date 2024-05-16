@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { CJR, DarkCJR, DarkMenu, Menu } from "../../SVGicons";
-import Whatsapp from "../../whatsappButton";
 import NavigationItem from "./navigationItems";
+import { DarkCJR, CJR, DarkMenu, Menu } from "@/app/components/SVGicons";
+import Whatsapp from "@/app/components/whatsappButton";
 
 export interface NavigationItem {
   label: string;
