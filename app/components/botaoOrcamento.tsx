@@ -69,16 +69,18 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
       </a>
       <AnimatePresence>
         {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="fixed inset-0 flex items-center justify-center z-40">
             <div
-              className="absolute inset-0 bg-gray-900 opacity-50"
+              className="absolute inset-0 bg-gray-900 opacity-50 z-40"
               onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                 isSubmitted ? setIsSubmitted(false) : "";
                 toggleModal(e);
               }}
             ></div>
             <motion.div
-              className="bg-white text-black py-5 px-10 rounded-xl z-50 flex flex-col"
+              className={`bg-white text-black py-5 px-10 rounded-xl flex flex-col z-50 w-full max-w-3xl ${
+                isSubmitted ? "" : ""
+              }`}
               initial={{ opacity: 0, scale: 1 }} // Initial animation properties
               animate={{ opacity: 1, scale: 1, scaleX: 1 }} // Animation properties to animate to
               exit={{ opacity: 0 }} // Exit animation properties
@@ -122,11 +124,12 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                   </defs>
                 </svg>
                 <motion.div layout className="flex justify-between">
-                  <h1 className="text-4xl text-spaceblue font-semibold">
+                  <h1
+                    className={`text-4xl text-spaceblue font-semibold mb-1 flex `}
+                  >
                     Atendimento CJR
                   </h1>
                   <button
-                    className={isSubmitted ? "hidden" : "flex"}
                     onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
                       toggleModal(e)
                     }
@@ -142,11 +145,11 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                     </svg>
                   </button>
                 </motion.div>
-                <h2 className="text-xl mb-5  text-mutedSpaceblue font-medium">
+                <h2 className="text-xl mb-3  text-mutedSpaceblue font-medium">
                   Tire seu projeto do papel
                 </h2>
                 <h3
-                  className={`text-spaceblue text-lg ${
+                  className={`text-spaceblue text-lg mb-1 ${
                     isSubmitted ? "w-full max-w-md " : ""
                   }`}
                 >
@@ -154,20 +157,43 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                     ? "Obrigado pela resposta, entraremos em contato o mais rápido possível!"
                     : "Por favor, responda esse pequeno questionário para podermos entrar em contato!"}
                 </h3>
+                <p className="text-spaceblue text-lg mb-3">
+                  {isSubmitted
+                    ? "Enquanto isso, sinta-se à vontade para nos conhecer um pouco mais em nosso Instagram. Estamos ansiosos para trabalhar com você!"
+                    : ""}
+                </p>
               </motion.div>
-              <motion.button
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 1 }}
-                className={`hover:cursor-pointer my-2 bg-green/70 p-3 w-fit self-center rounded-lg font-semibold text-lg ${
-                  isSubmitted ? "flex" : "hidden"
-                }`}
-                onClick={() => {
-                  setIsModalOpen(false);
-                  setIsSubmitted(false);
-                }} // Set isSubmitted to true upon button click
-              >
-                Voltar para o site
-              </motion.button>
+              <motion.div className="items-center flex flex-col">
+                <motion.a
+                  href="https://www.instagram.com/cjr.unb/"
+                  target="_blank"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 1 }}
+                  className={`hover:cursor-pointer my-2 bg-green/70 p-3 w-fit gap-1 self-center items-center rounded-lg font-medium text-lg mb-5 ${
+                    isSubmitted ? "flex" : "hidden"
+                  }`}
+                  onClick={() => {
+                    setIsModalOpen(false);
+                    setIsSubmitted(false);
+                  }} // Set isSubmitted to true upon button click
+                >
+                  Conheça nosso Instagram
+                  <ArrowSquare />
+                </motion.a>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 1 }}
+                  className={`bg-green/40 p-3 w-fit rounded-lg hover:bg-green/70 transition-all mb-5 ${
+                    isSubmitted ? "flex" : "hidden"
+                  }`}
+                  onClick={() => {
+                    setIsModalOpen(false);
+                    setIsSubmitted(false);
+                  }} // Set isSubmitted to true upon button click
+                >
+                  Continuar navegando
+                </motion.button>
+              </motion.div>
               <motion.form
                 onSubmit={handleSubmit}
                 className={`flex-col text-md font-semibold text-spaceblue ${
@@ -231,7 +257,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                   whileHover={{ scale: 1.15 }}
                   whileTap={{ scale: 1 }}
                   type="submit"
-                  className="hover:cursor-pointer my-2 bg-green/70 p-3 w-fit self-center rounded-lg font-semibold text-lg "
+                  className="hover:cursor-pointer my-2 text-black bg-green/70 p-3 w-fit self-center rounded-lg font-medium text-lg"
                 >
                   Enviar proposta
                 </motion.button>

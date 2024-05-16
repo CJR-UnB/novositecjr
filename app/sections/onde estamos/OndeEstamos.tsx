@@ -1,4 +1,4 @@
-import { PageBreak } from "../../SVGicons";
+import { PageBreak } from "@/app/components/SVGicons";
 import Map from "./map";
 
 const OndeEstamos: React.FC = () => {

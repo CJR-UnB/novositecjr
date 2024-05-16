@@ -1,6 +1,6 @@
+import { Github, Linkedin } from "@/app/components/SVGicons";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { Github, Linkedin } from "../../SVGicons";
 
 interface CardProps {
   backgroundSrc?: string;

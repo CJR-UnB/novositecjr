@@ -30,6 +30,14 @@ function Depoimentos() {
           }
         >
           <CardDepoimento
+            titulo="Sempre prontos para resolver qualquer problema"
+            texto="Durante o decorrer de 1 ano, a equipe da CJR fez um ótimo trabalho construindo a nova plataforma do Selo Social de treinamento e qualificação de lideranças para o desenvolvimento de projetos alinhados aos Objetivos de Desenvolvimento Sustentável (ODS). O processo foi longo, por ser uma plataforma bastante complexa. No entanto, mesmo sendo um trabalho difícil, a equipe sempre foi muito prestativa, 
+            estando disponível para responder dúvidas e resolver todos os conflitos necessários durante todo o desenvolvimento do projeto, o que resultou em uma entrega fidedigna ao que foi pedido desde o início quando foi solicitado o serviço"
+            imgSrc="/carina.png"
+            nome="Carina Giunco"
+            atividade="Diretora do instituto Selo Social"
+          />
+          <CardDepoimento
             titulo="Networking valioso"
             texto='"Durante meu tempo na empresa júnior de computação, além de aplicar conceitos teóricos em projetos reais, fiz networking valioso e construí amizades duradouras. Desenvolvi habilidades de liderança e trabalho em equipe, aprofundando meu conhecimento técnico. A experiência foi crucial para minha formação, enfrentando desafios práticos e contribuindo significativamente para meu crescimento profissional."'
             imgSrc={"/depoimento_bruno.jpg"}

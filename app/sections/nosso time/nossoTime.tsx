@@ -1,4 +1,4 @@
-import { PageBreak } from "../../SVGicons";
+import { PageBreak } from "@/app/components/SVGicons";
 import Card from "./cardEquipe";
 
 const NossoTime: React.FC = () => {
