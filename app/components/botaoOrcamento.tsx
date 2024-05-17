@@ -19,7 +19,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
     descricaoProjeto: "",
   });
 
-  const toggleModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const toggleModal = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     setIsModalOpen(!isModalOpen);
   };
@@ -55,7 +55,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
     <>
       <a
         href="#"
-        onClick={(e: React.MouseEvent<HTMLButtonElement>) => toggleModal(e)}
+        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => toggleModal(e)}
         className="flex self-center"
       >
         <motion.button
@@ -72,7 +72,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
           <div className="fixed inset-0 flex items-center justify-center z-40">
             <div
               className="absolute inset-0 bg-gray-900 opacity-50 z-40"
-              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+              onClick={(e: React.MouseEvent<HTMLDivElement>) => {
                 isSubmitted ? setIsSubmitted(false) : "";
                 toggleModal(e);
               }}

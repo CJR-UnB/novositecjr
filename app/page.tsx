@@ -1,11 +1,11 @@
 "use client";
 
-import { Footer } from "flowbite-react";
 import Image from "next/image";
 import Cases from "./sections/cases/cases";
 import Contador from "./sections/contador/contador";
 import Contato from "./sections/contato/contato";
 import Depoimentos from "./sections/depoimentos/depoimentos";
+import Footer from "./sections/footer";
 import Header from "./sections/header/header";
 import HomePage from "./sections/homepage";
 import NossoTime from "./sections/nosso time/nossoTime";
