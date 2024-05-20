@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Cases from "./sections/cases/cases";
 import Contador from "./sections/contador/contador";
 import Contato from "./sections/contato/contato";
 import Depoimentos from "./sections/depoimentos/depoimentos";
@@ -49,7 +48,7 @@ export default function Home() {
       <Contador />
       <QuemSomos />
       <Servicos />
-      <Cases />
+      {/* <Cases /> os cases ainda não estão prontos para serem lançados*/}
       <NossoTime />
       <Depoimentos />
       <OndeEstamos />

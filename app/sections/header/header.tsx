@@ -1,7 +1,7 @@
+import { CJR, DarkCJR, DarkMenu, Menu } from "@/app/components/SVGicons";
+import Whatsapp from "@/app/components/whatsappButton";
 import { useEffect, useState } from "react";
 import NavigationItem from "./navigationItems";
-import { DarkCJR, CJR, DarkMenu, Menu } from "@/app/components/SVGicons";
-import Whatsapp from "@/app/components/whatsappButton";
 
 export interface NavigationItem {
   label: string;
@@ -151,6 +151,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
                 text={true}
                 active={activeSection === "servicos"}
               />
+              {/*
               <NavigationItem
                 key={"nossos-cases"}
                 label={"Cases"}
@@ -159,7 +160,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
                 normal={true}
                 text={true}
                 active={activeSection === "nossos-cases"}
-              />
+              /> essa seção ainda precisa ser finalizada*/}
               <NavigationItem
                 key={"nosso-time"}
                 label={"Nosso Time"}
@@ -228,6 +229,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               text={true}
               style={"block mb-6"}
             />
+            {/*
             <NavigationItem
               label="Nossos Cases"
               id="nossos-cases"
@@ -235,7 +237,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
               normal={false}
               text={true}
               style={"block mb-6"}
-            />
+            /> essa seção ainda precisa ser finalizada*/}
             <NavigationItem
               label="Nosso Time"
               id="nosso-time"
