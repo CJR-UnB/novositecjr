@@ -186,7 +186,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 Qual é o seu telefone?
                 <input
                   type="tel"
-                  placeholder="ex: 21 912345678"
+                  placeholder="ex: 21912345678"
                   className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
                   name="telefone"
                   pattern="[0-9]*"
