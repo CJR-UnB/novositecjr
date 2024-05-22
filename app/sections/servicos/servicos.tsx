@@ -65,7 +65,7 @@ const Servicos: React.FC = () => {
               icone={siteInstitucionalIcon}
               tipo="Site Institucional"
               descricao="Criação de websites profissionais e responsivos para promover a sua marca e serviços online"
-              descricao_back="Desenvolvemos sites institucionais que refletem a identidade da sua marca com um design elegante e atrativo. Nosso objetivo é garantir que seu site se destaque na multidão, atraindo e envolvendo os visitantes de forma eficaz."
+              descricao_back="Desenvolvemos sites institucionais que refletem a identidade da sua marca com um design moderno e atrativo. Nosso objetivo é garantir que seu site se destaque na multidão, atraindo e envolvendo os visitantes de forma eficaz."
             />
           </div>
         </div>
