@@ -1,5 +1,5 @@
+import Orcamento from "@/app/components/botaoOrcamento";
 import Image from "next/image";
-import Orcamento from "../../botaoOrcamento";
 
 const QuemSomos: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -52,7 +52,6 @@ const QuemSomos: React.FC = () => {
             conquistamos clientes por meio de atendimentos de qualidade e
             soluções inovadoras, com custos que somente uma EJ pode oferecer.
           </p>
-          <Orcamento className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10" />
         </div>
       </div>
     </section>

@@ -1,8 +1,8 @@
+import { PageBreak } from "@/app/components/SVGicons";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { PageBreak } from "../../SVGicons";
 import CasesCarousel from "./casesCarousel";
 
 const Cases: React.FC = () => {

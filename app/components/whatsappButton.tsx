@@ -12,7 +12,7 @@ const Whatsapp: React.FC = () => {
 
   return (
     <>
-      <div className="fixed flex bottom-4 right-4 z-50 items-center">
+      <div className="fixed flex bottom-4 right-4 z-30 items-center">
         <motion.div
           className={`text-black bg-offwhite h-fit p-3 mr-4 rounded-3xl shadow-xl text-lg`}
           initial="hidden"

@@ -1,8 +1,8 @@
+import Orcamento from "@/app/components/botaoOrcamento";
+import { MessageApp, Instagram, Focatia } from "@/app/components/SVGicons";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { Focatia, Instagram, MessageApp } from "../../SVGicons";
-import Orcamento from "../../botaoOrcamento";
 
 const Contato: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +33,7 @@ const Contato: React.FC = () => {
               transition={{ duration: 0.2 }}
               className="hover:scale-110 transition-all duration-300 my-6"
             >
-              <a href="" target="_blank" className="flex items-center">
+              <a href="https://wa.me/61920034064" target="_blank" className="flex items-center">
                 <MessageApp />
                 <h1 className="ml-2 text-xl">Via WhatsApp</h1>
               </a>
