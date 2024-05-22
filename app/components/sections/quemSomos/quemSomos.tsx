@@ -42,13 +42,15 @@ const QuemSomos: React.FC = () => {
           </h1>
           <p className="pt-[15px] text-xl text-mutedSpaceblue leading-snug w-full max-w-3xl mb-8">
             A CJR é uma empresa sem fins lucrativos fundada em 1999 por alunos
-            da UnB com o objetivo de proporcionar um abiente de aprendizado,
-            empreendedorismo e colaborativismo para universitários de cursos de
-            computação. <br /> Competindo de igual para igual com grandes
-            empresas, nós conquistamos clientes por meio de atendimentos e
-            serviços de qualidade, com custos que somente uma EJ pode oferecer.
-            Algum texto maior e mais legal falando sobre a gente né poxa tá
-            pequeno
+            da UnB com o objetivo de proporcionar um ambiente inclusivo de
+            aprendizado, empreendedorismo e colaborativismo para universitários
+            de cursos de computação. Valorizamos a diversidade e a inclusão, de
+            forma que o respeito e a igualdade são pilares fundamentais para a
+            nossa empresa e contribuem para a evolução e crescimento constante
+            dos membros.
+            <br /> Competindo de igual para igual com grandes empresas, nós
+            conquistamos clientes por meio de atendimentos de qualidade e
+            soluções inovadoras, com custos que somente uma EJ pode oferecer.
           </p>
           <Orcamento className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10" />
         </div>
