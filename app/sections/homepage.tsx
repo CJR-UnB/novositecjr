@@ -67,9 +67,8 @@ const HomePage: React.FC = () => {
             seus serviços
           </p>
           <Orcamento
-            className="bg-aquagreen rounded-xl mt-5 py-3 px-10 text-black transition-colors duration-300 hover:bg-green ease-linear
-           hidden xs:hidden sm:hidden md:hidden lg:flex xl:flex 2xl:flex
-           lg:text-xl xl:text-2xl 2xl:text-2xl"
+            className="bg-aquagreen rounded-xl mt-3 mb-5 py-3 px-7 text-black transition-colors duration-300 hover:bg-green ease-linear
+           flex items-center text-lg"
           />
         </motion.div>
         <div

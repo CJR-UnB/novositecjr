@@ -9,22 +9,14 @@ const NossoTime: React.FC = () => {
           NOSSO TIME
         </h1>
         <PageBreak />
-
+        {/* a b c d e f g h i j k l m n o p q r s t u v w x y z */}
         <div className="flex flex-wrap justify-around items-center mb-20 gap-20">
           <Card
-            imageSrc="/pejao.JPG"
-            nome="Pedro João Reffatti"
-            cargo="Presidente"
-            linkedin="https://www.linkedin.com/in/pedro-joão-reffatti-pinheiro-b3b77b2aa/"
-            github=""
-            backgroundSrc="background.png"
-          />
-          <Card
-            imageSrc="/victoria.JPG"
-            nome="Victória Rocha"
-            cargo="Diretora de Organização Empresarial"
-            linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
-            github=""
+            imageSrc="/leandro.JPG"
+            nome="Leandro Kornelius"
+            cargo="Diretor de Talentos"
+            linkedin="https://www.linkedin.com/in/leandrokornelius/"
+            github="https://github.com/LeoKornelius"
             backgroundSrc="background.png"
           />
           <Card
@@ -36,11 +28,19 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/leandro.JPG"
-            nome="Leandro Kornelius"
-            cargo="Diretor de Talentos"
-            linkedin="https://www.linkedin.com/in/leandrokornelius/"
-            github="https://github.com/LeoKornelius"
+            imageSrc="/luiza.JPG"
+            nome="Luiza dos Santos Costa"
+            cargo="Diretora de Projetos"
+            linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"
+            github="https://github.com/luizadsantos"
+            backgroundSrc="background.png"
+          />
+          <Card
+            imageSrc="/pejao.JPG"
+            nome="Pedro João Reffatti"
+            cargo="Presidente"
+            linkedin="https://www.linkedin.com/in/pedro-joão-reffatti-pinheiro-b3b77b2aa/"
+            github=""
             backgroundSrc="background.png"
           />
           <Card
@@ -52,11 +52,11 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/luiza.JPG"
-            nome="Luiza dos Santos Costa"
-            cargo="Diretora de Projetos"
-            linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"
-            github="https://github.com/luizadsantos"
+            imageSrc="/victoria.JPG"
+            nome="Victória Rocha"
+            cargo="Diretora de Organização Empresarial"
+            linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
+            github=""
             backgroundSrc="background.png"
           />
         </div>
