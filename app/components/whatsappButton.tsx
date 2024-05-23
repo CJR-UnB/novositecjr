@@ -22,7 +22,7 @@ const Whatsapp: React.FC = () => {
           Precisa de ajuda?
         </motion.div>
         <a
-          href="https://wa.me/61920034064"
+          href="https://wa.me/5561920034064?text=Ol%C3%A1%2C%20quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20tecnol%C3%B3gicas%20da%20CJR%20e%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20gratuito%21"
           target="_blank"
           rel="noopener noreferrer"
           onMouseEnter={() => setIsHovered(true)}
