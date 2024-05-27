@@ -16,7 +16,7 @@ const NossoTime: React.FC = () => {
             nome="Pedro João Reffatti"
             cargo="Presidente"
             linkedin="https://www.linkedin.com/in/pedro-joão-reffatti-pinheiro-b3b77b2aa/"
-            github=""
+            github="https://github.com/pedrojoaorp"
             backgroundSrc="background.png"
           />
           <Card
@@ -24,7 +24,7 @@ const NossoTime: React.FC = () => {
             nome="Victória Rocha"
             cargo="Diretora de Organização Empresarial"
             linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
-            github=""
+            github="https://github.com/rochavictoria"
             backgroundSrc="background.png"
           />
           <Card
