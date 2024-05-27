@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Typewriter from "typewriter-effect";
-import HomePageIcon from "../SVGicons";
-import Orcamento from "../botaoOrcamento";
+import Orcamento from "../components/botaoOrcamento";
+import HomePageIcon from "../components/SVGicons";
 
 const HomePage: React.FC = () => {
   return (

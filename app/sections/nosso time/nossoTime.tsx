@@ -1,4 +1,4 @@
-import { PageBreak } from "../../SVGicons";
+import { PageBreak } from "@/app/components/SVGicons";
 import Card from "./cardEquipe";
 
 const NossoTime: React.FC = () => {
@@ -12,7 +12,7 @@ const NossoTime: React.FC = () => {
 
         <div className="flex flex-wrap justify-around items-center mb-20 gap-20">
           <Card
-            imageSrc="/pejao.jpg"
+            imageSrc="/pejao.JPG"
             nome="Pedro João Reffatti"
             cargo="Presidente"
             linkedin="https://www.linkedin.com/in/pedro-joão-reffatti-pinheiro-b3b77b2aa/"
@@ -20,7 +20,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/victoria.jpg"
+            imageSrc="/victoria.JPG"
             nome="Victória Rocha"
             cargo="Diretora de Organização Empresarial"
             linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
@@ -28,7 +28,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/luiz.jpg"
+            imageSrc="/luiz.JPG"
             nome="Luiz Augusto Araújo"
             cargo="Diretor Comercial"
             linkedin="https://www.linkedin.com/in/luiz-augusto-araújo-da-silva-09a937213/"
@@ -36,7 +36,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/leandro.jpg"
+            imageSrc="/leandro.JPG"
             nome="Leandro Kornelius"
             cargo="Diretor de Talentos"
             linkedin="https://www.linkedin.com/in/leandrokornelius/"
@@ -44,7 +44,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/rafik.jpg"
+            imageSrc="/rafik.JPG"
             nome="Rodrigo Rafik"
             cargo="Diretor de Publicidade"
             linkedin="https://www.linkedin.com/in/rodrigorafik/"
@@ -52,7 +52,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="/luiza.jpg"
+            imageSrc="/luiza.JPG"
             nome="Luiza dos Santos Costa"
             cargo="Diretora de Projetos"
             linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"

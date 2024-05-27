@@ -1,18 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import Cases from "./components/sections/cases/cases";
-import Contador from "./components/sections/contador/contador";
-import Depoimentos from "./components/sections/depoimentos/depoimentos";
-import Footer from "./components/sections/footer";
-import Header from "./components/sections/header/header";
-import HomePage from "./components/sections/homepage";
-import NossoTime from "./components/sections/nosso time/nossoTime";
-import OndeEstamos from "./components/sections/onde estamos/OndeEstamos";
-import Parceiros from "./components/sections/parceiros";
-import QuemSomos from "./components/sections/quemSomos/quemSomos";
-import Servicos from "./components/sections/servicos/servicos";
-import Contato from "./components/sections/contato/contato";
+import Contador from "./sections/contador/contador";
+import Contato from "./sections/contato/contato";
+import Depoimentos from "./sections/depoimentos/depoimentos";
+import Footer from "./sections/footer";
+import Header from "./sections/header/header";
+import HomePage from "./sections/homepage";
+import NossoTime from "./sections/nosso time/nossoTime";
+import OndeEstamos from "./sections/onde estamos/OndeEstamos";
+import Parceiros from "./sections/parceiros";
+import QuemSomos from "./sections/quemSomos/quemSomos";
+import Servicos from "./sections/servicos/servicos";
+
 {
   /* As cores principais que combinamos no figma já estão gravadas nos arquivos do projeto com os seguintes nomes:
     aquagreen: "#27BD80",
@@ -47,8 +47,8 @@ export default function Home() {
       </div>
       <Contador />
       <QuemSomos />
-      <Cases />
       <Servicos />
+      {/* <Cases /> os cases ainda não estão prontos para serem lançados*/}
       <NossoTime />
       <Depoimentos />
       <OndeEstamos />

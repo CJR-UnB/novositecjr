@@ -1,6 +1,6 @@
+import { Github, Linkedin } from "@/app/components/SVGicons";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { Github, Linkedin } from "../../SVGicons";
 
 interface CardProps {
   backgroundSrc?: string;
@@ -31,6 +31,7 @@ const Card: React.FC<CardProps> = ({
         <img
           src={backgroundSrc}
           className="absolute flex h-32 w-full justify-center rounded-xl bg-cover"
+          alt="background"
         />
         <div className="absolute -bottom-12 flex h-[160px] w-[160px] items-center justify-center rounded-full border-[4px] border-white">
           <img

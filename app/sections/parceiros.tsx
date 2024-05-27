@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { PageBreak } from "../SVGicons";
+import { PageBreak } from "../components/SVGicons";
 
 const Parceiros: React.FC = () => {
   return (

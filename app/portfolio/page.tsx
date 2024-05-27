@@ -27,16 +27,16 @@ export default function portfolio() {
         className="flex flex-wrap justify-around items-center mt-10 mx-2"
       >
         <CaseCard
-          titulo="Algum case"
+          titulo="Selo Social"
           subtitulo="Alguma leve descrição"
-          imgSrc="/case_base.svg"
+          imgSrc=""
           imgAlt="Imagem de um case"
           descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit ullamcorper nunc, vel fermentum neque euismod eget. Donec id massa augue. Aliquam elementum enim faucibus eleifend accumsan. Ut ornare turpis sem, ac bibendum magna finibus a. Quisque vulputate lacinia vulputate. Proin non rutrum eros. Integer at pretium orci. Maecenas vel accumsan orci. "
           link="https://www.instagram.com/"
           invertido={true}
         />
         <CaseCard
-          titulo="Algum case"
+          titulo="Mandou Bem"
           subtitulo="Alguma leve descrição"
           imgSrc="/lagartixa.png"
           imgAlt="Imagem de um case"
@@ -45,7 +45,7 @@ export default function portfolio() {
           invertido={false}
         />
         <CaseCard
-          titulo="Algum case"
+          titulo="FGM"
           subtitulo="Alguma leve descrição"
           imgSrc="/lagartixa.png"
           imgAlt="Imagem de um case"
@@ -54,9 +54,27 @@ export default function portfolio() {
           invertido={false}
         />
         <CaseCard
-          titulo="Algum case"
+          titulo="MurOn"
           subtitulo="Alguma leve descrição"
           imgSrc="/lagartixa.png"
+          imgAlt="Imagem de um case"
+          descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit ullamcorper nunc, vel fermentum neque euismod eget. Donec id massa augue. Aliquam elementum enim faucibus eleifend accumsan. Ut ornare turpis sem, ac bibendum magna finibus a. Quisque vulputate lacinia vulputate. Proin non rutrum eros. Integer at pretium orci. Maecenas vel accumsan orci. "
+          link="https://www.instagram.com/"
+          invertido={true}
+        />
+        <CaseCard
+          titulo="Insana"
+          subtitulo="Alguma leve descrição"
+          imgSrc="/lagartixa.png"
+          imgAlt="Imagem de um case"
+          descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit ullamcorper nunc, vel fermentum neque euismod eget. Donec id massa augue. Aliquam elementum enim faucibus eleifend accumsan. Ut ornare turpis sem, ac bibendum magna finibus a. Quisque vulputate lacinia vulputate. Proin non rutrum eros. Integer at pretium orci. Maecenas vel accumsan orci. "
+          link="https://www.instagram.com/"
+          invertido={true}
+        />
+        <CaseCard
+          titulo="SisterWave"
+          subtitulo="Alguma leve descrição"
+          imgSrc="/case_base.svg"
           imgAlt="Imagem de um case"
           descricao="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit ullamcorper nunc, vel fermentum neque euismod eget. Donec id massa augue. Aliquam elementum enim faucibus eleifend accumsan. Ut ornare turpis sem, ac bibendum magna finibus a. Quisque vulputate lacinia vulputate. Proin non rutrum eros. Integer at pretium orci. Maecenas vel accumsan orci. "
           link="https://www.instagram.com/"
