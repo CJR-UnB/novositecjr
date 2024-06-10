@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { CJR, DarkCJR } from "../components/SVGicons";
@@ -8,13 +10,9 @@ export interface NavigationItem {
   id: string;
 }
 
-interface HeaderProps {
-  navigationItems: NavigationItem[];
-}
-
-const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
+const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const navigationItems = [{ label: "", id: "" }];
   {
     /* função para fazer a página voltar para o topo */
   }

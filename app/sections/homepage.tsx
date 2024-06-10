@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import React from "react";
 import Typewriter from "typewriter-effect";
 import Orcamento from "../components/botaoOrcamento";
@@ -13,10 +12,7 @@ const HomePage: React.FC = () => {
         id="homepage"
         style={{ overflow: "hidden", height: "92vh" }}
       >
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+        <div
           className="px-5 mx-2
          m-auto lg:ml-32 xl:ml-40 2xl:ml-40
          mt-16 sm:mt-16 md:mt-20 lg:mt-auto xl:mt-auto 2xl:mt-auto"
@@ -70,7 +66,7 @@ const HomePage: React.FC = () => {
             className="bg-aquagreen rounded-xl mt-3 mb-5 py-3 px-7 text-black transition-colors duration-300 hover:bg-green ease-linear
            flex items-center text-lg"
           />
-        </motion.div>
+        </div>
         <div
           className="
         flex xs:flex sm:flex md:flex lg:block xl:block 2xl:block

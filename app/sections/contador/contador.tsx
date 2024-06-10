@@ -1,17 +1,7 @@
 import { Calendar, Code, Face, Members } from "@/app/components/SVGicons";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { useInView } from "react-intersection-observer";
 import Counter from "./contadorProp";
 
 const Contador: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 1, // Trigger when 50% of the component is visible
-    onChange: setIsVisible, // Update isVisible state when component is in view
-  });
-
   const currentYear = new Date().getFullYear();
   const startingYear = 1999;
   const functioningYears = currentYear - startingYear;
@@ -20,7 +10,7 @@ const Contador: React.FC = () => {
 
   return (
     <section className="">
-      <motion.div ref={ref} className="w-full h-fit bg-aquagreen mb-4 z-20">
+      <div className="w-full h-fit bg-aquagreen mb-4 z-20">
         <div className="flex flex-col md:flex-row justify-around p-5 text-2xl font-semibold">
           <div className="text-center z-20">
             <Calendar />
@@ -43,7 +33,7 @@ const Contador: React.FC = () => {
             <h1>Nota de satisfação</h1>
           </div>
         </div>
-      </motion.div>
+      </div>
       <div
         id="base wave"
         className="w-full absolute transform -translate-y-10 z-10"

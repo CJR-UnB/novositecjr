@@ -1,6 +1,4 @@
 import { Github, Linkedin } from "@/app/components/SVGicons";
-import { useState } from "react";
-import { useInView } from "react-intersection-observer";
 
 interface CardProps {
   backgroundSrc?: string;
@@ -19,12 +17,6 @@ const Card: React.FC<CardProps> = ({
   github,
   backgroundSrc,
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const { ref, inView } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.3, // Trigger when 50% of the component is visible
-    onChange: setIsVisible, // Update isVisible state when component is in view
-  });
   return (
     <div className="relative flex flex-col items-center rounded-lg border-[1px] border-spaceblue/40 w-[400px] m-5 p-4 bg-white shadow-md">
       <div className="relative flex h-32 w-full justify-center rounded-xl bg-cover">
@@ -71,7 +63,7 @@ export default Card;
 
 {
   /*       
-  <motion.div
+  < div
         initial={{ opacity: 0 }}
         animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 0.5 }}
@@ -107,7 +99,7 @@ export default Card;
           }}
         />
 
-        <motion.div
+        < div
           initial={{ opacity: 0 }}
           animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.5 }}
@@ -119,7 +111,7 @@ export default Card;
           <h2 classNameName="w-full max-w-xs text-xl text-center font-semibold text-gray-300 mb-3">
             {cargo}
           </h2>
-          <motion.div
+          < div
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}
             transition={{ duration: 0.5 }}
@@ -139,7 +131,7 @@ export default Card;
             >
               <Github />
             </a>
-          </motion.div>
-        </motion.div>
-      </motion.div>*/
+          </ div>
+        </ div>
+      </ div>*/
 }

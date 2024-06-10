@@ -1,4 +1,3 @@
-import Orcamento from "@/app/components/botaoOrcamento";
 import Image from "next/image";
 
 const QuemSomos: React.FC = () => {

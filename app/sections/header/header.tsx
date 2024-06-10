@@ -1,3 +1,5 @@
+"use client";
+
 import { CJR, DarkCJR, DarkMenu, Menu } from "@/app/components/SVGicons";
 import Whatsapp from "@/app/components/whatsappButton";
 import { useEffect, useState } from "react";
@@ -8,16 +10,13 @@ export interface NavigationItem {
   id: string;
 }
 
-interface HeaderProps {
-  navigationItems: NavigationItem[];
-}
-
-const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
+const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
 
   const [activeSection, setActiveSection] = useState("");
+  const navigationItems = [{ label: "", id: "" }];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -131,7 +130,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
           {isScrolled ? <DarkCJR /> : <CJR />}
         </NavigationItem>
         <div className="self-center text-2xl mr-24 space-x-16 hidden xs:hidden sm:hidden md:hidden lg:hidden xl:flex">
-          {navigationItems.map((item) => (
+          {navigationItems.map(() => (
             <>
               <NavigationItem
                 key={"quem-somos"}

@@ -1,17 +1,13 @@
 // Code Generated with love
-
-"use client";
-
 import { PageBreak } from "../components/SVGicons";
 import CaseCard from "./caseCard";
 import Header from "./header";
 
 export default function portfolio() {
-  const navigationItems = [{ label: "", id: "" }];
 
   return (
     <main className="text-spaceblue bg-offwhite font-Roboto ">
-      <Header navigationItems={navigationItems} />
+      <Header/>
       <article>
         <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl mt-10">
           Nosso portfolio
