@@ -8,6 +8,12 @@ interface OrcamentoProps {
   className: string;
 }
 
+declare global {
+  interface Window {
+    gtag: any;
+  }
+}
+
 const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
