@@ -28,7 +28,7 @@ const Servicos: React.FC = () => {
         <p className="text-lg sm:text-xl mb-5 px-5 text-mutedSpaceblue font-normal text-center">
           Conheça os nossos serviços e como podemos impulsionar seus resultados!
         </p>
-        <Orcamento className="flex bg-green items-center text-xl w-fit font-normal text-black rounded-lg mt-5 py-3 px-10 mx-5" />
+        <Orcamento className="flex bg-green items-center self-center text-xl w-fit font-normal text-black rounded-lg mt-5 py-3 px-10 mx-5" />
         <div className="flex justify-center items-center text-center mt-10 text-4xl font-bold">
           <div className="grid md:grid-cols-3 gap-6 px-10 w-fit">
             <CardServico

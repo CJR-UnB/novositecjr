@@ -15,12 +15,12 @@ const HomePage: React.FC = () => {
       >
         <div
           className="px-5 mx-2
-         m-auto lg:ml-32 xl:ml-40 2xl:ml-40
-         mt-16 sm:mt-16 md:mt-20 lg:mt-auto xl:mt-auto 2xl:mt-auto"
+         m-auto lg:ml-32 xl:ml-40
+         mt-16 md:mt-20 lg:mt-auto"
         >
           <h1
             className=" w-full max-w-3xl mb-3 leading-snug text-left
-          text-3xl xs:text-4xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
+          text-3xl xs:text-4xl 2xl:text-5xl"
           >
             Desenvolvendo ideias e impulsionando resultados
             <div className="my-0 md:my-3 text-aquagreen">
@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
           </h1>
           <p
             className="text-gray-200 w-full max-w-xl text-left
-          text-xl xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-2xl"
+          text-xl lg:text-2xl"
           >
             A CJR tem a solução certa para digitalizar sua empresa e escalar
             seus serviços
