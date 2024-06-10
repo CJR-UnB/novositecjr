@@ -33,9 +33,11 @@ Vai ficar incrível
 export default function Home() {
   return (
     <main className="text-spaceblue bg-white font-Roboto ">
-      {/*<Header />
+      <Header />
       <HomePage />
-
+      <div className="absolute w-full transform -translate-y-16 md:-translate-y-32 ">
+        <Image src={"/wave.svg"} width={2300} height={200} alt="waves" />
+      </div>
       <Contador />
       <QuemSomos />
       <Servicos />
@@ -44,15 +46,7 @@ export default function Home() {
       <OndeEstamos />
       <Parceiros />
       <Contato />
-      <Footer /> */}
-      <Header />
-      {/*<Homepage />*/}
-      <div className="absolute w-full transform -translate-y-16 md:-translate-y-32 ">
-        <Image src={"/wave.svg"} width={2300} height={200} alt="waves" />
-      </div>
-      <Contador />
-      <QuemSomos />
-      <Servicos />
+      <Footer />
 
       {/* <Cases /> os cases ainda não estão prontos para serem lançados*/}
     </main>

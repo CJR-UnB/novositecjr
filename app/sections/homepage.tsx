@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Typewriter from "typewriter-effect";
 import Orcamento from "../components/botaoOrcamento";
@@ -7,10 +9,9 @@ const HomePage: React.FC = () => {
   return (
     <>
       <section
-        className="bg-spaceblue text-white p-1 flex relative
-        flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row"
+        className="bg-spaceblue text-white p-1 flex lg:flex-row"
         id="homepage"
-        style={{ overflow: "hidden", height: "92vh" }}
+        style={{ height: "92vh" }}
       >
         <div
           className="px-5 mx-2
@@ -67,15 +68,7 @@ const HomePage: React.FC = () => {
            flex items-center text-lg"
           />
         </div>
-        <div
-          className="
-        flex xs:flex sm:flex md:flex lg:block xl:block 2xl:block
-        scale-90 xs:scale-90 sm:scale-100 md:scale-100 lg:scale-100 xl:scale-125 2xl:scale-125
-        mt-0 xs:mt-0 sm:mt-0 md:mt-0 lg:mt-32 xl:mt-44 2xl:mt-44
-        xs:ml-auto sm:ml-auto md:ml-auto lg: xl: 2xl:
-        mr-44 xs: sm: md: lg:mr-10 xl:mr-44 2xl:mr-44
-        justify-center items-center"
-        >
+        <div>
           <HomePageIcon />
         </div>
       </section>

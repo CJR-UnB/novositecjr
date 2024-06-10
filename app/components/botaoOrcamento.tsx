@@ -60,17 +60,13 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
 
   return (
     <>
-      <a
-        href="#"
-        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => toggleModal(e)}
-        className="flex self-center"
+      <button
+        className={className}
+        onClick={(e: React.MouseEvent<HTMLButtonElement>) => toggleModal(e)}
       >
-        <button className={className}>
-          <h1 className="mr-2">Faça seu diagnóstico gratuito</h1>
-          <ArrowSquare />
-        </button>
-      </a>
-
+        <h1 className="mr-2">Faça seu diagnóstico gratuito</h1>
+        <ArrowSquare />
+      </button>
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div
