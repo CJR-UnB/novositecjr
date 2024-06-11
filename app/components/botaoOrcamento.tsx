@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import React, { useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import { ArrowSquare } from "./SVGicons";
 
 interface OrcamentoProps {
@@ -61,23 +62,29 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   return (
     <>
       <button
-        className={className}
+        className={`${className} transition-all duration-200 ease-out hover:scale-110 active:scale-95`}
         onClick={(e: React.MouseEvent<HTMLButtonElement>) => toggleModal(e)}
       >
         <h1 className="mr-2">Faça seu diagnóstico gratuito</h1>
         <ArrowSquare />
       </button>
-      {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
+
+      <CSSTransition
+        in={isModalOpen}
+        timeout={300}
+        classNames="modal"
+        unmountOnExit
+      >
+        <div className={`fixed inset-0 flex items-center justify-center z-50`}>
           <div
-            className="absolute inset-0 bg-gray-900 opacity-50 z-40"
+            className={`absolute bg-gray-900/60 inset-0 z-40`}
             onClick={(e: React.MouseEvent<HTMLDivElement>) => {
               isSubmitted ? setIsSubmitted(false) : "";
               toggleModal(e);
             }}
           ></div>
           <div
-            className={`bg-white text-black py-5 px-10 rounded-xl flex flex-col z-50 mx-2`}
+            className={`bg-white text-black py-5 px-10 rounded-lg flex flex-col z-50 mx-2 transition-transform transform duration-300 ease-in-out`}
             key="modal"
           >
             <div className="flex flex-col">
@@ -142,7 +149,9 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 }`}
                 onClick={() => {
                   setIsModalOpen(false);
-                  setIsSubmitted(false);
+                  setTimeout(() => {
+                    setIsSubmitted(false);
+                  }, 300);
                 }} // Set isSubmitted to true upon button click
               >
                 Continuar navegando
@@ -222,7 +231,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
             </form>
           </div>
         </div>
-      )}
+      </CSSTransition>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import Orcamento from "@/app/components/botaoOrcamento";
-import { MessageApp, Instagram, Focatia } from "@/app/components/SVGicons";
+import { Focatia, Instagram, MessageApp } from "@/app/components/SVGicons";
 
 const Contato: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const Contato: React.FC = () => {
             <h2 className="text-lg sm:text-xl mb-5">
               Entre em contato com a nossa equipe
             </h2>
-            <div className="hover:scale-110 transition-all duration-300 my-6">
+            <div className="hover:scale-110 transition-all duration-200 ease-out my-6">
               <a
                 href="https://wa.me/61920034064"
                 target="_blank"
@@ -27,7 +27,7 @@ const Contato: React.FC = () => {
                 <h1 className="ml-2 text-xl">Via WhatsApp</h1>
               </a>
             </div>
-            <div className="hover:scale-110 transition-all duration-300 my-6">
+            <div className="hover:scale-110 transition-all duration-200 ease-out my-6">
               <a
                 href="https://www.instagram.com/cjr.unb/"
                 target="_blank"
