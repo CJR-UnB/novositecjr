@@ -70,10 +70,10 @@ const HomePage: React.FC = () => {
         </div>
         <div
           className="
-        px-5
-        scale-75 md:scale-90 xl:scale-100
-        mt-0 xl:mt-32 mr-36 md:mr-10
-        -translate-y-20 md:-translate-y-0"
+        scale-90 sm:scale-100
+        mt-4 xl:mt-44
+        mr-44 xs: sm: md: lg:mr-10 xl:mr-24
+        justify-center items-center"
         >
           <svg
             ref={svgRef}

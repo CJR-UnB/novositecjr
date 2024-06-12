@@ -18,7 +18,7 @@ const Contador: React.FC = () => {
             <h1>Anos de funcionamento</h1>
           </div>
           <div className="text-center z-20">
-            <Code />
+            <Code className="flex justify-center mb-4" />
             <Counter projetos={true} duration={20} target={60} />
             <h1>Projetos finalizados</h1>
           </div>
