@@ -2,31 +2,14 @@ import Orcamento from "@/app/components/botaoOrcamento";
 import {
   Cart,
   Cellphone,
-  Code,
   Coffee,
   PageBreak,
   People,
   PWA,
   Web,
 } from "@/app/components/SVGicons";
-import {
-  faCartShopping,
-  faCode,
-  faLaptopCode,
-  faMobileScreenButton,
-  faMugSaucer,
-  faUsersBetweenLines,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import CardServico from "./cardServico";
-
-const sistemasWebIcon = <FontAwesomeIcon icon={faCode} />;
-const consultoriaIcon = <FontAwesomeIcon icon={faMugSaucer} />;
-const PWAIcon = <FontAwesomeIcon icon={faLaptopCode} />;
-const ecommerceIcon = <FontAwesomeIcon icon={faCartShopping} />;
-const appIcon = <FontAwesomeIcon icon={faMobileScreenButton} />;
-const siteInstitucionalIcon = <FontAwesomeIcon icon={faUsersBetweenLines} />;
 
 const Servicos: React.FC = () => {
   return (
