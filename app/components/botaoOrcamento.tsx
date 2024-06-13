@@ -1,6 +1,5 @@
 "use client";
 
-import axios from "axios";
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { ArrowSquare } from "./SVGicons";
@@ -9,16 +8,9 @@ interface OrcamentoProps {
   className: string;
 }
 
-declare global {
-  interface Window {
-    gtag: any;
-  }
-}
-
 const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -32,6 +24,30 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
     setIsModalOpen(!isModalOpen);
   };
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    try {
+      const response = await fetch("/api/slack", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        console.error(
+          "Erro ao enviar mensagem para o Slack",
+          response.statusText
+        );
+      }
+    } catch (error) {
+      console.error("Erro ao enviar mensagem para o Slack", error);
+    }
+  };
+  /*
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("form data:", formData);
@@ -46,6 +62,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
       console.error("webhook error:", error);
     }
   };
+*/
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -63,7 +80,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
     <>
       <button
         className={`${className} transition-all duration-200 ease-out hover:scale-110 active:scale-95`}
-        onClick={(e: React.MouseEvent<HTMLButtonElement>) => toggleModal(e)}
+        onClick={toggleModal}
       >
         <h1 className="mr-2">Faça seu diagnóstico gratuito</h1>
         <ArrowSquare />
@@ -75,30 +92,18 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
         classNames="modal"
         unmountOnExit
       >
-        <div className={`fixed inset-0 flex items-center justify-center z-50`}>
+        <div className="fixed inset-0 flex items-center justify-center z-50">
           <div
-            className={`absolute bg-gray-900/60 inset-0 z-40`}
-            onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-              isSubmitted ? setIsSubmitted(false) : "";
-              toggleModal(e);
-            }}
+            className="absolute bg-gray-900/60 inset-0 z-40"
+            onClick={toggleModal}
           ></div>
-          <div
-            className={`bg-white text-black py-5 px-10 rounded-lg flex flex-col z-50 mx-2 transition-transform transform duration-300 ease-in-out`}
-            key="modal"
-          >
+          <div className="bg-white text-black py-5 px-10 rounded-lg flex flex-col z-50 mx-2 transition-transform transform duration-300 ease-in-out">
             <div className="flex flex-col">
               <div className="flex justify-between mt-3">
-                <h1
-                  className={`text-4xl text-spaceblue font-semibold mb-1flex `}
-                >
+                <h1 className="text-4xl text-spaceblue font-semibold mb-1">
                   Atendimento CJR
                 </h1>
-                <button
-                  onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-                    toggleModal(e)
-                  }
-                >
+                <button onClick={toggleModal}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="32"
@@ -110,12 +115,12 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                   </svg>
                 </button>
               </div>
-              <h2 className="text-xl mb-3  text-mutedSpaceblue font-medium">
+              <h2 className="text-xl mb-3 text-mutedSpaceblue font-medium">
                 Tire seu projeto do papel
               </h2>
               <h3
                 className={`text-spaceblue text-lg mb-1 ${
-                  isSubmitted ? "w-full max-w-md " : ""
+                  isSubmitted ? "w-full max-w-md" : ""
                 }`}
               >
                 {isSubmitted
@@ -138,7 +143,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 onClick={() => {
                   setIsModalOpen(false);
                   setIsSubmitted(false);
-                }} // Set isSubmitted to true upon button click
+                }}
               >
                 Conheça nosso Instagram
                 <ArrowSquare />
@@ -152,7 +157,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                   setTimeout(() => {
                     setIsSubmitted(false);
                   }, 300);
-                }} // Set isSubmitted to true upon button click
+                }}
               >
                 Continuar navegando
               </button>
@@ -210,19 +215,13 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               Conte para nós sobre do que se trata o seu projeto.
               <textarea
                 name="descricaoProjeto"
-                rows={2} // Set number of visible rows
-                style={{ resize: "vertical" }} // Allow vertical resizing
+                rows={2}
+                style={{ resize: "vertical" }}
                 placeholder="Descreva seu projeto aqui..."
                 className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
                 onChange={handleChange}
               ></textarea>
               <button
-                onClick={() => {
-                  window.gtag("event", "click", {
-                    event_category: "button",
-                    event_label: "https://www.cjr.org.br/#lead",
-                  });
-                }}
                 type="submit"
                 className="hover:cursor-pointer my-2 text-black bg-green/70 p-3 w-fit self-center rounded-lg font-medium text-lg"
               >
