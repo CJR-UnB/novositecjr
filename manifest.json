@@ -1,0 +1,12 @@
+{
+  "name": "integrator",
+  "short_description": "Adiciona cards automaticamente no Pipefy",
+  "description": "Adiciona cards automaticamente no Pipefy",
+  "icon": "https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Femoji-icon.svg?1505355049359",
+  "author": "CJR",
+  "init_url": "./",
+  "screenshots": [
+    "https://cdn.glitch.com/03813ab1-4482-45be-b7f7-74e8948d7ae7%2Fnew-whatsapp-emojis.jpg?1505355622244"
+  ],
+  "features": ["pipe-buttons", "card-buttons", "card-badges", "card-tab"]
+}
