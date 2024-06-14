@@ -87,32 +87,32 @@ const HomePage: React.FC = () => {
               fill="none"
               d="M496.208 297.975L496.208 492.785L592.499 396.735L592.499 201.925L496.208 297.975Z"
               stroke="#27BD80"
-              stroke-width="3"
+              strokeWidth="3"
             />
             <path
               d="M493.5 693.5L493.5 497.5L297.5 497.5L297.5 693.5L493.5 693.5Z"
               stroke="#27BD80"
-              stroke-width="3"
+              strokeWidth="3"
             />
             <path
               d="M396.5 197.5L592.5 197.5L592.5 1.5L397.677 1.5L396.5 2.83171L396.5 197.5Z"
               stroke="#27BD80"
-              stroke-width="3"
+              strokeWidth="3"
             />
             <path
               d="M97.7921 694.025L97.7921 499.215L1.50127 595.265L1.50125 790.076L97.7921 694.025Z"
               stroke="#27BD80"
-              stroke-width="3"
+              strokeWidth="3"
             />
             <path
               d="M395.791 3.61505L299.5 99.6654L299.5 294.476L395.791 198.425Z"
               stroke="#27BD80"
-              stroke-width="3"
+              strokeWidth="3"
             />
             <path
               d="M101.5 300.5L101.5 496.5L297.5 496.5L297.5 300.5L101.5 300.5Z"
               stroke="#27BD80"
-              stroke-width="3"
+              strokeWidth="3"
             />
           </svg>
         </div>
