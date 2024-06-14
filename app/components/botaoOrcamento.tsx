@@ -1,5 +1,6 @@
 "use client";
 
+import { ring } from "ldrs";
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { ArrowSquare } from "./SVGicons";
@@ -8,9 +9,12 @@ interface OrcamentoProps {
   className: string;
 }
 
+ring.register();
+
 const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // New state for loading animation
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -26,6 +30,8 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsSubmitting(true); // Show loading animation
+
     try {
       const response = await fetch("/api/slack", {
         method: "POST",
@@ -36,7 +42,10 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
       });
 
       if (response.ok) {
-        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitting(false);
+          setIsSubmitted(true);
+        }, 1000);
       } else {
         console.error(
           "Erro ao enviar mensagem para o Slack",
@@ -45,8 +54,11 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
       }
     } catch (error) {
       console.error("Erro ao enviar mensagem para o Slack", error);
+
+    } finally {
     }
   };
+
   /*
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -137,7 +149,8 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               <a
                 href="https://www.instagram.com/cjr.unb/"
                 target="_blank"
-                className={`hover:cursor-pointer my-2 bg-green/70 p-3 w-fit gap-1 self-center items-center rounded-lg font-medium text-lg mb-5 ${
+                rel="noopener noreferrer"
+                className={`hover:cursor-pointer my-2 bg-green/70 p-3 w-fit gap-1 self-center items-center rounded-lg font-medium text-lg mb-5 transition-all duration-200 ease-out hover:scale-110 active:scale-95 ${
                   isSubmitted ? "flex" : "hidden"
                 }`}
                 onClick={() => {
@@ -149,7 +162,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 <ArrowSquare />
               </a>
               <button
-                className={`bg-green/40 p-3 w-fit rounded-lg hover:bg-green/70 transition-all mb-5 ${
+                className={`bg-green/40 p-3 w-fit rounded-lg hover:bg-green/70 transition-all mb-5 duration-200 hover:scale-105 ${
                   isSubmitted ? "flex" : "hidden"
                 }`}
                 onClick={() => {
@@ -162,6 +175,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 Continuar navegando
               </button>
             </div>
+
             <form
               onSubmit={handleSubmit}
               className={`flex-col text-md font-semibold text-spaceblue ${
@@ -189,7 +203,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               />
               Qual é o seu telefone?
               <input
-                type="number"
+                type="tel"
                 placeholder="ex: 21912345678"
                 className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
                 name="telefone"
@@ -223,10 +237,25 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               ></textarea>
               <button
                 type="submit"
-                className="hover:cursor-pointer my-2 text-black bg-green/70 p-3 w-fit self-center rounded-lg font-medium text-lg"
+                className={`hover:cursor-pointer my-2 text-black bg-green/70 p-3 w-fit self-center rounded-lg font-medium text-lg transition-all duration-200 ease-out hover:scale-110 active:scale-95 ${
+                  isSubmitting ? "hidden" : ""
+                }`}
               >
                 Enviar proposta
               </button>
+              <div
+                className={`my-2 p-3 self-center ${
+                  isSubmitting ? "block" : "hidden"
+                }`}
+              >
+                <l-ring
+                  size="30"
+                  stroke="3"
+                  bg-opacity="0"
+                  speed="3"
+                  color="black"
+                ></l-ring>
+              </div>
             </form>
           </div>
         </div>
