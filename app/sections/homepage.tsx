@@ -1,16 +1,19 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import Typewriter from "typewriter-effect";
 import Orcamento from "../components/botaoOrcamento";
 
 const HomePage: React.FC = () => {
   const svgRef = useRef<SVGSVGElement>(null);
+  const [inProp, setInProp] = useState(false);
 
   useEffect(() => {
     if (svgRef.current) {
       svgRef.current.classList.add("draw");
     }
+    setInProp(true);
   }, []);
 
   return (
@@ -20,54 +23,56 @@ const HomePage: React.FC = () => {
         id="homepage"
         style={{ height: "92vh" }}
       >
-        <div className="px-5 mx-2 xl:ml-24">
-          <h1
-            className=" w-full max-w-3xl mb-3 leading-snug text-left
+        <CSSTransition in={inProp} timeout={500} classNames="fade-slide">
+          <div className="px-5 mx-2 xl:ml-24" id="caixa de título">
+            <h1
+              className=" w-full max-w-3xl mb-3 leading-snug text-left
           text-3xl xs:text-4xl 2xl:text-5xl"
-          >
-            Desenvolvendo ideias e impulsionando resultados
-            <div className="my-0 md:my-3 text-aquagreen">
-              <Typewriter
-                onInit={(typewriter) => {
-                  typewriter
-                    .pauseFor(1000)
-                    .typeString("Sites?")
-                    .pauseFor(2000)
-                    .deleteAll()
-                    .pauseFor(500)
-                    .typeString("Aplicativos?")
-                    .pauseFor(2000)
-                    .deleteAll()
-                    .pauseFor(500)
-                    .typeString("Sistemas?")
-                    .pauseFor(2000)
-                    .deleteAll()
-                    .pauseFor(500)
-                    .typeString("Consultorias?")
-                    .pauseFor(2000)
-                    .deleteAll()
-                    .pauseFor(500)
-                    .typeString("A CJR te acompanha!")
-                    .pauseFor(2000)
-                    .start();
-                }}
-                options={{
-                  delay: 50,
-                  deleteSpeed: 30,
-                  loop: true,
-                }}
-              />
-            </div>
-          </h1>
-          <p
-            className="text-gray-200 w-full max-w-xl text-left
+            >
+              Desenvolvendo ideias e impulsionando resultados
+              <div className="my-0 md:my-3 text-aquagreen">
+                <Typewriter
+                  onInit={(typewriter) => {
+                    typewriter
+                      .pauseFor(1000)
+                      .typeString("Sites?")
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .pauseFor(500)
+                      .typeString("Aplicativos?")
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .pauseFor(500)
+                      .typeString("Sistemas?")
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .pauseFor(500)
+                      .typeString("Consultorias?")
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .pauseFor(500)
+                      .typeString("A CJR te acompanha!")
+                      .pauseFor(2000)
+                      .start();
+                  }}
+                  options={{
+                    delay: 50,
+                    deleteSpeed: 30,
+                    loop: true,
+                  }}
+                />
+              </div>
+            </h1>
+            <p
+              className="text-gray-200 w-full max-w-xl text-left
           text-xl lg:text-2xl"
-          >
-            A CJR tem a solução certa para digitalizar sua empresa e escalar
-            seus serviços
-          </p>
-          <Orcamento className="bg-aquagreen rounded-xl mt-3 py-3 px-7 text-black flex items-center text-lg" />
-        </div>
+            >
+              A CJR tem a solução certa para digitalizar sua empresa e escalar
+              seus serviços
+            </p>
+            <Orcamento className="bg-aquagreen rounded-xl mt-3 py-3 px-7 text-black flex items-center text-lg" />
+          </div>
+        </CSSTransition>
         <div
           className="
         scale-90 sm:scale-100

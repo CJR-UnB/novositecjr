@@ -33,22 +33,14 @@
   transition: opacity 400ms;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.fade-slide-enter {
+  opacity: 0;
+  transform: translateY(-60px);
 }
 
-@keyframes car-stretch {
-  0% {
-    stroke-dasharray: 0, 150;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 75, 150;
-    stroke-dashoffset: -25;
-  }
-  100% {
-    stroke-dashoffset: -100;
-  }
+.fade-slide-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 2s, transform 550ms;
+  animation: ease-out;
 }
