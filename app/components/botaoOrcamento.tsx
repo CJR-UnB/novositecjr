@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import LoadingIcons from "react-loading-icons";
+import { TailSpin } from "react-loading-icons";
 import { CSSTransition } from "react-transition-group";
 import { ArrowSquare } from "./SVGicons";
 
@@ -245,7 +245,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               >
                 Enviar proposta
               </button>
-              <LoadingIcons.TailSpin
+              <TailSpin
                 stroke="#27BD80"
                 strokeWidth={2}
                 className={`self-center my-2 ${
