@@ -47,7 +47,6 @@ export async function POST(req: Request) {
   }
 }
 
-
 function generateBlock(formData: FormData) {
   return [
     {
@@ -64,7 +63,7 @@ export function sendSlackMessage(block: any) {
   app.client.chat.postMessage({
     token: process.env.SLACK_BOT_TOKEN,
     channel: process.env.SLACK_CHANNEL || "geral",
-    text: "Hello world!",
+    text: "Um novo cliente respondeu o form!",
     blocks: block,
   });
 }

@@ -1,15 +1,13 @@
 "use client";
 
-import { ring } from "ldrs";
 import React, { useState } from "react";
+import LoadingIcons from "react-loading-icons";
 import { CSSTransition } from "react-transition-group";
 import { ArrowSquare } from "./SVGicons";
 
 interface OrcamentoProps {
   className: string;
 }
-
-ring.register();
 
 const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,7 +52,6 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
       }
     } catch (error) {
       console.error("Erro ao enviar mensagem para o Slack", error);
-
     } finally {
     }
   };
@@ -107,7 +104,12 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div
             className="absolute bg-gray-900/60 inset-0 z-40"
-            onClick={toggleModal}
+            onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+              toggleModal(e);
+              setTimeout(() => {
+                isSubmitted ? setIsSubmitted(false) : "";
+              }, 500);
+            }}
           ></div>
           <div className="bg-white text-black py-5 px-10 rounded-lg flex flex-col z-50 mx-2 transition-transform transform duration-300 ease-in-out">
             <div className="flex flex-col">
@@ -243,19 +245,13 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               >
                 Enviar proposta
               </button>
-              <div
-                className={`my-2 p-3 self-center ${
+              <LoadingIcons.TailSpin
+                stroke="#27BD80"
+                strokeWidth={2}
+                className={`self-center my-2 ${
                   isSubmitting ? "block" : "hidden"
                 }`}
-              >
-                <l-ring
-                  size="30"
-                  stroke="3"
-                  bg-opacity="0"
-                  speed="3"
-                  color="black"
-                ></l-ring>
-              </div>
+              />
             </form>
           </div>
         </div>

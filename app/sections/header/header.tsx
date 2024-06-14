@@ -120,7 +120,6 @@ const Header: React.FC = () => {
         style={{ minHeight: "fit-content", maxHeight: "5rem" }}
       >
         <NavigationItem
-          key={"homepage"}
           id={"homepage"}
           onClick={scrollTop}
           normal={false}
@@ -130,27 +129,23 @@ const Header: React.FC = () => {
           {isScrolled ? <DarkCJR /> : <CJR />}
         </NavigationItem>
         <div className="self-center text-2xl mr-24 space-x-16 hidden xs:hidden sm:hidden md:hidden lg:hidden xl:flex">
-          {navigationItems.map(() => (
-            <>
-              <NavigationItem
-                key={"quem-somos"}
-                label={"Quem Somos"}
-                id={"quem-somos"}
-                onClick={scrollToSection}
-                normal={true}
-                text={true}
-                active={activeSection === "quem-somos"}
-              />
-              <NavigationItem
-                key={"servicos"}
-                label={"Serviços"}
-                id={"servicos"}
-                onClick={scrollToSection}
-                normal={true}
-                text={true}
-                active={activeSection === "servicos"}
-              />
-              {/*
+          <NavigationItem
+            label={"Quem Somos"}
+            id={"quem-somos"}
+            onClick={scrollToSection}
+            normal={true}
+            text={true}
+            active={activeSection === "quem-somos"}
+          />
+          <NavigationItem
+            label={"Serviços"}
+            id={"servicos"}
+            onClick={scrollToSection}
+            normal={true}
+            text={true}
+            active={activeSection === "servicos"}
+          />
+          {/*
               <NavigationItem
                 key={"nossos-cases"}
                 label={"Cases"}
@@ -160,34 +155,30 @@ const Header: React.FC = () => {
                 text={true}
                 active={activeSection === "nossos-cases"}
               /> essa seção ainda precisa ser finalizada*/}
-              <NavigationItem
-                key={"nosso-time"}
-                label={"Nosso Time"}
-                id={"nosso-time"}
-                onClick={scrollToSection}
-                normal={true}
-                text={true}
-                active={activeSection === "nosso-time"}
-              />
+          <NavigationItem
+            label={"Nosso Time"}
+            id={"nosso-time"}
+            onClick={scrollToSection}
+            normal={true}
+            text={true}
+            active={activeSection === "nosso-time"}
+          />
 
-              <div
-                className="bg-aquagreen max-h-full flex"
-                style={{ height: "5rem" }}
-              >
-                <NavigationItem
-                  key={"contato"}
-                  label={"Contato"}
-                  id={"contato"}
-                  onClick={scrollToSection}
-                  normal={false}
-                  text={true}
-                  style={
-                    "py-7 px-20 text-black transition-colors duration-300 hover:bg-green ease-in flex-grow"
-                  }
-                />
-              </div>
-            </>
-          ))}
+          <div
+            className="bg-aquagreen max-h-full flex"
+            style={{ height: "5rem" }}
+          >
+            <NavigationItem
+              label={"Contato"}
+              id={"contato"}
+              onClick={scrollToSection}
+              normal={false}
+              text={true}
+              style={
+                "py-7 px-20 text-black transition-colors duration-300 hover:bg-green ease-in flex-grow"
+              }
+            />
+          </div>
         </div>
         <button
           id="hamburguer"
