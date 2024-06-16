@@ -1,38 +1,26 @@
-New website for the junior enterprise CJR
+# Site atual da CJR (2024 - presente)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## _desenvolvido na stack da empresa: React, NextJs, TailwindCSS e Typescript_
 
-## Getting Started
+### Algumas informações úteis:
 
-First, run the development server:
+- Cada seção do site está separado dentro de seções, presentes na pasta _./app/sections_;
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- O arquivo .env do aplicativo contém informações para o uso de um bot no slack, mas está atualmente desativado devido ao nosso uso do make.com;
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  - A pasta API contém a lógica para o desenvolvimento dessa bot do slack
+    que está em desuso;
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Todas as animações foram feitas usando o React-transition-group e keyframes CSS e as imagens do site são vetores do site phosphoricons.com e se apresentam nos arquivos _./app/global.css_ e ._/components/SVGicons.tsx_, respectivamente;
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- O arquivo _./app/components/botaoOrcamento.tsx_ é o arquivo que contém toda a lógica do funil de vendas conectado ao make.com;
 
-## Learn More
+  - O arquivo _./app/components/whatsappButton.tsx_ contém a lógica para mandar mensagem pelo whatsapp;
 
-To learn more about Next.js, take a look at the following resources:
+- Todas as cores usadas no site estão configuradas dentro do arquivo _./tailwind.config.ts_ e podem ser usadas com seu próprio nome dentro do código;
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- A pasta portfolio se refere a uma página de portfólio que está atualmente desativada e precisa ser desenvolvida para finalizar o site;
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Dúvidas no código podem ser tratadas atualmente pelos desenvolvedores atuais do site (2024): @rafaelghiorzi @Luccambc @viniciusrsm;
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`Código feito com amor`

@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import React, { useState } from "react";
 import { TailSpin } from "react-loading-icons";
 import { CSSTransition } from "react-transition-group";
@@ -26,37 +27,6 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsSubmitting(true); // Show loading animation
-
-    try {
-      const response = await fetch("/api/slack", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setTimeout(() => {
-          setIsSubmitting(false);
-          setIsSubmitted(true);
-        }, 1000);
-      } else {
-        console.error(
-          "Erro ao enviar mensagem para o Slack",
-          response.statusText
-        );
-      }
-    } catch (error) {
-      console.error("Erro ao enviar mensagem para o Slack", error);
-    } finally {
-    }
-  };
-
-  /*
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("form data:", formData);
@@ -71,7 +41,6 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
       console.error("webhook error:", error);
     }
   };
-*/
 
   const handleChange = (
     e: React.ChangeEvent<

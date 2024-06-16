@@ -67,3 +67,41 @@ export function sendSlackMessage(block: any) {
     blocks: block,
   });
 }
+
+/*
+
+O código acima pode ser integrado dentro do funil de vendas com a seguinte função aplicada dentro do componente
+
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true); // Show loading animation
+
+    try {
+      const response = await fetch("/api/slack", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setTimeout(() => {
+          setIsSubmitting(false);
+          setIsSubmitted(true);
+        }, 1000);
+      } else {
+        console.error(
+          "Erro ao enviar mensagem para o Slack",
+          response.statusText
+        );
+      }
+    } catch (error) {
+      console.error("Erro ao enviar mensagem para o Slack", error);
+    } finally {
+    }
+  };
+
+
+*/
