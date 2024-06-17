@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Contador from "./sections/contador/contador";
 import Contato from "./sections/contato/contato";
@@ -33,14 +31,9 @@ Vai ficar incrível
 }
 
 export default function Home() {
-  const navigationItems = [{ label: "", id: "" }];
-
   return (
     <main className="text-spaceblue bg-white font-Roboto ">
-      <head>
-        <link rel="icon" href="/favicon.svg" />
-      </head>
-      <Header navigationItems={navigationItems} />
+      <Header />
       <HomePage />
       <div className="absolute w-full transform -translate-y-16 md:-translate-y-32 ">
         <Image src={"/wave.svg"} width={2300} height={200} alt="waves" />
@@ -48,13 +41,14 @@ export default function Home() {
       <Contador />
       <QuemSomos />
       <Servicos />
-      {/* <Cases /> os cases ainda não estão prontos para serem lançados*/}
       <NossoTime />
       <Depoimentos />
       <OndeEstamos />
       <Parceiros />
       <Contato />
       <Footer />
+
+      {/* <Cases /> os cases ainda não estão prontos para serem lançados*/}
     </main>
   );
 }

@@ -1,86 +1,125 @@
-import { motion } from "framer-motion";
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import Typewriter from "typewriter-effect";
 import Orcamento from "../components/botaoOrcamento";
-import HomePageIcon from "../components/SVGicons";
 
 const HomePage: React.FC = () => {
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [inProp, setInProp] = useState(false);
+
+  useEffect(() => {
+    if (svgRef.current) {
+      svgRef.current.classList.add("draw");
+    }
+    setInProp(true);
+  }, []);
+
   return (
     <>
       <section
-        className="bg-spaceblue text-white p-1 flex relative
-        flex-col xs:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row"
+        className="bg-spaceblue text-white p-1 flex flex-col xl:flex-row xl:justify-around items-center relative overflow-hidden"
         id="homepage"
-        style={{ overflow: "hidden", height: "92vh" }}
+        style={{ height: "92vh" }}
       >
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="px-5 mx-2
-         m-auto lg:ml-32 xl:ml-40 2xl:ml-40
-         mt-16 sm:mt-16 md:mt-20 lg:mt-auto xl:mt-auto 2xl:mt-auto"
-        >
-          <h1
-            className=" w-full max-w-3xl mb-3 leading-snug text-left
-          text-3xl xs:text-4xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-5xl"
-          >
-            Desenvolvendo ideias e impulsionando resultados
-            <div className="my-0 md:my-3 text-aquagreen">
-              <Typewriter
-                onInit={(typewriter) => {
-                  typewriter
-                    .pauseFor(1000)
-                    .typeString("Sites?")
-                    .pauseFor(2000)
-                    .deleteAll()
-                    .pauseFor(500)
-                    .typeString("Aplicativos?")
-                    .pauseFor(2000)
-                    .deleteAll()
-                    .pauseFor(500)
-                    .typeString("Sistemas?")
-                    .pauseFor(2000)
-                    .deleteAll()
-                    .pauseFor(500)
-                    .typeString("Consultorias?")
-                    .pauseFor(2000)
-                    .deleteAll()
-                    .pauseFor(500)
-                    .typeString("A CJR te acompanha!")
-                    .pauseFor(2000)
-                    .start();
-                }}
-                options={{
-                  delay: 50,
-                  deleteSpeed: 30,
-                  loop: true,
-                }}
-              />
-            </div>
-          </h1>
-          <p
-            className="text-gray-200 w-full max-w-xl text-left
-          text-xl xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-xl 2xl:text-2xl"
-          >
-            A CJR tem a solução certa para digitalizar sua empresa e escalar
-            seus serviços
-          </p>
-          <Orcamento
-            className="bg-aquagreen rounded-xl mt-3 mb-5 py-3 px-7 text-black transition-colors duration-300 hover:bg-green ease-linear
-           flex items-center text-lg"
-          />
-        </motion.div>
+        <CSSTransition in={inProp} timeout={500} classNames="fade-slide">
+          <div className="px-5 mx-2 xl:ml-24" id="caixa de título">
+            <h1
+              className=" w-full max-w-3xl mb-3 leading-snug text-left
+          text-3xl xs:text-4xl 2xl:text-5xl"
+            >
+              Desenvolvendo ideias e impulsionando resultados
+              <div className="my-0 md:my-3 text-aquagreen">
+                <Typewriter
+                  onInit={(typewriter) => {
+                    typewriter
+                      .pauseFor(1000)
+                      .typeString("Sites?")
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .pauseFor(500)
+                      .typeString("Aplicativos?")
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .pauseFor(500)
+                      .typeString("Sistemas?")
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .pauseFor(500)
+                      .typeString("Consultorias?")
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .pauseFor(500)
+                      .typeString("A CJR te acompanha!")
+                      .pauseFor(2000)
+                      .start();
+                  }}
+                  options={{
+                    delay: 50,
+                    deleteSpeed: 30,
+                    loop: true,
+                  }}
+                />
+              </div>
+            </h1>
+            <p
+              className="text-gray-200 w-full max-w-xl text-left
+          text-xl lg:text-2xl"
+            >
+              A CJR tem a solução certa para digitalizar sua empresa e escalar
+              seus serviços
+            </p>
+            <Orcamento className="bg-aquagreen rounded-xl mt-3 py-3 px-7 text-black flex items-center text-lg" />
+          </div>
+        </CSSTransition>
         <div
           className="
-        flex xs:flex sm:flex md:flex lg:block xl:block 2xl:block
-        scale-90 xs:scale-90 sm:scale-100 md:scale-100 lg:scale-100 xl:scale-125 2xl:scale-125
-        mt-0 xs:mt-0 sm:mt-0 md:mt-0 lg:mt-32 xl:mt-44 2xl:mt-44
-        xs:ml-auto sm:ml-auto md:ml-auto lg: xl: 2xl:
-        mr-44 xs: sm: md: lg:mr-10 xl:mr-44 2xl:mr-44
+        scale-90 sm:scale-100
+        mt-4 xl:mt-44
+        mr-44 xs: sm: md: lg:mr-10 xl:mr-24
         justify-center items-center"
         >
-          <HomePageIcon />
+          <svg
+            ref={svgRef}
+            width="740"
+            height="797"
+            viewBox="0 0 594 651"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="none"
+              d="M496.208 297.975L496.208 492.785L592.499 396.735L592.499 201.925L496.208 297.975Z"
+              stroke="#27BD80"
+              strokeWidth="3"
+            />
+            <path
+              d="M493.5 693.5L493.5 497.5L297.5 497.5L297.5 693.5L493.5 693.5Z"
+              stroke="#27BD80"
+              strokeWidth="3"
+            />
+            <path
+              d="M396.5 197.5L592.5 197.5L592.5 1.5L397.677 1.5L396.5 2.83171L396.5 197.5Z"
+              stroke="#27BD80"
+              strokeWidth="3"
+            />
+            <path
+              d="M97.7921 694.025L97.7921 499.215L1.50127 595.265L1.50125 790.076L97.7921 694.025Z"
+              stroke="#27BD80"
+              strokeWidth="3"
+            />
+            <path
+              d="M395.791 3.61505L299.5 99.6654L299.5 294.476L395.791 198.425Z"
+              stroke="#27BD80"
+              strokeWidth="3"
+            />
+            <path
+              d="M101.5 300.5L101.5 496.5L297.5 496.5L297.5 300.5L101.5 300.5Z"
+              stroke="#27BD80"
+              strokeWidth="3"
+            />
+          </svg>
         </div>
       </section>
     </>

@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes draw {
+  from {
+    stroke-dasharray: 0, 500;
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dasharray: 1000, 0;
+    stroke-dashoffset: 100;
+  }
+}
+
+.draw path {
+  animation: draw 3s ease;
+}
+
+.modal-enter {
+  opacity: 0;
+}
+.modal-enter-active {
+  opacity: 1;
+  transition: opacity 400ms;
+  animation: ease-in-out;
+}
+.modal-exit {
+  opacity: 1;
+}
+.modal-exit-active {
+  opacity: 0;
+  transition: opacity 400ms;
+}
+
+.fade-slide-enter {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+
+.fade-slide-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 2s, transform 550ms;
+  animation: ease-out;
+}

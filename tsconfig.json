@@ -27,7 +27,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/components/navbar.js",
-    "app/pages/_document.js"
+    "app/pages/_document.js",
+    "app/api/slack/route.ts"
   ],
   "exclude": ["node_modules"]
 }
