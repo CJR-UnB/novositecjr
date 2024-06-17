@@ -59,7 +59,7 @@ function generateBlock(formData: FormData) {
   ];
 }
 
-export function sendSlackMessage(block: any) {
+async function sendSlackMessage(block: any) {
   app.client.chat.postMessage({
     token: process.env.SLACK_BOT_TOKEN,
     channel: process.env.SLACK_CHANNEL || "geral",
