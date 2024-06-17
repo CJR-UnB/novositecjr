@@ -211,6 +211,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 className={`hover:cursor-pointer my-2 text-black bg-green/70 p-3 w-fit self-center rounded-lg font-medium text-lg transition-all duration-200 ease-out hover:scale-110 active:scale-95 ${
                   isSubmitting ? "hidden" : ""
                 }`}
+                onClick={() => setIsSubmitting(true)}
               >
                 Enviar proposta
               </button>
