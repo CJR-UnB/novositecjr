@@ -36,7 +36,13 @@ export default function Home() {
       <Header />
       <HomePage />
       <div className="absolute w-full transform -translate-y-16 md:-translate-y-32 ">
-        <Image src={"/wave.svg"} width={2300} height={200} alt="waves" />
+        <Image
+          src={"/wave.svg"}
+          width={2300}
+          height={200}
+          alt="waves"
+          priority
+        />
       </div>
       <Contador />
       <QuemSomos />

@@ -21,7 +21,6 @@ const HomePage: React.FC = () => {
       <section
         className="bg-spaceblue text-white p-1 flex flex-col xl:flex-row xl:justify-around items-center relative overflow-hidden"
         id="homepage"
-        style={{ height: "92vh" }}
       >
         <CSSTransition in={inProp} timeout={500} classNames="fade-slide">
           <div className="px-5 mx-2 xl:ml-24" id="caixa de título">
@@ -75,15 +74,16 @@ const HomePage: React.FC = () => {
         </CSSTransition>
         <div
           className="
-        scale-90 sm:scale-100
-        mt-4 xl:mt-44
-        mr-44 xs: sm: md: lg:mr-10 xl:mr-24
-        justify-center items-center"
+          min-h-[20rem]
+          scale-100
+          mt-4 xl:mt-14
+          justify-center items-center self-center flex
+          mr-0 xl:mr-24
+          w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl"
         >
           <svg
             ref={svgRef}
-            width="740"
-            height="797"
+            className="w-full h-auto"
             viewBox="0 0 594 651"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
