@@ -16,7 +16,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const [isSubmitting, setIsSubmitting] = useState(false); // New state for loading animation
   const [formData, setFormData] = useState({
     nome: "indefinido",
-    email: "rafael.ghiorzi@gmail.com",
+    email: "indefinido",
     telefone: "indefinido",
     conheceuPor: "indefinido",
     descricaoProjeto: "indefinido",
@@ -29,12 +29,18 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("form data:", formData);
+
+    const finalFormData = {
+      ...formData,
+      email: formData.email === "" ? "indefinido" : formData.email,
+    };
+
+    console.log("form data:", finalFormData);
     setIsSubmitting(true); // Set isSubmitting to true upon form submission
     try {
       const response = await axios.post(
         "https://hook.us1.make.com/kpqx58untrlts3fd1u8f83qj3ab7u4ev",
-        formData
+        finalFormData
       );
       console.log("webhook response:", response.data);
       setIsSubmitted(true); // Set isSubmitted to true upon successful form submission
@@ -55,10 +61,9 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
   ) => {
-    const { name, value } = e.target;
     setFormData({
-      ...formData,
-      [name]: value,
+      ...formData, // keep the existing formData state
+      [e.target.name]: e.target.value, // only update the field that was changed
     });
   };
 
