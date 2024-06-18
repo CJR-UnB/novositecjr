@@ -15,11 +15,11 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false); // New state for loading animation
   const [formData, setFormData] = useState({
-    nome: "",
-    email: "",
-    telefone: "",
-    conheceuPor: "",
-    descricaoProjeto: "",
+    nome: "indefinido",
+    email: "rafael.ghiorzi@gmail.com",
+    telefone: "indefinido",
+    conheceuPor: "indefinido",
+    descricaoProjeto: "indefinido",
   });
 
   const toggleModal = (e: React.MouseEvent<HTMLElement>) => {
@@ -30,6 +30,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("form data:", formData);
+    setIsSubmitting(true); // Set isSubmitting to true upon form submission
     try {
       const response = await axios.post(
         "https://hook.us1.make.com/kpqx58untrlts3fd1u8f83qj3ab7u4ev",
@@ -37,8 +38,15 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
       );
       console.log("webhook response:", response.data);
       setIsSubmitted(true); // Set isSubmitted to true upon successful form submission
+      setIsSubmitting(false); // Set isSubmitting to false upon successful form submission
     } catch (error) {
       console.error("webhook error:", error);
+      setIsSubmitted(false); // Set isSubmitted to false upon unsuccessful form submission
+      setIsSubmitting(false); // Set isSubmitting to false upon unsuccessful form submission
+      alert("Erro ao enviar formulário, tente novamente mais tarde.");
+      setTimeout(() => {
+        setIsModalOpen(false);
+      }, 500);
     }
   };
 
@@ -153,7 +161,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 isSubmitted ? "hidden" : "flex"
               }`}
             >
-              Qual é o seu nome?
+              Qual é o seu nome? *
               <input
                 type="text"
                 required
@@ -167,12 +175,11 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               <input
                 type="email"
                 placeholder="seu.email@exemplo.com"
-                required
                 className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
                 name="email"
                 onChange={handleChange}
               />
-              Qual é o seu telefone?
+              Qual é o seu telefone? *
               <input
                 type="tel"
                 placeholder="ex: 21912345678"
@@ -180,6 +187,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 name="telefone"
                 pattern="[0-9]*"
                 inputMode="numeric"
+                required
                 onChange={handleChange}
               />
               Como você conheceu a CJR?
@@ -191,13 +199,15 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 <option value="" disabled selected>
                   Escolha uma opção
                 </option>
-                <option value="instagram">Instagram</option>
-                <option value="facebook">Facebook</option>
-                <option value="linkedin">Linkedin</option>
-                <option value="google">Google</option>
-                <option value="outro">Outro</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Facebook">Facebook</option>
+                <option value="Linkedin">Linkedin</option>
+                <option value="Google">Google</option>
+                <option value="Indicação">Indicação</option>
+                <option value="Já fui cliente">Já fui cliente</option>
+                <option value="Outro">Outro</option>
               </select>
-              Conte para nós sobre do que se trata o seu projeto.
+              Conte para nós sobre do que se trata o seu projeto. *
               <textarea
                 name="descricaoProjeto"
                 rows={2}
@@ -205,13 +215,13 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 placeholder="Descreva seu projeto aqui..."
                 className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
                 onChange={handleChange}
+                required
               ></textarea>
               <button
                 type="submit"
                 className={`hover:cursor-pointer my-2 text-black bg-green/70 p-3 w-fit self-center rounded-lg font-medium text-lg transition-all duration-200 ease-out hover:scale-110 active:scale-95 ${
                   isSubmitting ? "hidden" : ""
                 }`}
-                onClick={() => setIsSubmitting(true)}
               >
                 Enviar proposta
               </button>
