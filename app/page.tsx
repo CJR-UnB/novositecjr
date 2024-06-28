@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Blog from "./sections/blog/blog";
+import Cases from "./sections/cases/cases";
 import Contador from "./sections/contador/contador";
 import Contato from "./sections/contato/contato";
 import Depoimentos from "./sections/depoimentos/depoimentos";
@@ -47,7 +49,9 @@ export default function Home() {
       <Contador />
       <QuemSomos />
       <Servicos />
+      <Cases />
       <NossoTime />
+      <Blog />
       <Depoimentos />
       <OndeEstamos />
       <Parceiros />

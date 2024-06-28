@@ -3,14 +3,14 @@
 import { CJR, DarkCJR, DarkMenu, Menu } from "@/app/components/SVGicons";
 import Whatsapp from "@/app/components/whatsappButton";
 import { useEffect, useState } from "react";
-import NavigationItem from "./navigationItems";
+import NavigationItemAlt from "./navigationItemsAlt";
 
 export interface NavigationItem {
   label: string;
   id: string;
 }
 
-const Header: React.FC = () => {
+const HeaderAlt: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,7 +66,6 @@ const Header: React.FC = () => {
         "quem-somos",
         "nossos-cases",
         "servicos",
-        "portfolio",
         "nosso-time",
         "blog",
         "depoimentos",
@@ -126,7 +125,7 @@ const Header: React.FC = () => {
         }`}
         style={{ minHeight: "fit-content", maxHeight: "5rem" }}
       >
-        <NavigationItem
+        <NavigationItemAlt
           id={"homepage"}
           onClick={scrollTop}
           normal={false}
@@ -134,57 +133,58 @@ const Header: React.FC = () => {
           style=""
         >
           {isScrolled ? <DarkCJR /> : <CJR />}
-        </NavigationItem>
+        </NavigationItemAlt>
         <div className="self-center text-2xl mr-24 space-x-16 hidden xs:hidden sm:hidden md:hidden lg:hidden xl:flex">
-          <NavigationItem
+          <NavigationItemAlt
             label={"Quem Somos"}
             id={"quem-somos"}
-            onClick={scrollToSection}
+            onClick={goToHref("www.cjr.org.br/#quem-somos")}
             normal={true}
             text={true}
             active={activeSection === "quem-somos"}
           />
-          <NavigationItem
+          <NavigationItemAlt
             label={"Serviços"}
             id={"servicos"}
-            onClick={scrollToSection}
+            onClick={goToHref("www.cjr.org.br/#servicos")}
             normal={true}
             text={true}
             active={activeSection === "servicos"}
           />
-          <NavigationItem
+          <NavigationItemAlt
             key={"nossos-cases"}
             label={"Cases"}
             id={"nossos-cases"}
-            onClick={scrollToSection}
+            onClick={goToHref("www.cjr.org.br/#nossos-cases")}
             normal={true}
             text={true}
             active={activeSection === "nossos-cases"}
           />
-          <NavigationItem
+          <NavigationItemAlt
             label={"Nosso Time"}
             id={"nosso-time"}
-            onClick={scrollToSection}
+            onClick={goToHref("www.cjr.org.br/#nosso-time")}
             normal={true}
             text={true}
             active={activeSection === "nosso-time"}
           />
-          <NavigationItem
+          <NavigationItemAlt
             label={"Blog"}
-            id="blog"
-            onClick={goToHref("www.cjr.org.br/blog")}
+            id={"blog"}
+            onClick={goToHref("www.cjr.org.br/#blog")}
             normal={true}
             text={true}
             active={activeSection === "blog"}
           />
+
           <div
             className="bg-aquagreen max-h-full flex"
             style={{ height: "5rem" }}
           >
-            <NavigationItem
+            <NavigationItemAlt
               label={"Contato"}
               id={"contato"}
-              onClick={scrollToSection}
+              onClick={goToHref("www.cjr.org.br/#contato")}
               normal={false}
               text={true}
               style={
@@ -216,7 +216,7 @@ const Header: React.FC = () => {
             }`}
             style={{ alignItems: "center", height: "95vh" }}
           >
-            <NavigationItem
+            <NavigationItemAlt
               label="Quem somos"
               id="quem-somos"
               onClick={scrollToSection}
@@ -224,7 +224,7 @@ const Header: React.FC = () => {
               text={true}
               style={"block mb-6"}
             />
-            <NavigationItem
+            <NavigationItemAlt
               label="Serviços e Produtos"
               id="servicos"
               onClick={scrollToSection}
@@ -232,7 +232,7 @@ const Header: React.FC = () => {
               text={true}
               style={"block mb-6"}
             />
-
+            {/*
             <NavigationItem
               label="Nossos Cases"
               id="nossos-cases"
@@ -240,8 +240,8 @@ const Header: React.FC = () => {
               normal={false}
               text={true}
               style={"block mb-6"}
-            />
-            <NavigationItem
+            /> essa seção ainda precisa ser finalizada*/}
+            <NavigationItemAlt
               label="Nosso Time"
               id="nosso-time"
               onClick={scrollToSection}
@@ -249,15 +249,7 @@ const Header: React.FC = () => {
               text={true}
               style={"block mb-6"}
             />
-            <NavigationItem
-              label="Blog"
-              id="blog"
-              onClick={scrollToSection}
-              normal={false}
-              text={true}
-              style={"block mb-6"}
-            />
-            <NavigationItem
+            <NavigationItemAlt
               label="Contato"
               id="contato"
               onClick={scrollToSection}
@@ -273,4 +265,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default HeaderAlt;

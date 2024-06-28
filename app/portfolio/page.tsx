@@ -1,16 +1,15 @@
 // Code Generated with love
 import { PageBreak } from "../components/SVGicons";
+import HeaderAlt from "../sections/headerAlt/headerAlt";
 import CaseCard from "./caseCard";
-import Header from "./header";
 
 export default function portfolio() {
-
   return (
-    <main className="text-spaceblue bg-offwhite font-Roboto ">
-      <Header/>
+    <main className="text-spaceblue bg-offwhite ">
+      <HeaderAlt />
       <article>
         <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl mt-10">
-          Nosso portfolio
+          NOSSO PORTFOLIO
         </h1>
         <PageBreak />
         <p className="text-center text-xl text-mutedSpaceblue">
