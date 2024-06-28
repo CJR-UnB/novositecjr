@@ -1,8 +1,22 @@
 // Code Generated with love
+import prisma from "@/lib/prisma";
+import BlogCard from "../components/blogCard";
 import { PageBreak } from "../components/SVGicons";
 import HeaderAlt from "../sections/headerAlt/headerAlt";
 
-export default function portfolio() {
+async function getArticles() {
+  const articles = await prisma.article.findMany({
+    orderBy: {
+      id: "desc",
+    },
+  });
+  return articles;
+}
+
+export default async function portfolio() {
+  const articles = await getArticles();
+  console.log(articles);
+
   return (
     <main className="text-spaceblue">
       <HeaderAlt />
@@ -16,10 +30,16 @@ export default function portfolio() {
           conquistas da CJR
         </p>
       </article>
-      <section
-        id="portfolio"
-        className="flex flex-wrap justify-around items-center mt-10 mx-2"
-      ></section>
+      {articles.map((article) => (
+        <BlogCard
+          key={article.id}
+          id={article.id}
+          title={article.title}
+          author={article.author}
+          createdAt={article.createdAt}
+          content={article.content}
+        />
+      ))}
     </main>
   );
 }

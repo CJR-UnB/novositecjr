@@ -1,10 +1,13 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 interface BlogCardProps {
-  id: string;
+  id: number;
   title: string;
   author: string;
-  createdAt: string;
-  text: string;
-  imageSrc: string;
+  createdAt: Date;
+  content: string;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({
@@ -12,24 +15,32 @@ const BlogCard: React.FC<BlogCardProps> = ({
   title,
   author,
   createdAt,
-  text,
-  imageSrc,
+  content,
 }) => {
+  const router = useRouter();
+  const date = new Date(createdAt);
+  const day = date.getDate().toString().padStart(2, "0");
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const formattedDate = `${day}/${month}`;
+
+  const handleLeiaMais = () => {
+    router.push(`/blog/${id}`);
+  };
   return (
     <div className="relative flex max-w-[24rem] flex-col rounded-lg bg-white bg-clip-border shadow-md text-spaceblue m-5">
-      <div className="relative m-0 overflow-hidden rounded-t-lg bg-transparent bg-clip-border shadow-none">
-        <img src={imageSrc} alt="placeholder" />
-      </div>
       <div className="px-6 pt-6">
         <h4 className="block font-sans text-xl font-semibold leading-snug tracking-normal antialiased">
           {title}
         </h4>
         <p className="mt-3 block font-sans text-xl font-normal leading-relaxed text-mutedSpaceblue antialiased">
-          {text.slice(0, 50)}
-          {text.length > 50 ? "..." : ""}
+          {content.slice(0, 50)}
+          {content.length > 50 ? "..." : ""}
         </p>
       </div>
-      <button className="flex items-center gap-2 w-fit mt-2 p-2 ml-6 font-medium text-aquagreen rounded-lg hover:bg-aquagreen/10 transition-all duration-200">
+      <button
+        onClick={handleLeiaMais}
+        className="flex items-center gap-2 w-fit mt-2 p-2 ml-6 font-medium text-aquagreen rounded-lg hover:bg-aquagreen/10 transition-all duration-200"
+      >
         Continuar lendo
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +60,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
       </button>
       <div className="text-right px-5 pb-3 text-">
         <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
-          {createdAt} - {author}
+          {formattedDate} - {author}
         </p>
       </div>
     </div>

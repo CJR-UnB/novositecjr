@@ -1,7 +1,20 @@
 import BlogCard from "@/app/components/blogCard";
 import { PageBreak } from "@/app/components/SVGicons";
+import prisma from "@/lib/prisma";
 
-const Blog: React.FC = () => {
+async function getArticles() {
+  const articles = await prisma.article.findMany({
+    take: 5,
+    orderBy: {
+      id: "desc",
+    },
+  });
+  return articles;
+}
+
+export default async function Blog() {
+  const articles = await getArticles();
+
   return (
     <section className="mt-20 items-center flex flex-col" id="blog">
       <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl">
@@ -10,16 +23,16 @@ const Blog: React.FC = () => {
       <PageBreak />
       {/* A gente vai precisar de uma função map com critério de post mais recente aqui
       vou deixar um placeholder por enquanto */}
-      <BlogCard
-        imageSrc="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
-        id="?"
-        title="Isso é um teste!"
-        author="Rafael Dias"
-        createdAt="28 de Junho"
-        text="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
-      />
+      {articles.map((article) => (
+        <BlogCard
+          key={article.id}
+          id={article.id}
+          title={article.title}
+          author={article.author}
+          createdAt={article.createdAt}
+          content={article.content}
+        />
+      ))}
     </section>
   );
-};
-
-export default Blog;
+}
