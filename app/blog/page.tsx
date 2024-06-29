@@ -13,7 +13,7 @@ async function getArticles() {
   return articles;
 }
 
-export default async function portfolio() {
+export default async function Blog() {
   const articles = await getArticles();
   console.log(articles);
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 
 export default function Auth() {
@@ -12,6 +13,18 @@ export default function Auth() {
 
   const handleSubmit = async (values: { user: string; password: string }) => {
     if (values.user === USER && values.password === PASSWORD) {
+      sessionStorage.setItem("accessToken", "teste");
+
+      // Creates a cookie with expiration time for 1 hour
+      const expirationTime = 60 * 60 * 1000;
+      const expiryDate = new Date(Date.now() + expirationTime);
+
+      // Sets a cookie
+      Cookies.set("accessToken", "token de 1 hora", {
+        expires: expiryDate,
+        secure: process.env.NODE_ENV === "production",
+      });
+
       // Successful login logic, e.g., redirect to editor page
       router.push("/admin/blogAdmin");
     } else {

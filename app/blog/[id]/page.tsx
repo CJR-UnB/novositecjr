@@ -32,7 +32,7 @@ export default async function BlogPost({ params }: { params: any }) {
   return (
     <main className="text-spaceblue">
       <HeaderAlt />
-      <div className="self-center flex flex-col p-5">
+      <section className="items-center self-center flex flex-col p-5">
         <h1 className="text-spaceblue font-semibold text-4xl md:text-5xl mt-3 mb-3">
           {article.title}
         </h1>
@@ -58,11 +58,10 @@ export default async function BlogPost({ params }: { params: any }) {
           </svg>
           <p className="text-lg font-medium">{article.author}</p>
         </div>
-      </div>
-
-      <article className="px-5">
-        <p>{article.content}</p>
-      </article>
+        <article className="px-5">
+          <p>{article.content}</p>
+        </article>
+      </section>
     </main>
   );
 }
