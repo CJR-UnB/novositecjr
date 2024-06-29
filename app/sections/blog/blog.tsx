@@ -4,7 +4,7 @@ import prisma from "@/lib/prisma";
 
 async function getArticles() {
   const articles = await prisma.article.findMany({
-    take: 5,
+    take: 3,
     orderBy: {
       id: "desc",
     },
@@ -21,19 +21,19 @@ export default async function Blog() {
         CONHEÇA O BLOG DA CJR
       </h1>
       <PageBreak />
-      {/* A gente vai precisar de uma função map com critério de post mais recente aqui
-      vou deixar um placeholder por enquanto */}
-      {articles.map((article) => (
-        <BlogCard
-          key={article.id}
-          id={article.id}
-          title={article.title}
-          author={article.author}
-          createdAt={article.createdAt}
-          updatedAt={article.updatedAt}
-          content={article.content}
-        />
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-3 ">
+        {articles.map((article) => (
+          <BlogCard
+            key={article.id}
+            id={article.id}
+            title={article.title}
+            author={article.author}
+            createdAt={article.createdAt}
+            updatedAt={article.updatedAt}
+            content={article.content}
+          />
+        ))}
+      </div>
     </section>
   );
 }

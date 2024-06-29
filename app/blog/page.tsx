@@ -30,17 +30,19 @@ export default async function Blog() {
           conquistas da CJR
         </p>
       </article>
-      {articles.map((article) => (
-        <BlogCard
-          key={article.id}
-          id={article.id}
-          title={article.title}
-          author={article.author}
-          createdAt={article.createdAt}
-          content={article.content}
-          updatedAt={article.updatedAt}
-        />
-      ))}
+      <div className="grid grid-cols-1 md:grid-cols-3 ">
+        {articles.map((article) => (
+          <BlogCard
+            key={article.id}
+            id={article.id}
+            title={article.title}
+            author={article.author}
+            createdAt={article.createdAt}
+            content={article.content}
+            updatedAt={article.updatedAt}
+          />
+        ))}
+      </div>
     </main>
   );
 }

@@ -127,7 +127,7 @@ const HeaderAlt: React.FC = () => {
       >
         <NavigationItemAlt
           id={"homepage"}
-          onClick={scrollTop}
+          onClick={goToHref("www.cjr.org.br")}
           normal={false}
           text={false}
           style=""
@@ -219,7 +219,7 @@ const HeaderAlt: React.FC = () => {
             <NavigationItemAlt
               label="Quem somos"
               id="quem-somos"
-              onClick={scrollToSection}
+              onClick={goToHref("www.cjr.org.br/#quem-somos")}
               normal={false}
               text={true}
               style={"block mb-6"}
@@ -227,24 +227,31 @@ const HeaderAlt: React.FC = () => {
             <NavigationItemAlt
               label="Serviços e Produtos"
               id="servicos"
-              onClick={scrollToSection}
+              onClick={goToHref("www.cjr.org.br/#servicos")}
               normal={false}
               text={true}
               style={"block mb-6"}
             />
-            {/*
-            <NavigationItem
+            <NavigationItemAlt
               label="Nossos Cases"
               id="nossos-cases"
-              onClick={scrollToSection}
+              onClick={goToHref("www.cjr.org.br/#nossos-cases")}
               normal={false}
               text={true}
               style={"block mb-6"}
-            /> essa seção ainda precisa ser finalizada*/}
+            />
             <NavigationItemAlt
               label="Nosso Time"
               id="nosso-time"
-              onClick={scrollToSection}
+              onClick={goToHref("www.cjr.org.br/#nosso-time")}
+              normal={false}
+              text={true}
+              style={"block mb-6"}
+            />
+            <NavigationItemAlt
+              label="Blog"
+              id="blog"
+              onClick={goToHref("www.cjr.org.br/#blog")}
               normal={false}
               text={true}
               style={"block mb-6"}
@@ -252,7 +259,7 @@ const HeaderAlt: React.FC = () => {
             <NavigationItemAlt
               label="Contato"
               id="contato"
-              onClick={scrollToSection}
+              onClick={goToHref("www.cjr.org.br/#contato")}
               normal={false}
               text={true}
               style={"block mb-6"}
