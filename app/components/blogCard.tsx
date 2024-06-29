@@ -51,13 +51,13 @@ const BlogCard: React.FC<BlogCardProps> = ({
   };
 
   return (
-    <div className="relative flex max-w-[24rem] flex-col rounded-lg bg-white bg-clip-border shadow-md text-spaceblue m-5">
+    <div className="relative flex max-w-[30rem] flex-col rounded-lg bg-white bg-clip-border shadow-md text-spaceblue m-5">
       <div className="px-6 pt-6">
-        <h4 className="block font-sans text-xl font-semibold leading-snug tracking-normal antialiased">
+        <h1 className="block font-sans text-2xl font-semibold leading-snug tracking-normal antialiased">
           {title}
-        </h4>
+        </h1>
         <p className="mt-3 block font-sans text-xl font-normal leading-relaxed text-mutedSpaceblue antialiased">
-          {content.slice(0, 50)}
+          {content.slice(0, 100)}
           {content.length > 50 ? "..." : ""}
         </p>
       </div>
