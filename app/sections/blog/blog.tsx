@@ -30,6 +30,7 @@ export default async function Blog() {
           title={article.title}
           author={article.author}
           createdAt={article.createdAt}
+          updatedAt={article.updatedAt}
           content={article.content}
         />
       ))}
