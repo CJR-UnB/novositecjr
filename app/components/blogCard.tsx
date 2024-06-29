@@ -8,6 +8,7 @@ interface BlogCardProps {
   author: string;
   createdAt: Date;
   content: string;
+  updatedAt: Date;
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({
@@ -16,6 +17,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
   author,
   createdAt,
   content,
+  updatedAt,
 }) => {
   const router = useRouter();
   const date = new Date(createdAt);

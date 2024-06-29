@@ -38,6 +38,7 @@ export default async function portfolio() {
           author={article.author}
           createdAt={article.createdAt}
           content={article.content}
+          updatedAt={article.updatedAt}
         />
       ))}
     </main>

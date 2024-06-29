@@ -1,6 +1,15 @@
 import HeaderAlt from "@/app/sections/headerAlt/headerAlt";
 import prisma from "@/lib/prisma";
 
+interface ArticleType {
+  id: number;
+  title: string;
+  content: string;
+  author: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export default async function BlogPost({ params }: { params: any }) {
   const { id } = params;
   const article = await prisma.article.findUnique({
@@ -9,6 +18,10 @@ export default async function BlogPost({ params }: { params: any }) {
 
   if (!article) {
     return <p>Article not found</p>;
+  }
+
+  if (!article) {
+    return <p>Carregando...</p>;
   }
 
   const date = new Date(article.createdAt);
