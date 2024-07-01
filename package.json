@@ -27,7 +27,9 @@
     "react-leaflet": "^4.2.1",
     "react-loading-icons": "^1.1.0",
     "react-transition-group": "^4.4.5",
+    "supabase": "^1.178.2",
     "tailwind-merge": "^2.2.1",
+    "ts-node": "^10.9.2",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {

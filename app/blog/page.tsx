@@ -15,8 +15,6 @@ async function getArticles() {
 
 export default async function Blog() {
   const articles = await getArticles();
-  console.log(articles);
-
   return (
     <main className="text-spaceblue">
       <HeaderAlt />

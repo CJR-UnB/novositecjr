@@ -57,7 +57,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
           {title}
         </h1>
         <p className="mt-3 block font-sans text-xl font-normal leading-relaxed text-mutedSpaceblue antialiased">
-          {content.slice(0, 100)}
+          {content.slice(0, 150)}
           {content.length > 50 ? "..." : ""}
         </p>
       </div>
@@ -76,7 +76,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
       )}
       <button
         onClick={handleLeiaMais}
-        className="flex items-center gap-2 w-fit mt-2 p-2 ml-6 font-medium text-aquagreen rounded-lg hover:bg-aquagreen/10 transition-all duration-200"
+        className="relative flex items-center gap-2 w-fit mt-2 p-2 ml-6 font-medium text-aquagreen rounded-lg  hover:bg-aquagreen/10 transition-all duration-200"
       >
         Continuar lendo
         <svg
@@ -95,9 +95,8 @@ const BlogCard: React.FC<BlogCardProps> = ({
           ></path>
         </svg>
       </button>
-
-      <div className="text-right px-5 pb-3 text-">
-        <p className="block font-sans text-base font-normal leading-relaxed text-inherit antialiased">
+      <div className="flex relative self-end px-3 pb-2 leading-relaxed text-inherit antialiased">
+        <p>
           {formattedDate} - {author}
         </p>
       </div>
