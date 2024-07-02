@@ -46,8 +46,8 @@ const Editor: React.FC<EditorProps> = ({
     defaultValues: {
       content: content,
       title: title,
-      createdAt: createdAt,
-      updatedAt: updatedAt,
+      createdAt: createdAt as any,
+      updatedAt: updatedAt as any,
       author: author,
     },
   });
