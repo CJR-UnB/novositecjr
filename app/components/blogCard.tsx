@@ -50,6 +50,11 @@ const BlogCard: React.FC<BlogCardProps> = ({
     }
   };
 
+  const handleEdit = (id: number) => {
+    router.push(`/admin/blogAdmin/edit/${id}`);
+    console.log("Editando artigo", id);
+  };
+
   return (
     <div className="relative flex max-w-[30rem] flex-col rounded-lg bg-white bg-clip-border shadow-md text-spaceblue m-5">
       <div className="px-6 pt-6">
@@ -63,7 +68,10 @@ const BlogCard: React.FC<BlogCardProps> = ({
       </div>
       {isAdmin && (
         <div className="flex px-6 py-2 gap-5">
-          <button className="bg-navyblue/70 p-2 rounded-lg text-white font-medium hover:scale-110 hover:bg-navyblue transition-all duration-300 ease-in-out">
+          <button
+            onClick={() => handleEdit(id)}
+            className="bg-navyblue/70 p-2 rounded-lg text-white font-medium hover:scale-110 hover:bg-navyblue transition-all duration-300 ease-in-out"
+          >
             Editar
           </button>
           <button
