@@ -1,5 +1,6 @@
 "use client";
 
+import Editor from "@/app/components/Editor";
 import HeaderAlt from "@/app/sections/headerAlt/headerAlt";
 
 import { useEffect, useState } from "react";
@@ -17,6 +18,7 @@ export default function EditArticle({ params }: { params: any }) {
         }
         const article = await response.json();
         setArticle(article);
+        console.log(article);
       } catch (error) {
         console.log("Erro ao buscar artigos:", error);
       }
@@ -32,7 +34,14 @@ export default function EditArticle({ params }: { params: any }) {
   return (
     <main>
       <HeaderAlt />
-      <div>{article.content}</div>
+      <Editor
+        id={article.id}
+        title={article.title}
+        content={article.content}
+        author={article.author}
+        createdAt={article.createdAt}
+        updatedAt={article.updatedAt}
+      />
     </main>
   );
 }
