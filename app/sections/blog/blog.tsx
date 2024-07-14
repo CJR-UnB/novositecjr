@@ -3,13 +3,18 @@ import { PageBreak } from "@/app/components/SVGicons";
 import prisma from "@/lib/prisma";
 
 async function getArticles() {
-  const articles = await prisma.article.findMany({
-    take: 3,
-    orderBy: {
-      id: "desc",
-    },
-  });
-  return articles;
+  try {
+    const articles = await prisma.article.findMany({
+      take: 3,
+      orderBy: {
+        id: "desc",
+      },
+    });
+    return articles;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 }
 
 export default async function Blog() {
