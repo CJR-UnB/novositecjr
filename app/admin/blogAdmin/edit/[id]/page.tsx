@@ -1,7 +1,12 @@
-export default function createArticle() {
+"use client";
+
+import Editor from "@/app/components/Editor";
+import "react-quill/dist/quill.snow.css";
+
+export default function CreateArticle() {
   return (
     <main>
-      <p>Verificando token de acesso...</p>
+      <Editor />
     </main>
   );
 }
