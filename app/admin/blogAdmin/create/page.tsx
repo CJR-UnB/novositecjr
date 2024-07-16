@@ -2,16 +2,19 @@
 
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function CheckAcessToken() {
   const router = useRouter();
 
-  const accessToken = Cookies.get("accessToken");
-  if (!accessToken) {
-    router.push("/admin/auth");
-  } else {
-    router.push("/admin/blogAdmin/edit/[id]");
-  }
+  useEffect(() => {
+    const accessToken = Cookies.get("accessToken");
+    if (!accessToken) {
+      router.push("/admin/auth");
+    } else {
+      router.push("/admin/blogAdmin/edit/[id]");
+    }
+  }, [router]);
 
   return (
     <main>
