@@ -16,8 +16,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
-    "flowbite": "^2.3.0",
-    "flowbite-react": "^0.7.3",
     "formik": "^2.4.6",
     "js-cookie": "^3.0.5",
     "leaflet": "^1.9.4",

@@ -1,6 +1,5 @@
-import ArrowSquare, { PageBreak } from "@/app/components/SVGicons";
-import Link from "next/link";
-import CasesCarousel from "./casesCarousel";
+import { PageBreak } from "@/app/components/SVGicons";
+import ImageCarousel from "@/app/components/imageCarousel";
 
 const Cases: React.FC = () => {
   return (
@@ -22,15 +21,19 @@ const Cases: React.FC = () => {
             por indivíduos apaixonados e experientes, que se dedicam a entender
             as necessidades únicas de cada cliente.
           </p>
+          {/*
           <Link href="/portfolio">
             <button className="flex bg-green items-center text-xl w-fit text-black rounded-lg mt-5 py-3 px-10 transition-all duration-200 ease-out hover:scale-110 active:scale-95">
               <h1 className="mr-2">Conheça nosso portfolio</h1>
               <ArrowSquare />
             </button>
           </Link>
+          */}
         </div>
         <div className="mx-5 md:mx-14 lg:mx-10 xl:mx-10 2xl:mx-10">
-          <CasesCarousel />
+          <ImageCarousel
+            images={["/TIME.png", "/background.png", "/pejao.JPG"]}
+          />
         </div>
       </div>
     </section>
