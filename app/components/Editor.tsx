@@ -1,24 +1,15 @@
 "use client";
 
-import Cookies from "js-cookie";
-import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const Editor = () => {
-  const router = useRouter();
+interface EditorProps {
+  content: string;
+}
 
-  useEffect(() => {
-    const accessToken = Cookies.get("accessToken");
-    if (!accessToken) {
-      router.push("/admin/auth");
-    } else {
-      router.push("/admin/blogAdmin/edit/[id]");
-    }
-  }, [router]);
-
-  const [value, setValue] = useState("");
+const Editor: React.FC<EditorProps> = ({ content }) => {
+  const [value, setValue] = useState(content);
   const quill = useRef<ReactQuill | null>(null); // use reactQuill type
 
   function handler() {

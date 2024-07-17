@@ -1,14 +1,6 @@
 import HeaderAlt from "@/app/sections/headerAlt/headerAlt";
 import prisma from "@/lib/prisma";
 
-interface ArticleType {
-  id: number;
-  title: string;
-  content: string;
-  author: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
 
 export default async function BlogPost({ params }: { params: any }) {
   const { id } = params;

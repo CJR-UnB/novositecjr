@@ -36,7 +36,7 @@ export default function Auth() {
       });
 
       // Successful login logic, e.g., redirect to editor page
-      router.push("/admin/blogAdmin");
+      router.push("/admin");
     } else {
       // Handle incorrect credentials
       alert("Usuário ou senha incorretos");

@@ -13,7 +13,7 @@ export default function CheckAcessToken() {
     if (!accessToken) {
       router.push("/admin/auth");
     } else {
-      router.push("/admin/blogAdmin/edit/[id]");
+      router.push("/admin/edit/[id]");
     }
   }, [router]);
 

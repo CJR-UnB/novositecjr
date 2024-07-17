@@ -33,25 +33,22 @@ const BlogCard: React.FC<BlogCardProps> = ({
 
   const handleDelete = async (id: number) => {
     try {
-      const response = await fetch(`/api/articles`, {
+      const response = await fetch(`/api/articles/${id}`, {
         method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id }),
       });
 
       if (!response.ok) {
         throw new Error("Failed to delete the article");
       }
-      window.location.reload();
+
+      window.location.reload(); // Optionally reload the page after successful deletion
     } catch (error) {
-      console.error("Ërror ao apagar o artigo", error);
+      console.error("Error ao apagar o artigo", error);
     }
   };
 
   const handleEdit = (id: number) => {
-    router.push(`/admin/blogAdmin/edit/${id}`);
+    router.push(`/admin/edit/${id}`);
     console.log("Editando artigo", id);
   };
 
