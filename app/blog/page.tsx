@@ -1,20 +1,41 @@
+"use client";
+
 // Code Generated with love
-import prisma from "@/lib/prisma";
+import { useEffect, useState } from "react";
+import { ArticleData } from "../api/articles/route";
 import BlogCard from "../components/blogCard";
 import { PageBreak } from "../components/SVGicons";
 import HeaderAlt from "../sections/headerAlt/headerAlt";
 
 async function getArticles() {
-  const articles = await prisma.article.findMany({
-    orderBy: {
-      id: "desc",
-    },
-  });
+  const response = await fetch("/api/articles");
+  if (!response.ok) {
+    throw new Error("Failed to fetch articles");
+  }
+  const articles = await response.json();
   return articles;
 }
 
-export default async function Blog() {
-  const articles = await getArticles();
+export default function Blog() {
+  const [articles, setArticles] = useState<ArticleData[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getArticles()
+      .then((data) => {
+        setArticles(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching articles:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <>Loading</>;
+  }
+
   return (
     <main className="text-spaceblue">
       <HeaderAlt />

@@ -1,10 +1,23 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 const Editor = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const accessToken = Cookies.get("accessToken");
+    if (!accessToken) {
+      router.push("/admin/auth");
+    } else {
+      router.push("/admin/blogAdmin/edit/[id]");
+    }
+  }, [router]);
+
   const [value, setValue] = useState("");
   const quill = useRef<ReactQuill | null>(null); // use reactQuill type
 
@@ -95,16 +108,22 @@ const Editor = () => {
 
   return (
     <div>
-      <label>Editor Content</label>
-      <ReactQuill
-        ref={quill}
-        className=""
-        theme="snow"
-        formats={formats}
-        modules={modules}
-        value={value}
-        onChange={(value) => setValue(value)}
-      />
+      <label className="justify-center flex text-2xl font-medium mt-10 mb-5">
+        Editar conteúdo
+      </label>
+      <main className="p-5">
+        <ReactQuill
+          ref={quill}
+          className=""
+          theme="snow"
+          formats={formats}
+          modules={modules}
+          value={value}
+          onChange={(value) => {
+            setValue(value), handler();
+          }}
+        />
+      </main>
     </div>
   );
 };

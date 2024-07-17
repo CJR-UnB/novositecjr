@@ -172,7 +172,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 required
                 autoFocus
                 placeholder="Coloque seu nome aqui..."
-                className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
+                className="my-2 rounded-lg transition-all duration-300 border-spaceblue border focus:border-green outline-none p-2 font-medium"
                 name="nome"
                 onChange={handleChange}
               />
@@ -180,7 +180,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               <input
                 type="email"
                 placeholder="seu.email@exemplo.com"
-                className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
+                className="my-2 rounded-lg transition-all duration-300 border-spaceblue border focus:border-green  outline-none p-2 font-medium"
                 name="email"
                 onChange={handleChange}
               />
@@ -188,7 +188,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               <input
                 type="tel"
                 placeholder="ex: 21912345678"
-                className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
+                className="my-2 rounded-lg transition-all duration-300 border-spaceblue border focus:border-green  outline-none p-2 font-medium"
                 name="telefone"
                 pattern="[0-9]*"
                 inputMode="numeric"
@@ -198,7 +198,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               Como você conheceu a CJR?
               <select
                 name="conheceuPor"
-                className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
+                className="my-2 rounded-lg transition-all duration-300 border-spaceblue border focus:border-green  outline-none p-2 font-medium"
                 onChange={handleChange}
               >
                 <option value="" disabled selected>
@@ -218,7 +218,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 rows={2}
                 style={{ resize: "vertical" }}
                 placeholder="Descreva seu projeto aqui..."
-                className="my-2 rounded-lg transition-all duration-300 border-spaceblue outline-none p-2 font-medium"
+                className="my-2 rounded-lg transition-all duration-300 border-spaceblue border focus:border-green outline-none p-2 font-medium"
                 onChange={handleChange}
                 required
               ></textarea>
