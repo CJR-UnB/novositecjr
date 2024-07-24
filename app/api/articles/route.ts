@@ -1,6 +1,4 @@
 import prisma from "@/lib/prisma";
-import Cookies from "js-cookie";
-import { useRouter } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 
 export interface ArticleData {
@@ -60,15 +58,6 @@ export async function PUT(req: NextRequest) {
       { error: "Erro ao atualizar artigo" },
       { status: 500 }
     );
-  }
-}
-
-export function useAdminAccessCheck() {
-  const router = useRouter();
-
-  const accessToken = Cookies.get("accessToken");
-  if (!accessToken) {
-    router.push("/admin/auth");
   }
 }
 
