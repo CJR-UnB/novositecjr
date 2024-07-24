@@ -12,11 +12,15 @@ export async function GET(
       where: { id: Number(id) },
     });
     if (!article) {
-      return NextResponse.json({ error: "Artigo não encontrado" }).status;
+      return (
+        NextResponse.json({ error: "Artigo não encontrado" }), { status: 404 }
+      );
     }
     return NextResponse.json(article);
   } catch (error) {
-    return NextResponse.json({ error: "Erro ao buscar artigos" }).status;
+    return (
+      NextResponse.json({ error: "Erro ao buscar artigos" }), { status: 500 }
+    );
   }
 }
 
@@ -29,8 +33,14 @@ export async function DELETE(
     await prisma.article.delete({
       where: { id: Number(id) },
     });
-    return NextResponse.json({ message: "Artigo deletado com sucesso" });
+    return (
+      NextResponse.json({ message: "Artigo deletado com sucesso" }),
+      { status: 200 }
+    );
   } catch (error) {
-    return NextResponse.json({ error: "Erro ao deletar artigo PORRA" });
+    return (
+      NextResponse.json({ error: "Erro ao deletar artigo PORRA" }),
+      { status: 500 }
+    );
   }
 }
