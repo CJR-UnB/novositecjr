@@ -17,8 +17,9 @@ export async function GET(req: NextRequest) {
     const articles = await prisma.article.findMany();
     return NextResponse.json(articles);
   } catch (error) {
-    return (
-      NextResponse.json({ error: "Erro ao buscar artigos" }), { status: 500 }
+    return NextResponse.json(
+      { error: "Erro ao buscar artigos" },
+      { status: 500 }
     );
   }
 }
@@ -33,10 +34,11 @@ export async function POST(req: NextRequest) {
         author,
       },
     });
-    return NextResponse.json(newArticle), { status: 201 };
+    return NextResponse.json(newArticle, { status: 201 });
   } catch (error) {
-    return (
-      NextResponse.json({ error: "Erro ao criar artigo" }), { status: 500 }
+    return NextResponse.json(
+      { error: "Erro ao criar artigo" },
+      { status: 500 }
     );
   }
 }
@@ -54,8 +56,9 @@ export async function PUT(req: NextRequest) {
     });
     return NextResponse.json(updateArticle), { status: 200 };
   } catch (error) {
-    return (
-      NextResponse.json({ error: "Erro ao atualizar artigo" }), { status: 500 }
+    return NextResponse.json(
+      { error: "Erro ao atualizar artigo" },
+      { status: 500 }
     );
   }
 }
