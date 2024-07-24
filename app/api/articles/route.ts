@@ -52,7 +52,7 @@ export async function PUT(req: NextRequest) {
         author,
       },
     });
-    return NextResponse.json(updateArticle), { status: 200 };
+    return NextResponse.json(updateArticle, { status: 200 });
   } catch (error) {
     return NextResponse.json(
       { error: "Erro ao atualizar artigo" },
