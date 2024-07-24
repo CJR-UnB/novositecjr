@@ -133,7 +133,7 @@ const DepoimentoCarousel: React.FC<DepoimentoCarouselProps> = ({
               <button
                 key={index}
                 className={`w-3 h-3 rounded-full ${
-                  currentDepoimento === index ? "bg-white" : "bg-gray-300/50"
+                  currentDepoimento === index ? "bg-gray-500" : "bg-gray-300/70"
                 }`}
                 onClick={() => handleDotClick(index)}
               />

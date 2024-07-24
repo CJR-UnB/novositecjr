@@ -1,26 +1,27 @@
 "use client";
 
+import Editor from "@/app/components/Editor";
 import HeaderAlt from "@/app/sections/headerAlt/headerAlt";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import "react-quill/dist/quill.snow.css";
 
-export default function CheckAcessToken() {
+export default function CreateArticle() {
   const router = useRouter();
+  const [value, setValue] = useState("");
 
   useEffect(() => {
     const accessToken = Cookies.get("accessToken");
     if (!accessToken) {
       router.push("/admin/auth");
-    } else {
-      router.push("/admin/edit/[id]");
     }
   }, [router]);
 
   return (
     <main>
       <HeaderAlt />
-      <p>Verificando token de acesso...</p>
+      <Editor />
     </main>
   );
 }

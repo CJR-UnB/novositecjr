@@ -3,11 +3,16 @@
 import Image from "next/image";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
-interface ImageCarouselProps {
-  images: string[];
+interface CarouselProps {
+  cases: {
+    title: string;
+    description: string;
+    image: string;
+    style?: {};
+  }[];
 }
 
-const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
+const ImageCarousel: React.FC<CarouselProps> = ({ cases }) => {
   // AS IMAGENS PRECISAM SER 800X450 PARA CABER CORRETAMENTE NO CARROSSEL
 
   const [currentImage, setCurrentImage] = useState(0);
@@ -16,15 +21,15 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
 
   const handlePrev = () => {
     setCurrentImage((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? cases.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = useCallback(() => {
     setCurrentImage((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === cases.length - 1 ? 0 : prevIndex + 1
     );
-  }, [setCurrentImage, images]);
+  }, [setCurrentImage, cases.length]);
 
   const handleDotClick = (index: number) => {
     setCurrentImage(index);
@@ -100,35 +105,60 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
             />
           </button>
           <section
-            className="relative max-w-[800px] max-h-[450px] overflow-hidden rounded-lg border shadow-md"
+            className="relative overflow-hidden bg-white border rounded-lg shadow-md"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
             onTouchStart={startDragging}
             onMouseDown={startDragging}
             ref={carouselRef}
-            style={{ aspectRatio: "800/450" }}
           >
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentImage * 100}%)` }}
             >
-              {images.map((src, index) => (
-                <div key={index} className="min-w-full h-full">
-                  <img
-                    src={src}
-                    alt={`Image ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
+              {cases.map((singleCase, index) => (
+                <div
+                  id="container"
+                  key={index}
+                  className="min-w-full items-center flex p-10 flex-col lg:flex-row"
+                >
+                  <div className="w-3/4 lg:w-1/2 justify-center flex">
+                    <img
+                      src={singleCase.image}
+                      alt={`Image ${index + 1}`}
+                      className=""
+                      style={singleCase.style || {}}
+                    />
+                  </div>
+                  <div className="w-3/4 lg:w-1/2 lg:ml-20">
+                    <h1 className="text-5xl font-bold mb-6 text-spaceblue">
+                      {singleCase.title}
+                    </h1>
+                    <h2 className="text-lg text-spaceblue/80 max-w-2xl w-full mb-10">
+                      {singleCase.description}
+                    </h2>
+                    <a
+                      href=""
+                      className="group transition duration-300 inline-block"
+                    >
+                      <p className="flex gap-3 items-center font-medium text-2xl text-black">
+                        Ler mais {`>`}
+                      </p>
+                      <span
+                        className={`block group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen max-w-0`}
+                      ></span>
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
           </section>
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {images.map((_, index) => (
+            {cases.map((_, index) => (
               <button
                 key={index}
                 className={`w-3 h-3 rounded-full ${
-                  currentImage === index ? "bg-white" : "bg-gray-300/50"
+                  currentImage === index ? "bg-gray-500" : "bg-gray-300/70"
                 }`}
                 onClick={() => handleDotClick(index)}
               />

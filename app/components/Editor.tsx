@@ -1,16 +1,17 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useCallback, useMemo, useRef, useState } from "react";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 interface EditorProps {
-  content: string;
+  content?: string;
 }
 
 const Editor: React.FC<EditorProps> = ({ content }) => {
   const [value, setValue] = useState(content);
-  const quill = useRef<ReactQuill | null>(null); // use reactQuill type
+  const quillRef = useRef<ReactQuill | null>(null); // use ReactQuill type
 
   function handler() {
     console.log(value);
@@ -25,13 +26,13 @@ const Editor: React.FC<EditorProps> = ({ content }) => {
 
     // When a file is selected
     input.onchange = () => {
-      const file = input.files ? input.files[0] : (null as any);
+      const file = input.files ? input.files[0] : null;
       const reader = new FileReader();
 
       // Read the selected file as a data URL
       reader.onload = () => {
-        const imageUrl = reader.result;
-        const quillEditor = quill.current?.getEditor();
+        const imageUrl = reader.result as string;
+        const quillEditor = quillRef.current?.getEditor();
 
         // Get the current selection range and insert the image at that index
         const range = quillEditor?.getSelection(true);
@@ -39,8 +40,9 @@ const Editor: React.FC<EditorProps> = ({ content }) => {
           quillEditor?.insertEmbed(range.index, "image", imageUrl, "user");
         }
       };
-
-      reader.readAsDataURL(file);
+      if (file) {
+        reader.readAsDataURL(file);
+      }
     };
   }, []);
 
@@ -104,7 +106,6 @@ const Editor: React.FC<EditorProps> = ({ content }) => {
       </label>
       <main className="p-5">
         <ReactQuill
-          ref={quill}
           className=""
           theme="snow"
           formats={formats}

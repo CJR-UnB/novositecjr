@@ -17,8 +17,8 @@ import Servicos from "./sections/servicos/servicos";
   /* As cores principais que combinamos no figma já estão gravadas nos arquivos do projeto com os seguintes nomes:
     aquagreen: "#27BD80",
     spaceblue: "#001830",
-    mutedSpaceblue: "001830",
     offwhite: "#D9D9D9",
+    mutedSpaceblue: "001830",
     spaceblue: "#002F67",
     white: "#FFFFFF",
     black: "#000000",
@@ -34,7 +34,7 @@ Vai ficar incrível
 
 export default function Home() {
   return (
-    <main className="text-spaceblue bg-white font-Roboto ">
+    <main className="text-spaceblue">
       <Header />
       <HomePage />
       <div className="absolute w-full transform -translate-y-16 md:-translate-y-32 ">

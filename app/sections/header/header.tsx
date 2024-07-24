@@ -2,6 +2,7 @@
 
 import { CJR, DarkCJR, DarkMenu, Menu } from "@/app/components/SVGicons";
 import Whatsapp from "@/app/components/whatsappButton";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import NavigationItem from "./navigationItems";
 
@@ -11,17 +12,13 @@ export interface NavigationItem {
 }
 
 const Header: React.FC = () => {
+  const router = useRouter();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
 
   const [activeSection, setActiveSection] = useState("");
-
-  const goToHref = (id: string) => {
-    return () => {
-      window.location.href = `https://${id}`;
-    };
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -172,7 +169,9 @@ const Header: React.FC = () => {
           <NavigationItem
             label={"Blog"}
             id="blog"
-            onClick={goToHref("www.cjr.org.br/blog")}
+            onClick={() => {
+              router.push("/blog");
+            }}
             normal={true}
             text={true}
             active={activeSection === "blog"}

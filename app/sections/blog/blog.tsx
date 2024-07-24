@@ -26,7 +26,12 @@ export default async function Blog() {
         CONHEÇA O BLOG DA CJR
       </h1>
       <PageBreak />
-      <div className="grid grid-cols-1 md:grid-cols-3 ">
+      {articles.length === 0 && (
+        <h2 className="text-center text-spaceblue font-semibold text-2xl">
+          Nenhum artigo encontrado
+        </h2>
+      )}
+      <div className="grid grid-cols-1 md:grid-cols-3 mb-10">
         {articles.map((article) => (
           <BlogCard
             key={article.id}

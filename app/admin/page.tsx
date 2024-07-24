@@ -54,6 +54,21 @@ export default function BlogAdmin() {
             da CJR.
           </p>
         </article>
+        {articles.length === 0 && (
+          <main className="flex flex-col">
+            <h2 className="text-center text-spaceblue font-semibold text-2xl mt-5">
+              Nenhum artigo encontrado
+            </h2>
+            <button
+              className="bg-green hover:bg-green/60 w-fit self-center py-2 px-5 mt-3 transition-all duration-500 rounded-lg font-semibold"
+              onClick={() => {
+                router.push("/admin/create");
+              }}
+            >
+              Crie um artigo
+            </button>
+          </main>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-3 ">
           {/* Render the articles here */}
           {articles.map((article) => (

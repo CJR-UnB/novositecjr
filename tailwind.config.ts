@@ -33,7 +33,7 @@ const config: Config = {
         spaceblue: "#001830",
         offwhite: "#f2f2f2",
         navyblue: "#002F67",
-        white: "#FFFFFF",
+        white: "#FEFEFE",
         black: "#000000",
         green: "#38C28A",
         mutedSpaceblue: "#4A5A6B",
