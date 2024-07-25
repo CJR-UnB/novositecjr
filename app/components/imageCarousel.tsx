@@ -8,6 +8,7 @@ interface CarouselProps {
     title: string;
     description: string;
     image: string;
+    link: string;
     style?: {};
   }[];
 }
@@ -138,7 +139,8 @@ const ImageCarousel: React.FC<CarouselProps> = ({ cases }) => {
                       {singleCase.description}
                     </h2>
                     <a
-                      href=""
+                      href={singleCase.link}
+                      target="_blank"
                       className="group transition duration-300 inline-block"
                     >
                       <p className="flex gap-3 items-center font-medium text-2xl text-black">
