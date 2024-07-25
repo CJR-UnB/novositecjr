@@ -6,7 +6,7 @@ const Contador: React.FC = () => {
   const startingYear = 1999;
   const functioningYears = currentYear - startingYear;
 
-  const activeMembers = 70;
+  const activeMembers = 65;
 
   return (
     <section className="">

@@ -2,6 +2,7 @@
 
 // Code Generated with love
 import { useEffect, useState } from "react";
+import TailSpin from "react-loading-icons/dist/esm/components/tail-spin";
 import { ArticleData } from "../api/articles/route";
 import BlogCard from "../components/blogCard";
 import { PageBreak } from "../components/SVGicons";
@@ -34,7 +35,7 @@ export default function Blog() {
 
   if (loading) {
     return (
-      <main>
+      <main className="flex flex-col">
         <HeaderAlt />
         <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl mt-10">
           BLOG DA CJR
@@ -44,9 +45,11 @@ export default function Blog() {
           Fique por dentro das novidadade na área da tecnologia e das notícias e
           conquistas da CJR
         </p>
-        <h2 className="text-center text-spaceblue font-semibold text-2xl">
-          Carregando...
-        </h2>
+        <TailSpin
+          stroke="#27BD80"
+          strokeWidth={2}
+          className="self-center mt-5"
+        />
       </main>
     );
   }
