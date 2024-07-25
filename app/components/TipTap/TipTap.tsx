@@ -4,7 +4,6 @@ import Highlight from "@tiptap/extension-highlight";
 import TextAlign from "@tiptap/extension-text-align";
 import { EditorProvider, useCurrentEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import { useEffect } from "react";
 
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
@@ -453,9 +452,9 @@ const extensions = [
   StarterKit,
 ];
 
-const template = `<h2>
+const template = `<p>
   Comece aqui o seu texto
-</h2>`;
+</p>`;
 
 export default function TipTap({
   content,
@@ -464,12 +463,6 @@ export default function TipTap({
   content: string;
   onChange: (content: string) => void;
 }) {
-  useEffect(() => {
-    if (!content) {
-      onChange(template);
-    }
-  }, [content, onChange]);
-
   return (
     <EditorProvider
       slotBefore={<MenuBar />}
