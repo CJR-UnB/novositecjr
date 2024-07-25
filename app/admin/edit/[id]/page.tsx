@@ -43,13 +43,34 @@ export default function EditArticle() {
   };
 
   return (
-    <main>
+    <main className="flex flex-col">
       <HeaderAlt />
-      <div className="p-10">
-        {article && (
-          <Tiptap content={article.content} onChange={handleChange} />
-        )}
-      </div>
+      <h1 className="text-center mt-10 font-semibold text-xl">
+        Edite seu artigo para o blog da CJR aqui
+      </h1>
+      {article && (
+        <>
+          <div className="flex flex-col self-center w-fit mt-10">
+            <h2 className="text-mutedSpaceblue">Insira o título aqui.</h2>
+            <input
+              type="text"
+              className="border-2 border-black mt-1 p-2 text-4xl font-medium rounded-md self-center"
+              placeholder={article.title}
+              id="title"
+            />
+            <h2 className="text-mutedSpaceblue mt-3">Insira o autor aqui.</h2>
+            <input
+              type="text"
+              className="border-2 border-black mt-1 p-2 text-xl rounded-md self-center w-full"
+              placeholder={article.author}
+              id="author"
+            />
+          </div>
+          <div className="p-10">
+            <Tiptap content={article.content} onChange={handleChange} />
+          </div>
+        </>
+      )}
     </main>
   );
 }

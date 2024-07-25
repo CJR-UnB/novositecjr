@@ -26,20 +26,24 @@ export default function CreateArticle() {
     <main className="flex flex-col">
       <HeaderAlt />
       <h1 className="text-center mt-10 font-semibold text-xl">
-        Crie seu próprio artigo para o blog da CJR aqui
+        Crie seu artigo para o blog da CJR aqui
       </h1>
-      <input
-        type="text"
-        className="border-2 border-black mx-10 mt-10 p-2 text-4xl font-medium rounded-md self-center"
-        placeholder="Insira o título do seu Texto"
-        id="title"
-      />
-      <input
-        type="text"
-        className="border-2 border-black mx-10 mt-3 p-2 text-xl rounded-md self-center"
-        placeholder="Insira o autor do texto"
-        id="author"
-      />
+      <div className="flex flex-col self-center w-fit mt-10">
+        <h2 className="text-mutedSpaceblue">Insira o título aqui.</h2>
+        <input
+          type="text"
+          className="border-2 border-black mt-1 p-2 text-4xl font-medium rounded-md self-center"
+          placeholder="Título"
+          id="title"
+        />
+        <h2 className="text-mutedSpaceblue mt-3">Insira o autor aqui.</h2>
+        <input
+          type="text"
+          className="border-2 border-black mt-1 p-2 text-xl rounded-md self-center w-full"
+          placeholder="Autor"
+          id="author"
+        />
+      </div>
       <div className="p-10">
         <Tiptap content={value} onChange={handleChange} />
       </div>
