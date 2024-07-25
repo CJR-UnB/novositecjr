@@ -1,11 +1,9 @@
 "use client";
 
-import Editor from "@/app/components/Editor";
 import HeaderAlt from "@/app/sections/headerAlt/headerAlt";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import "react-quill/dist/quill.snow.css";
 
 export default function CreateArticle() {
   const router = useRouter();
@@ -21,7 +19,6 @@ export default function CreateArticle() {
   return (
     <main>
       <HeaderAlt />
-      <Editor />
     </main>
   );
 }
