@@ -1,5 +1,6 @@
 "use client";
 
+import Tiptap from "@/app/components/TipTap/TipTap";
 import HeaderAlt from "@/app/sections/headerAlt/headerAlt";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -19,6 +20,9 @@ export default function CreateArticle() {
   return (
     <main>
       <HeaderAlt />
+      <div className="p-10">
+        <Tiptap />
+      </div>
     </main>
   );
 }
