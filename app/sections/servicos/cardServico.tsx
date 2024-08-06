@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 export default function ServiceBox({
   icone,
   tipo,
@@ -9,13 +13,24 @@ export default function ServiceBox({
   descricao: string;
   descricao_back: string;
 }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleCardClick = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
     <div
       className="flex flex-col items-center justify-center border-solid border-2 border-navyblue 
     rounded-lg w-full  min-h-32 lg:h-auto lg:w-auto overflow-hidden"
     >
-      <div className="w-[350px] h-72 bg-transparent cursor-pointer group rounded-lg perspective-1000">
-        <div className="relative w-full h-full preserve-3d group-hover:rotate-y-180 duration-500">
+      <div className="w-[350px] h-72 bg-white cursor-pointer group rounded-lg perspective-1000">
+        <div
+          className={`relative w-full h-full preserve-3d duration-500 ${
+            isFlipped ? "rotate-y-180" : ""
+          }`}
+          onClick={handleCardClick}
+        >
           <div className="flex flex-col flex-wrap items-center pt-4 w-full h-full absolute overflow-hidden">
             <i className="flex items-center justify-center size-10 md:size-16">
               {icone}
@@ -25,15 +40,13 @@ export default function ServiceBox({
 
             <p
               className="text-center align-bottom text-pretty text-navyblue text-base font-normal px-12 md:px-12
-            h-20 mb-8 md:text-base lg:text-lg  md:max-lg:mx-8"
+            h-fit md:text-base lg:text-[17px]  md:max-lg:mx-8 flex-grow"
             >
               {descricao}
             </p>
-            <span className="text-sm mt-3 text-mutedSpaceblue font-medium md:hidden block">
+
+            <span className="text-sm text-mutedSpaceblue font-normal mb-3">
               clique para saber mais
-            </span>
-            <span className="text-sm mt-3 text-mutedSpaceblue font-medium md:block hidden">
-              Passe o mouse para saber mais
             </span>
           </div>
 

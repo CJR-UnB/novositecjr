@@ -21,7 +21,6 @@ const CustomStyle = require("tailwindcss/plugin")(function ({
 
 const config: Config = {
   content: [
-    "./node_modules/flowbite-react/lib/**/*.js",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -34,7 +33,7 @@ const config: Config = {
         spaceblue: "#001830",
         offwhite: "#f2f2f2",
         navyblue: "#002F67",
-        white: "#FFFFFF",
+        white: "#FEFEFE",
         black: "#000000",
         green: "#38C28A",
         mutedSpaceblue: "#4A5A6B",
@@ -43,7 +42,6 @@ const config: Config = {
     },
   },
   plugins: [
-    require("flowbite/plugin"),
     require("@tailwindcss/aspect-ratio"),
     CustomStyle, // Plugin customizado adicionado ao array de plugins
   ],

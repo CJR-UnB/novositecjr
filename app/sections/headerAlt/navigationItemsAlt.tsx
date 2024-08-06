@@ -1,0 +1,56 @@
+interface NavigationItemAltProps {
+  label?: string;
+  id: string;
+  onClick: (id: string) => void;
+  normal?: boolean;
+  style?: string;
+  text: boolean;
+  children?: React.ReactNode;
+  active?: boolean;
+}
+
+const NavigationItemAlt: React.FC<NavigationItemAltProps> = ({
+  label,
+  id,
+  onClick,
+  normal,
+  style,
+  text,
+  children,
+  active,
+}) => {
+  const buttonstyle = normal ? "group transition duration-300" : style;
+  const activeSection = active
+    ? "max-w-full transition-all duration-500"
+    : "max-w-0";
+
+  if (text) {
+    return (
+      <>
+        <button className={buttonstyle} onClick={() => onClick(id)}>
+          {label}
+          {children}
+          {normal && (
+            <span
+              className={`block group-hover:max-w-full transition-all duration-500 h-0.5 ${activeSection} bg-aquagreen`}
+            ></span>
+          )}
+        </button>
+      </>
+    );
+  } else if (!text) {
+    return (
+      <>
+        <button
+          onClick={() => onClick(id)}
+          className="scale-125 mx-auto self-center py-5 xl:ml-40 xl:mr-10"
+        >
+          {label}
+          {children}
+        </button>
+      </>
+    );
+  }
+};
+
+export default NavigationItemAlt;

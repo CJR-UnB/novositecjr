@@ -34,9 +34,7 @@ const Card: React.FC<CardProps> = ({
         </div>
       </div>
       <div className="mt-16 flex flex-col items-center">
-        <h4 className="text-xl font-bold text-navy-700 dark:text-white">
-          {nome}
-        </h4>
+        <h4 className="text-xl font-bold text-navy-700">{nome}</h4>
         <p className="text-base font-normal text-gray-600">{cargo}</p>
         <div className="mt-5 mb-2 flex justify-center">
           <a

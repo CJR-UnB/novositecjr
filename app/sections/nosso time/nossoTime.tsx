@@ -16,7 +16,7 @@ const NossoTime: React.FC = () => {
             nome="Leandro Kornelius"
             cargo="Diretor de Talentos"
             linkedin="https://www.linkedin.com/in/leandrokornelius/"
-            github="https://github.com/LeoKornelius"
+            github="https://github.com/LeandroKornelius"
             backgroundSrc="background.png"
           />
           <Card
