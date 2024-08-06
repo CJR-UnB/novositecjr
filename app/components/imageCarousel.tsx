@@ -127,15 +127,15 @@ const ImageCarousel: React.FC<CarouselProps> = ({ cases }) => {
                     <img
                       src={singleCase.image}
                       alt={`Image ${index + 1}`}
-                      className=""
+                      className="max-h-[300px]"
                       style={singleCase.style || {}}
                     />
                   </div>
                   <div className="w-3/4 lg:w-1/2 lg:ml-20">
-                    <h1 className="text-5xl font-bold mb-6 text-spaceblue">
+                    <h1 className="text-3xl md:text-5xl font-bold mb-6 mt-4 md:mt-0 text-center md:text-start text-spaceblue">
                       {singleCase.title}
                     </h1>
-                    <h2 className="text-lg text-spaceblue/80 max-w-2xl w-full mb-10">
+                    <h2 className="text-lg text-spaceblue/80 max-w-2xl w-full mb-10 text-center md:text-start">
                       {singleCase.description}
                     </h2>
                     <a
@@ -144,7 +144,7 @@ const ImageCarousel: React.FC<CarouselProps> = ({ cases }) => {
                       className="group transition duration-300 inline-block"
                     >
                       <p className="flex gap-3 items-center font-medium text-2xl text-black">
-                        Ler mais {`>`}
+                        Conheça o projeto {`>`}
                       </p>
                       <span
                         className={`block group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen max-w-0`}

@@ -23,7 +23,7 @@ const Cases: React.FC = () => {
               description:
                 "Concepção de um sistema de aulas particulares de cursinhos pré-vestibular. A proposta da plataforma é facilitar a interação entre professores e alunos, sendo possível marcar aulas e visualizar de forma rápida sua agenda, horários e pagamentos pendentes",
               image: "/Plus.png",
-              style: { height: "400px" },
+
               link: "https://www.plusaprendizagens.com",
             },
             {
