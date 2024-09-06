@@ -50,14 +50,15 @@ body {
   animation: ease-out;
 }
 
-/* Basic editor styles */
+
+/* Basic editor styles for TipTap */
 .tiptap {
   :first-child {
     margin-top: 0;
   }
   padding: 1rem;
-  border-width: 2px;
-  border-color: #1f1f1f;
+  border-width: 1px;
+  border-color: #e22424;
   border-radius: 0.2rem;
 
   /* List styles */
@@ -132,7 +133,7 @@ body {
     background: #1f1f1f;
     border-radius: 0.2rem;
     color: #ffffff;
-    font-family: "JetBrainsMono", monospace;
+    font-family: 'JetBrainsMono', monospace;
     margin: 1.5rem 0;
     padding: 0.75rem 1rem;
 

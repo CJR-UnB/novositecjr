@@ -19,7 +19,7 @@ export default function Page() {
       setArtigo(response);
       setLoading(false);
     });
-  });
+  }, []);
 
   console.log(artigo);
 
