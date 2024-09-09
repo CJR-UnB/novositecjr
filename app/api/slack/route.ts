@@ -1,8 +1,5 @@
 // app.slack.com/block-kit-builder
 import { App as SlackApp } from "@slack/bolt";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const app = new SlackApp({
   signingSecret: process.env.SLACK_SIGNING_SECRET,

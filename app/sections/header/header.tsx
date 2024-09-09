@@ -166,17 +166,14 @@ const Header: React.FC = () => {
             text={true}
             active={activeSection === "nosso-time"}
           />
-          {/*
           <NavigationItem
             label={"Blog"}
             id="blog"
-            onClick={() => {
-              router.push("/blog");
-            }}
+            onClick={scrollToSection}
             normal={true}
             text={true}
             active={activeSection === "blog"}
-          /> */}
+          />
           <div
             className="bg-aquagreen max-h-full flex"
             style={{ height: "5rem" }}
@@ -249,7 +246,7 @@ const Header: React.FC = () => {
               text={true}
               style={"block mb-6"}
             />
-            {/*
+
             <NavigationItem
               label="Blog"
               id="blog"
@@ -257,7 +254,7 @@ const Header: React.FC = () => {
               normal={false}
               text={true}
               style={"block mb-6"}
-            /> */}
+            />
             <NavigationItem
               label="Contato"
               id="contato"

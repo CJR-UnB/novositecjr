@@ -50,16 +50,18 @@ body {
   animation: ease-out;
 }
 
-/* Basic editor styles */
+/* Basic editor styles for TipTap */
 .tiptap {
   :first-child {
     margin-top: 0;
   }
   padding: 1rem;
-  border-width: 2px;
-  border-color: #1f1f1f;
+  border-width: 1px;
+  border-color: #e22424;
   border-radius: 0.2rem;
+}
 
+.article {
   /* List styles */
   ul {
     padding: 0 1rem;
@@ -75,6 +77,7 @@ body {
     padding: 0 1rem;
     margin: 1.25rem 1rem 1.25rem 0.4rem;
     list-style-type: decimal;
+
     li p {
       margin-top: 0.25em;
       margin-bottom: 0.25em;
@@ -95,12 +98,13 @@ body {
 
   h1,
   h2 {
-    margin-top: 3.5rem;
+    margin-top: 2rem;
     margin-bottom: 1.5rem;
   }
 
   h1 {
-    font-size: 1.875rem;
+    font-size: 2rem;
+    font-weight: medium;
   }
 
   h2 {
