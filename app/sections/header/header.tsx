@@ -169,9 +169,7 @@ const Header: React.FC = () => {
           <NavigationItem
             label={"Blog"}
             id="blog"
-            onClick={() => {
-              router.push("/blog");
-            }}
+            onClick={scrollToSection}
             normal={true}
             text={true}
             active={activeSection === "blog"}

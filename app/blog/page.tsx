@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { TailSpin } from "react-loading-icons";
 import BlogCard from "../components/blogCard";
 import Orcamento from "../components/botaoOrcamento";
-import { Facebook, Instagram2, Linkedin } from "../components/SVGicons";
+import { Facebook, Instagram2, MessageApp2 } from "../components/SVGicons";
 import { findAll } from "../lib/artigos";
 import { Artigo } from "../sections/blog/blog";
 import HeaderAlt from "../sections/headerAlt/headerAlt";
@@ -40,31 +40,31 @@ export default function Page() {
   return (
     <main className="flex flex-col">
       <HeaderAlt />
-      <section className="flex flex-col w-fit self-center p-5">
-        <h1 className="text-5xl font-bold ">Blog da CJR</h1>
+      <section className="flex flex-col w-fit self-center p-10">
+        <h1 className="text-7xl font-bold ">Blog da CJR</h1>
         <h2 className="text-xl font-medium opacity-60">
           Fique por dentro das notícias e novidades do mundo da tecnologia!
         </h2>
       </section>
       <section className="">
-        {loading ? (
-          <TailSpin
-            stroke="#27BD80"
-            strokeWidth={2}
-            className="self-center my-2"
-          />
-        ) : (
-          artigos.length === 0 && (
-            <h2 className="text-center text-spaceblue font-semibold text-2xl">
-              Nenhum artigo encontrado
-            </h2>
-          )
-        )}
         <section className="flex lg:flex-row flex-col justify-center lg:gap-20">
           <div className="flex flex-col items-center">
             <h1 className="self-start text-3xl font-semibold mb-3 mx-5 lg:mx-0">
               Confira nossas postagens!
             </h1>
+            {loading ? (
+              <TailSpin
+                stroke="#27BD80"
+                strokeWidth={2}
+                className="self-center my-2"
+              />
+            ) : (
+              artigos.length === 0 && (
+                <h2 className="text-center text-spaceblue font-semibold text-2xl">
+                  Nenhum artigo encontrado
+                </h2>
+              )
+            )}
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 justify-center w-fit">
               {visibleArtigos.map((article) => (
                 <BlogCard
@@ -94,15 +94,7 @@ export default function Page() {
           <div className="flex flex-col items-center">
             <article className="w-[20rem]">
               <h1 className="text-2xl font-semibold mb-2">
-                Confira nosso LinkedIn
-              </h1>
-              <a href="https://www.linkedin.com/company/cjr-unb/">
-                <img src="" alt="Aqui vai vir uma imagem" />
-              </a>
-            </article>
-            <article className="w-[20rem]">
-              <h1 className="text-2xl font-semibold mb-2">
-                Acompanhe nossas redes sociais
+                Acompanhe nossas redes sociais!
               </h1>
               <div className="items-center flex justify-center mb-5 md:mb-0">
                 <button className="hover:scale-110 transition-all duration-300">
@@ -112,10 +104,11 @@ export default function Page() {
                 </button>
                 <button className="ml-6 hover:scale-110 transition-all duration-300">
                   <a
-                    href="https://www.linkedin.com/company/cjr-unb/mycompany/"
+                    href="https://wa.me/61920034064"
                     target="_blank"
+                    className="flex items-center"
                   >
-                    <Linkedin />
+                    <MessageApp2 />
                   </a>
                 </button>
                 <button className="ml-6 hover:scale-110 transition-all duration-300">

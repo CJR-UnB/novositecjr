@@ -27,7 +27,7 @@ export default function Blog() {
   useEffect(() => {
     findAll().then((response) => {
       // Get the first 6 articles
-      setArtigos(response.slice(0, 6));
+      setArtigos(response.slice(0, 5));
       setLoading(false);
     });
   }, []);
