@@ -169,6 +169,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               Qual é o seu nome? *
               <input
                 type="text"
+                minLength={3}
                 required
                 autoFocus
                 placeholder="Coloque seu nome aqui..."
@@ -200,6 +201,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 name="conheceuPor"
                 className="my-2 rounded-lg transition-all duration-300 border-spaceblue border focus:border-green  outline-none p-2 font-medium"
                 onChange={handleChange}
+                required
               >
                 <option value="" disabled selected>
                   Escolha uma opção
@@ -212,10 +214,11 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
                 <option value="Já fui cliente">Já fui cliente</option>
                 <option value="Outro">Outro</option>
               </select>
-              Conte para nós sobre do que se trata o seu projeto. *
+              Conte um pouco para nós sobre do que se trata o seu projeto. *
               <textarea
                 name="descricaoProjeto"
-                rows={2}
+                minLength={20}
+                rows={3}
                 style={{ resize: "vertical" }}
                 placeholder="Descreva seu projeto aqui..."
                 className="my-2 rounded-lg transition-all duration-300 border-spaceblue border focus:border-green outline-none p-2 font-medium"
