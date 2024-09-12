@@ -170,6 +170,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               <input
                 type="text"
                 minLength={3}
+                maxLength={40}
                 required
                 autoFocus
                 placeholder="Coloque seu nome aqui..."
@@ -180,6 +181,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               Qual é o seu email?
               <input
                 type="email"
+                maxLength={40}
                 placeholder="seu.email@exemplo.com"
                 className="my-2 rounded-lg transition-all duration-300 border-spaceblue border focus:border-green  outline-none p-2 font-medium"
                 name="email"
@@ -188,6 +190,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               Qual é o seu telefone? *
               <input
                 type="tel"
+                maxLength={15}
                 placeholder="ex: 21912345678"
                 className="my-2 rounded-lg transition-all duration-300 border-spaceblue border focus:border-green  outline-none p-2 font-medium"
                 name="telefone"
@@ -218,6 +221,7 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
               <textarea
                 name="descricaoProjeto"
                 minLength={20}
+                maxLength={300}
                 rows={3}
                 style={{ resize: "vertical" }}
                 placeholder="Descreva seu projeto aqui..."
