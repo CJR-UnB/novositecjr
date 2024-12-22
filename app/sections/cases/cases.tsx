@@ -16,7 +16,7 @@ const Cases: React.FC = () => {
               description:
                 "Desenvolvimento de um sistema para professores do Ensino Fundamental, com o objetivo de auxiliar na geração de relatórios sobre seus alunos. A montagem de documentos de acompanhamento de desempenho das crianças é um processo não só difícil, mas também muito trabalhoso, e o Mente Aprendiz tem o objetivo de fornecer ferramentas para os professores, tornando a criação desses documentos um processo mais simples e menos manual.",
               image: "/mente.png",
-              link: "https://www.institutomenteaprendiz.com.br",
+              link: "https://www.behance.net/gallery/211913433/Portfolio-CJR-2024",
             },
             {
               title: "Plus Aprendizagens",
@@ -24,14 +24,14 @@ const Cases: React.FC = () => {
                 "Concepção de um sistema de aulas particulares de cursinhos pré-vestibular. A proposta da plataforma é facilitar a interação entre professores e alunos, sendo possível marcar aulas e visualizar de forma rápida sua agenda, horários e pagamentos pendentes",
               image: "/Plus.png",
 
-              link: "https://www.plusaprendizagens.com",
+              link: "https://www.behance.net/gallery/211913433/Portfolio-CJR-2024",
             },
             {
               title: "Selo Social",
               description:
                 "O objetivo do projeto Selo Social foi criar uma plataforma capaz de administrar o processo de treinamento e gestão da qualificação de empresas e organizações para o desenvolvimento de projetos alinhados ao Objetivo de desenvolvimento sustentável, a fim de promover e certificar aquelas que demonstram compromisso social local.",
               image: "/selo social.png",
-              link: "https://www.selosocial.com",
+              link: "https://www.behance.net/gallery/211913433/Portfolio-CJR-2024",
             },
           ]}
         />

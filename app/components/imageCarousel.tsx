@@ -144,7 +144,7 @@ const ImageCarousel: React.FC<CarouselProps> = ({ cases }) => {
                       className="group transition duration-300 inline-block"
                     >
                       <p className="flex gap-3 items-center font-medium text-2xl text-black">
-                        Conheça o projeto {`>`}
+                        Conheça nosso portfólio {`>`}
                       </p>
                       <span
                         className={`block group-hover:max-w-full transition-all duration-500 h-0.5 bg-aquagreen max-w-0`}

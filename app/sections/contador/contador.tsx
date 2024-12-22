@@ -6,7 +6,7 @@ const Contador: React.FC = () => {
   const startingYear = 1999;
   const functioningYears = currentYear - startingYear;
 
-  const activeMembers = 65;
+  const activeMembers = 70;
 
   return (
     <section className="">
@@ -29,7 +29,7 @@ const Contador: React.FC = () => {
           </div>
           <div className="text-center z-20">
             <Face />
-            <Counter duration={10} target={100} />
+            <Counter duration={10} target={98} />
             <h1>Nota de satisfação</h1>
           </div>
         </div>
