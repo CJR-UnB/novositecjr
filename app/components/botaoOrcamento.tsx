@@ -10,11 +10,20 @@ interface OrcamentoProps {
   className: string;
 }
 
+type FormData = {
+  nome: string;
+  email: string;
+  telefone: string;
+  conheceuPor: string;
+  descricaoProjeto: string;
+  data?: string;
+};
+
 const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false); // New state for loading animation
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     nome: "indefinido",
     email: "indefinido",
     telefone: "indefinido",
@@ -29,30 +38,46 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    const finalFormData = {
+    let finalFormData = {
       ...formData,
       email: formData.email === "" ? "indefinido" : formData.email,
     };
 
-    console.log("form data:", finalFormData);
-    setIsSubmitting(true); // Set isSubmitting to true upon form submission
+    console.log("Final form data:", finalFormData);
+
     try {
-      const response = await axios.post(
+      // First: Post to the external webhook
+      const webhookResponse = await axios.post(
         "https://hook.us1.make.com/kpqx58untrlts3fd1u8f83qj3ab7u4ev",
         finalFormData
       );
-      console.log("webhook response:", response.data);
-      setIsSubmitted(true); // Set isSubmitted to true upon successful form submission
-      setIsSubmitting(false); // Set isSubmitting to false upon successful form submission
+      console.log("Webhook response:", webhookResponse.data);
+
+      finalFormData = {
+        ...finalFormData,
+        // get date in dd/mm/yyyy format
+        data: new Date().toLocaleDateString("pt-BR"),
+      };
+      // Next: Post to the Google Sheets endpoint
+      const sheetsResponse = await fetch("/api/planilha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(finalFormData),
+      });
+      console.log("Sheets response:", sheetsResponse);
+
+      setIsSubmitted(true);
     } catch (error) {
-      console.error("webhook error:", error);
-      setIsSubmitted(false); // Set isSubmitted to false upon unsuccessful form submission
-      setIsSubmitting(false); // Set isSubmitting to false upon unsuccessful form submission
+      console.error("Submission error:", error);
+      setIsSubmitted(false);
       alert("Erro ao enviar formulário, tente novamente mais tarde.");
       setTimeout(() => {
         setIsModalOpen(false);
       }, 500);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
