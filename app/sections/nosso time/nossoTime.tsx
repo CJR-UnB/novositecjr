@@ -12,7 +12,7 @@ const NossoTime: React.FC = () => {
         {/* a b c d e f g h i j k l m n o p q r s t u v w x y z */}
         <div className="flex flex-wrap justify-around items-center mb-20 gap-20">
           <Card
-            imageSrc="/marcos.png"
+            imageSrc="/marcos.jpg"
             nome="Marcos Neres"
             cargo="Diretor de Talentos"
             linkedin="https://linkedin.com/in/marcosalexsilvan"
@@ -20,7 +20,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="will.png"
+            imageSrc="will.jpg"
             nome="José Wilson"
             cargo="Diretor Comercial"
             linkedin="https://www.linkedin.com/in/wilsonsousajúnior/"
@@ -28,7 +28,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="sarah.png"
+            imageSrc="sarah.jpg"
             nome="Sarah Novais"
             cargo="Diretora de Projetos"
             linkedin="https://www.linkedin.com/in/sarahnovais/"
@@ -36,7 +36,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="luiza.png"
+            imageSrc="luiza.jpg"
             nome="Luiza Santos"
             cargo="Presidente"
             linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"
@@ -44,7 +44,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="leticia.png"
+            imageSrc="leticia.jpg"
             nome="Letícia Bonfim"
             cargo="Diretor de Publicidade"
             linkedin="https://www.linkedin.com/in/leticia-bomfim-2b6b93316/"
@@ -52,7 +52,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="dudu.png"
+            imageSrc="dudu.jpg"
             nome="Eduardo Barbosa"
             cargo="Diretora de Organização Empresarial"
             linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
