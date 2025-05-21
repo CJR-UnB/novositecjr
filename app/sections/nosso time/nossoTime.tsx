@@ -12,47 +12,47 @@ const NossoTime: React.FC = () => {
         {/* a b c d e f g h i j k l m n o p q r s t u v w x y z */}
         <div className="flex flex-wrap justify-around items-center mb-20 gap-20">
           <Card
-            imageSrc=""
+            imageSrc="/marcos.png"
             nome="Marcos Neres"
             cargo="Diretor de Talentos"
-            linkedin="https://www.linkedin.com/in/leandrokornelius/"
-            github="https://github.com/LeandroKornelius"
+            linkedin="https://linkedin.com/in/marcosalexsilvan"
+            github="https://github.com/Marcolino5"
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc=""
+            imageSrc="will.png"
             nome="José Wilson"
             cargo="Diretor Comercial"
-            linkedin="https://www.linkedin.com/in/luiz-augusto-araújo-da-silva-09a937213/"
-            github="https://github.com/LuizAugus10"
+            linkedin="https://www.linkedin.com/in/wilsonsousajúnior/"
+            github="https://github.com/WilsonSousajr"
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc=""
+            imageSrc="sarah.png"
             nome="Sarah Novais"
             cargo="Diretora de Projetos"
+            linkedin="https://www.linkedin.com/in/sarahnovais/"
+            github="https://github.com/sarahnovaiss"
+            backgroundSrc="background.png"
+          />
+          <Card
+            imageSrc="luiza.png"
+            nome="Luiza Santos"
+            cargo="Presidente"
             linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"
             github="https://github.com/luizadsantos"
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc=""
-            nome="Luiza Santos"
-            cargo="Presidente"
-            linkedin="https://www.linkedin.com/in/pedro-joão-reffatti-pinheiro-b3b77b2aa/"
-            github="https://github.com/pedrojoaorp"
-            backgroundSrc="background.png"
-          />
-          <Card
-            imageSrc=""
+            imageSrc="leticia.png"
             nome="Letícia Bonfim"
             cargo="Diretor de Publicidade"
-            linkedin="https://www.linkedin.com/in/rodrigorafik/"
-            github="https://github.com/maetsuji"
+            linkedin="https://www.linkedin.com/in/leticia-bomfim-2b6b93316/"
+            github="https://github.com/LetiBomfim"
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc=""
+            imageSrc="dudu.png"
             nome="Eduardo Barbosa"
             cargo="Diretora de Organização Empresarial"
             linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
