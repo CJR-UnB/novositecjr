@@ -36,7 +36,7 @@ const NossoTime: React.FC = () => {
             backgroundSrc="background.png"
           />
           <Card
-            imageSrc="luiza.jpg"
+            imageSrc="luiza.JPG"
             nome="Luiza Santos"
             cargo="Presidente"
             linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"
