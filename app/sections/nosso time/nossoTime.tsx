@@ -11,6 +11,14 @@ const NossoTime: React.FC = () => {
         <PageBreak />
         {/* a b c d e f g h i j k l m n o p q r s t u v w x y z */}
         <div className="flex flex-wrap justify-around items-center mb-20 gap-20">
+        <Card
+            imageSrc="luiza.JPG"
+            nome="Luiza Santos"
+            cargo="Presidente"
+            linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"
+            github="https://github.com/luizadsantos"
+            backgroundSrc="background.png"
+          />
           <Card
             imageSrc="/marcos.jpg"
             nome="Marcos Neres"
@@ -35,18 +43,11 @@ const NossoTime: React.FC = () => {
             github="https://github.com/sarahnovaiss"
             backgroundSrc="background.png"
           />
-          <Card
-            imageSrc="luiza.JPG"
-            nome="Luiza Santos"
-            cargo="Presidente"
-            linkedin="https://www.linkedin.com/in/luiza-dos-santos-costa-b022a228a/"
-            github="https://github.com/luizadsantos"
-            backgroundSrc="background.png"
-          />
+
           <Card
             imageSrc="leticia.jpg"
             nome="Letícia Bonfim"
-            cargo="Diretor de Publicidade"
+            cargo="Diretora de Publicidade"
             linkedin="https://www.linkedin.com/in/leticia-bomfim-2b6b93316/"
             github="https://github.com/LetiBomfim"
             backgroundSrc="background.png"
@@ -54,7 +55,7 @@ const NossoTime: React.FC = () => {
           <Card
             imageSrc="dudu.jpg"
             nome="Eduardo Barbosa"
-            cargo="Diretora de Organização Empresarial"
+            cargo="Diretor de Organização Empresarial"
             linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
             github="https://github.com/rochavictoria"
             backgroundSrc="background.png"
