@@ -56,8 +56,8 @@ const NossoTime: React.FC = () => {
             imageSrc="dudu.jpg"
             nome="Eduardo Barbosa"
             cargo="Diretor de Organização Empresarial"
-            linkedin="https://www.linkedin.com/in/victória-rocha-191a9524b/"
-            github="https://github.com/rochavictoria"
+            linkedin=""
+            github="https://github.com/EduBarb0sa"
             backgroundSrc="background.png"
           />
         </div>
