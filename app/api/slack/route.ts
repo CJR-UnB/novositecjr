@@ -1,10 +1,4 @@
-// app.slack.com/block-kit-builder
 import { App as SlackApp } from "@slack/bolt";
-
-const app = new SlackApp({
-  signingSecret: process.env.SLACK_SIGNING_SECRET,
-  token: process.env.SLACK_BOT_TOKEN,
-});
 
 interface FormData {
   nome: string;
@@ -56,14 +50,28 @@ function generateBlock(formData: FormData) {
   ];
 }
 
-async function sendSlackMessage(block: any) {
-  app.client.chat.postMessage({
+async function sendSlackMessage(blocks: any) {
+  if (
+    !process.env.SLACK_SIGNING_SECRET ||
+    !process.env.SLACK_BOT_TOKEN ||
+    !process.env.SLACK_CHANNEL
+  ) {
+    console.warn("Variáveis de ambiente do Slack não configuradas.");
+    return;
+  }
+
+  const app = new SlackApp({
+    signingSecret: process.env.SLACK_SIGNING_SECRET,
     token: process.env.SLACK_BOT_TOKEN,
-    channel: process.env.SLACK_CHANNEL || "geral",
+  });
+
+  await app.client.chat.postMessage({
+    channel: process.env.SLACK_CHANNEL,
     text: "Um novo cliente respondeu o form!",
-    blocks: block,
+    blocks: blocks,
   });
 }
+
 
 /*
 
