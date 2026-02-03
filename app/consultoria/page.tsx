@@ -2,8 +2,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Orcamento from "@/app/components/botaoOrcamento";
-import { CJR, ArrowSquare, PageBreak, WhatsappImage } from "@/app/components/SVGicons";
+import { CJR, ArrowSquare, PageBreak, WhatsappImage, Focatia,  Coffee} from "@/app/components/SVGicons";
 import Footer from "../sections/footer";
+import Contato from "../sections/contato/contato";
+import CardServico from "../sections/servicos/cardServico" 
+
+
+
 
 const Consultoria: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -61,9 +66,57 @@ const Consultoria: React.FC = () => {
             As entregas incluem diagnóstico, roadmap de melhorias, protótipos (quando aplicável)
             e suporte na implementação técnica.
           </p>
-
+         <section className="mt-20 flex flex-col" id="servicos">
+        <h1 className="text-center font-bold text-4xl">NOSSOS SERVIÇOS</h1>
+        <PageBreak />
+        <p className="text-lg sm:text-xl mb-5 px-5 text-mutedSpaceblue font-normal text-center">
+          Conheça os nossos serviços e como podemos impulsionar seus resultados!
+        </p>
+        <Orcamento className="flex bg-green items-center self-center text-xl w-fit font-normal text-black rounded-lg mt-5 py-3 px-10 mx-5" />
+        <div className="flex justify-center items-center text-center mt-10 text-4xl font-bold">
+          <div className="grid md:grid-cols-3 gap-6 px-10 w-fit">
+            <CardServico
+              icone={<Coffee />}
+              tipo="Sistemas Web"
+              descricao="Desenvolvimento personalizado de sistemas web para atender às necessidades específicas da sua empresa"
+              descricao_back="Desenvolvemos sistemas web sob medida, garantindo que atendam perfeitamente às necessidades do seu negócio. Nossa abordagem centrada no usuário e nossa expertise técnica garantem que seu sistema seja eficiente, seguro e altamente funcional."
+            />
+            <CardServico
+              icone={<Coffee />}
+              tipo="Consultoria"
+              descricao="Soluções estratégicas e consultoria especializada para impulsionar o crescimento do seu negócio"
+              descricao_back="Nossas consultorias especializadas abrangem otimização e aprimoramento de sites, aplicativos móveis, E-commerce e PWA. Identificamos oportunidades de melhoria e implementamos soluções personalizadas para maximizar o impacto de sua presença online."
+            />
+            <CardServico
+              icone={<Coffee />}
+              tipo="PWA"
+              descricao="Desenvolvimento de Progressive Web Apps para melhorar a experiência do usuário"
+              descricao_back="Desenvolvemos Progressive Web Apps que combinam a acessibilidade da web com a funcionalidade de um aplicativo móvel. Isso significa uma experiência fluida e envolvente para os usuários, independentemente do dispositivo ou conexão de internet, aumentando o engajamento e a retenção."
+            />
+            <CardServico
+              icone={<Coffee/>}
+              tipo="E-Commerce"
+              descricao="Desenvolvimento de lojas virtuais para impulsionar as vendas online do seu negócio"
+              descricao_back="Nossas soluções de E-commerce oferecem uma plataforma completa para impulsionar suas vendas online. Desde a criação de catálogos de produtos atrativos até a implementação de um checkout seguro e fácil de usar, garantimos uma experiência de compra perfeita para seus clientes."
+            />
+            <CardServico
+              icone={<Coffee />}
+              tipo="Aplicativo Móvel"
+              descricao="Desenvolvimento de aplicativos móveis personalizados para iOS e Android, oferecendo uma experiência única aos usuários"
+              descricao_back="Desenvolvemos aplicativos móveis sob medida para atender às necessidades específicas do seu negócio. Com um design intuitivo, garantimos uma experiência de usuário excepcional em todas as plataformas."
+            />
+            <CardServico
+              icone={<Coffee />}
+              tipo="Site Institucional"
+              descricao="Criação de websites profissionais e responsivos para promover a sua marca e serviços online"
+              descricao_back="Desenvolvemos sites institucionais que refletem a identidade da sua marca com um design moderno e atrativo. Nosso objetivo é garantir que seu site se destaque na multidão, atraindo e envolvendo os visitantes de forma eficaz."
+            />
+          </div>
+        </div>
+      </section>
           <h2 className="font-semibold text-xl">Áreas atendidas</h2>
           <ul className="list-disc list-inside mx-auto max-w-xl lg:max-w-2xl">
+          
             <li>Otimização de performance e SEO técnico</li>
             <li>Melhoria de UX/UI e acessibilidade</li>
             <li>Arquitetura e integração de sistemas</li>
@@ -138,6 +191,7 @@ const Consultoria: React.FC = () => {
       </div>
       
     </main>
+    <Contato />
     <Footer />
     </>
   );
