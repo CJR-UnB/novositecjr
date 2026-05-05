@@ -1,6 +1,6 @@
 # Site atual da CJR (2024 - presente)
 
-## _desenvolvido na stack da empresa: React, NextJs, TailwindCSS e Typescript_
+## _desenvolvido na stack da empresa: React, NextJs, TailwindCSS , Typescript_
 
 ### Algumas informações úteis:
 
