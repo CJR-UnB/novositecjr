@@ -8,9 +8,10 @@ const NossoTime: React.FC = () => {
         <h1 className="text-center text-spaceblue font-bold text-4xl md:text-5xl">
           NOSSO TIME
         </h1>
+
         <PageBreak />
-        {/* a b c d e f g h i j k l m n o p q r s t u v w x y z */}
-        <div className="flex justify-center items-stretch mb-20 gap-8 overflow-x-auto px-4">
+
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-20 px-6">
           <Card
             imageSrc="halycia1.jpeg"
             nome="Halycia de Oliveira"

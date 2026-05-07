@@ -14,12 +14,11 @@ const Card: React.FC<CardProps> = ({
   nome,
   cargo,
   linkedin,
- github,
+  github,
   backgroundSrc,
 }) => {
   return (
-    <div className="relative flex flex-col items-center rounded-lg border border-spaceblue/40 w-[400px] min-h-[340px] m-5 p-4 bg-white shadow-md">
-      
+    <div className="relative flex flex-col items-center rounded-lg border border-spaceblue/40 w-full min-h-[420px] p-4 bg-white shadow-md">
       {/* Background */}
       <div className="relative h-32 w-full">
         <img
@@ -39,17 +38,17 @@ const Card: React.FC<CardProps> = ({
       </div>
 
       {/* Conteúdo */}
-      <div className="mt-20 flex flex-col items-center text-center px-2">
+      <div className="mt-20 flex flex-col items-center text-center px-2 flex-1 w-full">
         <h4 className="text-xl font-bold text-navy-700">
           {nome}
         </h4>
 
-        <p className="mt-1 text-base font-normal text-gray-600">
+        <p className="mt-1 text-base font-normal text-gray-600 min-h-[48px]">
           {cargo}
         </p>
 
         {/* Ícones */}
-        <div className="mt-5 mb-2 flex justify-center">
+        <div className="mt-auto pt-5 mb-2 flex justify-center">
           <a
             href={linkedin}
             target="_blank"

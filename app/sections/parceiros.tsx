@@ -11,13 +11,13 @@ const Parceiros: React.FC = () => {
 
       <PageBreak />
 
-      <div className="flex flex-nowrap items-center justify-between w-full gap-16 overflow-x-auto px-6 lg:px-16 py-4 scroll-smooth">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 w-full px-6 lg:px-16 py-4">
         
         <a
           href="https://brasiljunior.org.br"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-w-[220px] items-center justify-center hover:scale-105 transition-transform duration-300"
+          className="flex items-center justify-center hover:scale-105 transition-transform duration-300"
         >
           <Image
             src="/brj.svg"
@@ -32,7 +32,7 @@ const Parceiros: React.FC = () => {
           href="https://concentrodf.com.br"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-w-[220px] items-center justify-center hover:scale-105 transition-transform duration-300"
+          className="flex items-center justify-center hover:scale-105 transition-transform duration-300"
         >
           <Image
             src="/concentro.svg"
@@ -47,7 +47,7 @@ const Parceiros: React.FC = () => {
           href="https://www.factoagencia.com.br/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-w-[220px] items-center justify-center hover:scale-105 transition-transform duration-300"
+          className="flex items-center justify-center hover:scale-105 transition-transform duration-300"
         >
           <Image
             src="/factologo.png"
@@ -62,7 +62,7 @@ const Parceiros: React.FC = () => {
           href="https://lamparinadesign.com.br/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-w-[220px] items-center justify-center hover:scale-105 transition-transform duration-300"
+          className="flex items-center justify-center hover:scale-105 transition-transform duration-300"
         >
           <Image
             src="/lamp3.png"
@@ -77,7 +77,7 @@ const Parceiros: React.FC = () => {
           href="https://www.cic.unb.br"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex min-w-[220px] items-center justify-center hover:scale-105 transition-transform duration-300"
+          className="flex items-center justify-center hover:scale-105 transition-transform duration-300"
         >
           <Image
             src="/unb cic.svg"
