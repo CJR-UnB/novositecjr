@@ -65,7 +65,7 @@ const Parceiros: React.FC = () => {
           className="flex items-center justify-center hover:scale-105 transition-transform duration-300"
         >
           <Image
-            src="/lamp3.png"
+            src="/lamparina.png"
             width={220}
             height={120}
             alt="lamparina"
