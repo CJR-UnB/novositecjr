@@ -31,11 +31,11 @@ const NossoTime: React.FC = () => {
           />
 
           <Card
-            imageSrc="pedro1.jpeg"
-            nome="Pedro Americo"
+            imageSrc="michele.jpg"
+            nome="Michele Aiko"
             cargo="Gerente Comercial"
-            linkedin="https://www.linkedin.com/in/dev-pedro-americo/"
-            github="https://github.com/dev-americo"
+            linkedin="https://www.linkedin.com/in/micheleaiko/"
+            github="https://github.com/michele-aiko"
             backgroundSrc="background.png"
           />
 
