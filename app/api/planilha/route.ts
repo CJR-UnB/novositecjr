@@ -18,8 +18,8 @@ export async function POST(req: Request) {
     });
 
     const sheets = google.sheets({ version: "v4", auth });
-    const spreadsheetId = "1pwmuxDpN0usQCbwZXSeXOmOFXvsFGejywBnJMBi07Wk";
-    const range = "Página1!A:E";
+    const spreadsheetId = "1hnk7iXiz9w6kiq62liqsfD4dAkHsuJe9gtYcp9I3f60";
+    const range = "Página1!A:F";
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
@@ -34,8 +34,11 @@ export async function POST(req: Request) {
       JSON.stringify({ message: "Dados adicionados com sucesso!" }),
       { status: 200 }
     );
-  } catch (error: any) {
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch (error: unknown) {
+    const message =
+      error instanceof Error ? error.message : "Erro interno ao salvar o lead.";
+
+    return new Response(JSON.stringify({ error: message }), {
       status: 500,
     });
   }
