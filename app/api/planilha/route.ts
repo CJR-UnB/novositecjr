@@ -1,25 +1,27 @@
-import fs from "fs";
 import { google } from "googleapis";
-import path from "path";
+
+const auth = new google.auth.GoogleAuth({
+  credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS || "{}"),
+  scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+});
+
+const sheets = google.sheets({ version: "v4", auth });
+const spreadsheetId = process.env.SPREADSHEET_ID;
+const range = "Página1!A:F";
+
+export async function GET() {
+  try {
+    await auth.getAccessToken();
+    return new Response(null, { status: 204 });
+  } catch {
+    return new Response(null, { status: 204 });
+  }
+}
 
 export async function POST(req: Request) {
   try {
     const { nome, email, telefone, conheceuPor, descricaoProjeto, data } =
       await req.json();
-
-    const auth = new google.auth.GoogleAuth({
-      credentials: JSON.parse(
-        fs.readFileSync(
-          path.join(process.cwd(), "app/api/planilha/chave.json"),
-          "utf-8"
-        )
-      ),
-      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    });
-
-    const sheets = google.sheets({ version: "v4", auth });
-    const spreadsheetId = "1pwmuxDpN0usQCbwZXSeXOmOFXvsFGejywBnJMBi07Wk";
-    const range = "Página1!A:E";
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
@@ -32,10 +34,13 @@ export async function POST(req: Request) {
 
     return new Response(
       JSON.stringify({ message: "Dados adicionados com sucesso!" }),
-      { status: 200 }
+      { status: 200 },
     );
-  } catch (error: any) {
-    return new Response(JSON.stringify({ error: error.message }), {
+  } catch (error: unknown) {
+    const message =
+      error instanceof Error ? error.message : "Erro interno ao salvar o lead.";
+
+    return new Response(JSON.stringify({ error: message }), {
       status: 500,
     });
   }

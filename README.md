@@ -6,14 +6,16 @@
 
 - Cada seção do site está separado dentro de seções, presentes na pasta _./app/sections_;
 
-- O arquivo .env do aplicativo contém informações para o uso de um bot no slack, mas está atualmente desativado devido ao nosso uso do make.com;
+- A API de leads salva os dados diretamente no Google Sheets. Configure
+  `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` e
+  `GOOGLE_SPREADSHEET_ID` no ambiente de execução;
 
   - A pasta API contém a lógica para o desenvolvimento dessa bot do slack
     que está em desuso;
 
 - Todas as animações foram feitas usando o React-transition-group e keyframes CSS e as imagens do site são vetores do site phosphoricons.com e se apresentam nos arquivos _./app/global.css_ e ._/components/SVGicons.tsx_, respectivamente;
 
-- O arquivo _./app/components/botaoOrcamento.tsx_ é o arquivo que contém toda a lógica do funil de vendas conectado ao make.com;
+- O arquivo _./app/components/botaoOrcamento.tsx_ é o arquivo que contém toda a lógica do funil de vendas conectado à API interna da planilha;
 
   - O arquivo _./app/components/whatsappButton.tsx_ contém a lógica para mandar mensagem pelo whatsapp;
 

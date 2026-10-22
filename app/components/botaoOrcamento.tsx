@@ -1,6 +1,5 @@
 "use client";
 
-import axios from "axios";
 import React, { useState } from "react";
 import { TailSpin } from "react-loading-icons";
 import { CSSTransition } from "react-transition-group";
@@ -33,6 +32,9 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
 
   const toggleModal = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
+    if (!isModalOpen) {
+      fetch("/api/planilha").catch(() => {});
+    }
     setIsModalOpen(!isModalOpen);
   };
 
@@ -40,33 +42,22 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    let finalFormData = {
+    const finalFormData = {
       ...formData,
       email: formData.email === "" ? "indefinido" : formData.email,
+      data: new Date().toLocaleDateString("pt-BR"),
     };
 
-    console.log("Final form data:", finalFormData);
-
     try {
-      // First: Post to the external webhook
-      const webhookResponse = await axios.post(
-        "https://hook.us1.make.com/kpqx58untrlts3fd1u8f83qj3ab7u4ev",
-        finalFormData
-      );
-      console.log("Webhook response:", webhookResponse.data);
-
-      finalFormData = {
-        ...finalFormData,
-        // get date in dd/mm/yyyy format
-        data: new Date().toLocaleDateString("pt-BR"),
-      };
-      // Next: Post to the Google Sheets endpoint
       const sheetsResponse = await fetch("/api/planilha", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(finalFormData),
       });
-      console.log("Sheets response:", sheetsResponse);
+
+      if (!sheetsResponse.ok) {
+        throw new Error("Não foi possível salvar o lead na planilha.");
+      }
 
       setIsSubmitted(true);
     } catch (error) {
@@ -84,11 +75,17 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
+    const { name, value } = e.target;
+    const finalValue = name === "telefone" ? value.replace(/\D/g, "") : value;
+    if (name === "telefone") {
+      e.target.value = finalValue;
+    }
+
     setFormData({
       ...formData, // keep the existing formData state
-      [e.target.name]: e.target.value, // only update the field that was changed
+      [name]: finalValue, // only update the field that was changed
     });
   };
 

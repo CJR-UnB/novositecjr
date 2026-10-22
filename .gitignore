@@ -29,6 +29,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# Google service account credentials
+app/api/planilha/chave.json
+
 # vercel
 .vercel
 
