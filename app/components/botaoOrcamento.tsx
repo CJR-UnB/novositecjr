@@ -75,11 +75,17 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
+    const { name, value } = e.target;
+    const finalValue = name === "telefone" ? value.replace(/\D/g, "") : value;
+    if (name === "telefone") {
+      e.target.value = finalValue;
+    }
+
     setFormData({
       ...formData, // keep the existing formData state
-      [e.target.name]: e.target.value, // only update the field that was changed
+      [name]: finalValue, // only update the field that was changed
     });
   };
 
