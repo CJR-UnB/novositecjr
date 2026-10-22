@@ -32,6 +32,9 @@ const Orcamento: React.FC<OrcamentoProps> = ({ className }) => {
 
   const toggleModal = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
+    if (!isModalOpen) {
+      fetch("/api/planilha").catch(() => {});
+    }
     setIsModalOpen(!isModalOpen);
   };
 

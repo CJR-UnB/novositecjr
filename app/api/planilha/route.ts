@@ -1,18 +1,27 @@
 import { google } from "googleapis";
 
+const auth = new google.auth.GoogleAuth({
+  credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS || "{}"),
+  scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+});
+
+const sheets = google.sheets({ version: "v4", auth });
+const spreadsheetId = process.env.SPREADSHEET_ID;
+const range = "Página1!A:F";
+
+export async function GET() {
+  try {
+    await auth.getAccessToken();
+    return new Response(null, { status: 204 });
+  } catch {
+    return new Response(null, { status: 204 });
+  }
+}
+
 export async function POST(req: Request) {
   try {
     const { nome, email, telefone, conheceuPor, descricaoProjeto, data } =
       await req.json();
-
-    const auth = new google.auth.GoogleAuth({
-      credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS || "{}"),
-      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    });
-
-    const sheets = google.sheets({ version: "v4", auth });
-    const spreadsheetId = process.env.SPREADSHEET_ID;
-    const range = "Página1!A:F";
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
