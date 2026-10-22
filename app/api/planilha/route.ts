@@ -1,6 +1,4 @@
-import fs from "fs";
 import { google } from "googleapis";
-import path from "path";
 
 export async function POST(req: Request) {
   try {
@@ -8,17 +6,12 @@ export async function POST(req: Request) {
       await req.json();
 
     const auth = new google.auth.GoogleAuth({
-      credentials: JSON.parse(
-        fs.readFileSync(
-          path.join(process.cwd(), "app/api/planilha/chave.json"),
-          "utf-8"
-        )
-      ),
+      credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS || "{}"),
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
 
     const sheets = google.sheets({ version: "v4", auth });
-    const spreadsheetId = "1hnk7iXiz9w6kiq62liqsfD4dAkHsuJe9gtYcp9I3f60";
+    const spreadsheetId = process.env.SPREADSHEET_ID;
     const range = "Página1!A:F";
 
     await sheets.spreadsheets.values.append({
@@ -32,7 +25,7 @@ export async function POST(req: Request) {
 
     return new Response(
       JSON.stringify({ message: "Dados adicionados com sucesso!" }),
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error: unknown) {
     const message =
