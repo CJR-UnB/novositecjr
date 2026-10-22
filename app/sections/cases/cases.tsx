@@ -12,13 +12,6 @@ const Cases: React.FC = () => {
         <ImageCarousel
           cases={[
             {
-              title: "Insituto Mente Aprendiz",
-              description:
-                "Desenvolvimento de um sistema para professores do Ensino Fundamental, com o objetivo de auxiliar na geração de relatórios sobre seus alunos. A montagem de documentos de acompanhamento de desempenho das crianças é um processo não só difícil, mas também muito trabalhoso, e o Mente Aprendiz tem o objetivo de fornecer ferramentas para os professores, tornando a criação desses documentos um processo mais simples e menos manual.",
-              image: "/mente.png",
-              link: "https://www.behance.net/gallery/211913433/Portfolio-CJR-2024",
-            },
-            {
               title: "Plus Aprendizagens",
               description:
                 "Concepção de um sistema de aulas particulares de cursinhos pré-vestibular. A proposta da plataforma é facilitar a interação entre professores e alunos, sendo possível marcar aulas e visualizar de forma rápida sua agenda, horários e pagamentos pendentes",
